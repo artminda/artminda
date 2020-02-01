@@ -26,25 +26,25 @@ let storyapi = new StoryblokClient({
 export default {
   metaInfo: {
     title: "Blog",
-    titleTemplate: "%s ← Eldin's Space",
+    titleTemplate: "%s ← artminda's web",
     meta: [
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         name: "description",
-        content: "Eldin Zaimovic's Blog"
+        content: "artminda chen's Blog"
       },
       { charset: "utf-8" },
-      { property: "og:title", content: "Eldin' Space" },
-      { property: "og:site_name", content: "Eldin' Space" },
+      { property: "og:title", content: "artminda' web" },
+      { property: "og:site_name", content: "artminda' web" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://eldin.space" },
+      { property: "og:url", content: "https://artminda.github.io/artminda/" },
       {
         property: "og:image",
         content: "https://i.imgur.com/Dcz2PGx.jpg"
       },
       {
         property: "og:description",
-        content: "Eldin Zaimovic's Blog"
+        content: "artminda chen's Blog"
       }
     ]
   },

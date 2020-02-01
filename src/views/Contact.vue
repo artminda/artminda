@@ -8,24 +8,24 @@
         </h2>
         <div class="py-4 subheading font-weight-bold">
           <v-icon large color="green" left>fas fa-map-marker-alt</v-icon>
-          <span>Doboj,&nbsp;</span>
-          <span class="green--text">Bosnia & Herzegovina</span>
+          <span>Taichung or Kaohsiung,&nbsp;</span>
+          <span class="green--text">Taiwan</span>
         </div>
         <div class="py-4 subheading font-weight-bold">
           <v-icon large color="green" left>fas fa-envelope</v-icon>
-          <span>eldin@</span>
-          <span class="green--text">zaimovic.com</span>
+          <span>doai10007118@</span>
+          <span class="green--text">gmail.com</span>
         </div>
         <div class="py-4 subheading font-weight-bold">
           <v-icon large color="green" left>fas fa-phone</v-icon>
-          <span>+387&nbsp;</span>
-          <span class="green--text">61 596 676</span>
+          <span>0937&nbsp;</span>
+          <span class="green--text">828 251</span>
         </div>
-        <div class="py-4 subheading font-weight-bold">
+        <!-- <div class="py-4 subheading font-weight-bold">
           <v-icon large color="green" left>fas fa-check</v-icon>
           <span>Freelance</span>
           <span class="green--text">Available</span>
-        </div>
+        </div> -->
       </v-flex>
 
       <v-flex xs12 sm12 md6 lg6 xl6>
@@ -34,7 +34,7 @@
           <span class="green--text">Form</span>
         </h2>
 
-        <form method="POST" action="https://formspree.io/eldin@zaimovic.com">
+        <form method="POST" action="https://formspree.io/xknrokpw">
           <v-text-field
             name="name"
             color="green"
@@ -91,19 +91,19 @@ import {
 export default {
   metaInfo: {
     title: "Contact",
-    titleTemplate: "%s ← Eldin's Space",
+    titleTemplate: "%s ← artminda's web",
     meta: [
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         name: "description",
         content:
-          "Eldin Zaimovic's Contact Doboj Bosnia and Herzegovina Freelance Get in Touch ContactMe"
+          "artminda chen's Contact please keep in Touch ContactMe"
       },
       { charset: "utf-8" },
-      { property: "og:title", content: "Eldin' Space" },
-      { property: "og:site_name", content: "Eldin' Space" },
+      { property: "og:title", content: "artminda' web" },
+      { property: "og:site_name", content: "artminda' web" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://eldin.space" },
+      { property: "og:url", content: "https://artminda.github.io/artminda" },
       {
         property: "og:image",
         content: "https://i.imgur.com/Dcz2PGx.jpg"
@@ -111,7 +111,7 @@ export default {
       {
         property: "og:description",
         content:
-          "Eldin Zaimovic's Contact Doboj Bosnia and Herzegovina Freelance Get in Touch ContactMe"
+          "artminda chen's Contact please keep in Touch ContactMe"
       }
     ]
   },

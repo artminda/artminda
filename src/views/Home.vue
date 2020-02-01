@@ -23,7 +23,7 @@
 
     <br>
 
-    <vue-typer class="headline" :repeat="0" text="Eldin Zaimovic"></vue-typer>
+    <vue-typer class="headline" :repeat="0" text="artminda chen"></vue-typer>
     <vue-typer
       :text="text1"
       :repeat="Infinity"
@@ -48,13 +48,13 @@
             </h3>
             <div>
               <p>
-                Hello! I’m Eldin Zaimovic. I'm a front-end developer who
+                Hello! I’m Artminda Chen. I'm a front-end developer who
                 is passionate about
                 <span
                   class="green--text font-weight-bold"
                 >VUE</span>, building great user experiences,
                 fighting for simplicity over complexity and constantly learning.
-                When I'm not coding or making videos, you'll find me traveling across Europe.
+                When I'm not coding or making videos, you'll find me workouts.
               </p>
             </div>
           </div>
@@ -102,20 +102,20 @@ import VueCompareImage from "vue-compare-image";
 export default {
   metaInfo: {
     title: "Home",
-    titleTemplate: "%s ← Eldin's Space",
+    titleTemplate: "%s ← Artminda's Web",
     meta: [
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "description", content: "Eldin Zaimovic's Portfolio" },
+      { name: "description", content: "Artminda Chen's Portfolio" },
       { charset: "utf-8" },
-      { property: "og:title", content: "Eldin' Space" },
-      { property: "og:site_name", content: "Eldin' Space" },
+      { property: "og:title", content: "Artminda' Web" },
+      { property: "og:site_name", content: "Artminda' Web" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://eldin.space" },
+      { property: "og:url", content: "https://artminda.github.io/artminda" },
       {
         property: "og:image",
         content: "https://i.imgur.com/Dcz2PGx.jpg"
       },
-      { property: "og:description", content: "Eldin Zaimovic's Portfolio" }
+      { property: "og:description", content: "Artminda Chen's Portfolio" }
     ]
   },
   components: {
@@ -125,31 +125,22 @@ export default {
   data() {
     return {
       icons: [
-        { href: "https://github.com/EldinZaimovic", icon: "fab fa-github" },
+        { href: "https://github.com/artminda", icon: "fab fa-github" },
         {
-          href: "https://stackoverflow.com/users/story/9660700",
-          icon: "fab fa-stack-overflow"
-        },
-        { href: "https://twitter.com/EldinMatricar", icon: "fab fa-twitter" },
-        {
-          href: "https://www.linkedin.com/in/eldin-zaimovic",
-          icon: "fab fa-linkedin-in"
+          href: "https://www.cakeresume.com/dashboard#",
+          icon: "fab fa-cuttlefish"
         },
         {
-          href: "https://www.xing.com/profile/Eldin_Zaimovic?sc_o=mxb_p",
-          icon: "fab fa-xing"
-        },
-        {
-          href: "https://www.facebook.com/EldinVasVoli",
+          href: "https://www.facebook.com/shyshydesign/",
           icon: "fab fa-facebook-f"
         },
-        { href: "https://www.instagram.com/matricar", icon: "fab fa-instagram" }
+        { href: "https://www.instagram.com/artminda", icon: "fab fa-instagram" }
       ],
       text1: ["Front-End Developer", "Web Developer", "Web Designer"],
-      leftImage: "https://i.imgur.com/bU50uS9.jpg",
-      rightImage: "https://i.imgur.com/z3ZoEEw.jpg",
-      leftImage2: "https://i.imgur.com/SXBitjh.jpg",
-      rightImage2: "https://i.imgur.com/Dcz2PGx.jpg",
+      leftImage: require('../assets/artmindaTwo.png'),
+      rightImage: require('../assets/artmindaOne.png'),
+      leftImage2: require('../assets/artmindaTwoTwo.png'),
+      rightImage2: require('../assets/artmindaOneOne.png'),
       sliderLine: 0,
       hSize: 0,
       sliderPosition: 0.5

@@ -14,7 +14,7 @@
             :src="service.src"
             height="100"
             aspect-ratio="2.75"
-            :alt="'Eldin do '+service.title"
+            :alt="'artminda do '+service.title"
             lazy-src="https://cdn.dribbble.com/users/503653/screenshots/3143656/fluid-loader.gif"
             contain
           ></v-img>
@@ -23,14 +23,14 @@
           </v-card-title>
         </v-card>
       </v-flex>
-      <v-flex xs12 sm12 md12 lg12 xl12>
+      <!-- <v-flex xs12 sm12 md12 lg12 xl12>
         <h2 class="pl-4">
           <span>My</span>
           <span class="green--text">Clients</span>
         </h2>
-      </v-flex>
+      </v-flex> -->
 
-      <v-flex v-for="client in clients" :key="client.src" xs6 sm4 md3 lg2 xl2>
+      <!-- <v-flex v-for="client in clients" :key="client.src" xs6 sm4 md3 lg2 xl2>
         <v-card flat :href="client.href" target="_blank" color="transparent">
           <v-hover>
             <v-img
@@ -53,7 +53,7 @@
             </v-img>
           </v-hover>
         </v-card>
-      </v-flex>
+      </v-flex> -->
     </v-layout>
   </v-container>
 </template>
@@ -62,19 +62,19 @@
 export default {
   metaInfo: {
     title: "Services",
-    titleTemplate: "%s ← Eldin's Space",
+    titleTemplate: "%s ← artminda's web",
     meta: [
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         name: "description",
         content:
-          "Eldin Zaimovic's Services Web Development Video Editing Graphic Design Front-End Advetising"
+          "artminda chen's Services Web Development Video Editing Graphic Design Front-End Advetising"
       },
       { charset: "utf-8" },
-      { property: "og:title", content: "Eldin' Space" },
-      { property: "og:site_name", content: "Eldin' Space" },
+      { property: "og:title", content: "artminda' web" },
+      { property: "og:site_name", content: "artminda' web" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://eldin.space" },
+      { property: "og:url", content: "https://artminda.github.io/artminda" },
       {
         property: "og:image",
         content: "https://i.imgur.com/Dcz2PGx.jpg"
@@ -82,7 +82,7 @@ export default {
       {
         property: "og:description",
         content:
-          "Eldin Zaimovic's Services Web Development Video Editing Graphic Design Front-End Advetising"
+          "artminda chen's Services Web Development Video Editing Graphic Design Front-End Advetising"
       }
     ]
   },
