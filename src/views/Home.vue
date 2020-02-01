@@ -133,8 +133,7 @@ export default {
         {
           href: "https://www.facebook.com/shyshydesign/",
           icon: "fab fa-facebook-f"
-        },
-        { href: "https://www.instagram.com/artminda", icon: "fab fa-instagram" }
+        }
       ],
       text1: ["Front-End Developer", "Web Developer", "Web Designer"],
       leftImage: require('../assets/artmindaTwo.png'),
