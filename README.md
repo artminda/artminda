@@ -3,8 +3,6 @@
 [Preview](https://artminda.github.io/artminda)
 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9042b890-6768-4734-8fa2-cb0b81be7a72/deploy-status)](https://app.netlify.com/sites/eldin-space/deploys)
-
 ## Project setup
 
 ```
