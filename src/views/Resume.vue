@@ -7,12 +7,12 @@
           <v-timeline-item color="green" small>
             <v-layout pt-3>
               <v-flex xs4>
-                <div class="caption font-weight-bold green--text">JAN 2018 -</div>
+                <div class="caption font-weight-bold green--text">SEP 2017 -</div>
                 <div class="caption font-weight-bold green--text">PRESENT</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>Full Stack Web Development Course</strong>
-                <div class="caption mb-2">freeCodeCamp</div>
+                <strong>Master of Fine Arts</strong>
+                <div class="caption mb-2">National Chiayi University</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -20,12 +20,12 @@
           <v-timeline-item color="green" small>
             <v-layout pt-3>
               <v-flex xs4>
-                <div class="caption font-weight-bold green--text">SEP 2007 -</div>
-                <div class="caption font-weight-bold green--text">MAY 2014</div>
+                <div class="caption font-weight-bold green--text">SEP 2011 -</div>
+                <div class="caption font-weight-bold green--text">MAY 2015</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>Telecommunications Engineering</strong>
-                <div class="caption mb-2">University of East Sarajevo</div>
+                <strong>Bachelor of Fine Arts</strong>
+                <div class="caption mb-2">National Taitung University</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -33,12 +33,12 @@
           <v-timeline-item color="green" small>
             <v-layout pt-3>
               <v-flex xs4>
-                <div class="caption font-weight-bold green--text">SEP 2003 -</div>
-                <div class="caption font-weight-bold green--text">MAY 2007</div>
+                <div class="caption font-weight-bold green--text">AUG 2008 -</div>
+                <div class="caption font-weight-bold green--text">JUL 2011</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>Electrical Technician for Computers</strong>
-                <div class="caption mb-2">Electro-technical school Doboj</div>
+                <strong>Major of Art</strong>
+                <div class="caption mb-2">National Singang Senior High School of Arts</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -52,12 +52,12 @@
           <v-timeline-item color="green" small>
             <v-layout pt-3>
               <v-flex xs4>
-                <div class="caption font-weight-bold green--text">DEC 2016 -</div>
-                <div class="caption font-weight-bold green--text">PRESENT</div>
+                <div class="caption font-weight-bold green--text">JUN 2019 -</div>
+                <div class="caption font-weight-bold green--text">JAN 2020</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>Freelance Frontend Developer</strong>
-                <div class="caption mb-2">Remote</div>
+                <strong>Front-End Developer</strong>
+                <div class="caption mb-2">Chung Yo Group</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -65,12 +65,12 @@
           <v-timeline-item color="green" small>
             <v-layout pt-3>
               <v-flex xs4>
-                <div class="caption font-weight-bold green--text">FEB 2018 -</div>
-                <div class="caption font-weight-bold green--text">JULY 2018</div>
+                <div class="caption font-weight-bold green--text">JUL 2018 -</div>
+                <div class="caption font-weight-bold green--text">MAY 2019</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>Teacher for electrical technicians</strong>
-                <div class="caption mb-2">High School Doboj Istok</div>
+                <strong>Web Designer</strong>
+                <div class="caption mb-2">Rocket Technology Co., Ltd.</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -78,12 +78,12 @@
           <v-timeline-item color="green" small>
             <v-layout pt-3>
               <v-flex xs4>
-                <div class="caption font-weight-bold green--text">AUG 2014 -</div>
-                <div class="caption font-weight-bold green--text">APR 2016</div>
+                <div class="caption font-weight-bold green--text">SEP 2015 -</div>
+                <div class="caption font-weight-bold green--text">AUG 2016</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>IT Technician</strong>
-                <div class="caption mb-2">MFS-EMMAUS</div>
+                <strong>Senior Visual Designer</strong>
+                <div class="caption mb-2">A.G.V. Products Corporation</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -94,15 +94,14 @@
       <v-flex xs12 sm12 md4 lg5 xl5 class="mx-2 pt-4">
         <h2>
           <span>Design</span>
-
           <span class="green--text">Skills</span>
         </h2>
         <br>
         <strong>Photoshop</strong>
         <v-progress-linear v-model="buffer1" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
-        <strong>Adobe XD</strong>
+        <strong>Illustrator</strong>
         <v-progress-linear v-model="buffer2" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
-        <strong>Zeplin</strong>
+        <strong>Premiere</strong>
         <v-progress-linear v-model="buffer3" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
       </v-flex>
       <v-flex xs12 sm12 md4 lg5 xl5 class="mx-2 pt-4">
@@ -111,16 +110,16 @@
           <span class="green--text">Skills</span>
         </h2>
         <br>
-        <strong>VUE/NUXT</strong>
+        <strong>Vue-CLI</strong>
         <v-progress-linear v-model="buffer4" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
-        <strong>HTML/CSS</strong>
+        <strong>Bootstrap/ Element</strong>
         <v-progress-linear v-model="buffer5" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
         <strong>JavaScript</strong>
         <v-progress-linear v-model="buffer6" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
       </v-flex>
       <div class="mt-4 pt-2">
         <v-btn
-          href="https://docs.google.com/document/d/1WSR42FEgUahJuR_RArW1wz7TfUBlgj13zekRidmQgs4/edit?usp=sharing"
+          href="https://docs.google.com/document/d/14wZAIgwog7Lo5EdK7AeU4D311ADfNKnO4YEsiwBlcYY/edit?usp=sharing"
           target="_blank"
           color="green"
           dark

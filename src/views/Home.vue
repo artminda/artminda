@@ -1,5 +1,6 @@
 <template>
   <v-layout column justify-center align-center class="mt-4 pt-2">
+   
     <VueCompareImage
       class="hidden-md-and-down"
       hover
@@ -10,10 +11,11 @@
       :rightImage="rightImage"
       :sliderPositionPercentage="sliderPosition"
     />
+
     <VueCompareImage
       class="hidden-lg-and-up"
       hover
-      :style="{ maxWidth: '400px' }"
+      :style="{ maxWidth: '300px' }"
       :sliderLineWidth="sliderLine"
       :handleSize="hSize"
       :leftImage="leftImage2"
@@ -133,6 +135,10 @@ export default {
         {
           href: "https://www.facebook.com/shyshydesign/",
           icon: "fab fa-facebook-f"
+        },
+        {
+          href: "https://www.upwork.com/o/profiles/users/~01665ea6dd70561bc2/",
+          icon: "fas fa-underline"
         }
       ],
       text1: ["Front-End Developer", "Web Developer", "Web Designer"],
