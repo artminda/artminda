@@ -23,14 +23,14 @@
           </v-card-title>
         </v-card>
       </v-flex>
-      <!-- <v-flex xs12 sm12 md12 lg12 xl12>
+      <v-flex xs12 sm12 md12 lg12 xl12>
         <h2 class="pl-4">
           <span>My</span>
           <span class="green--text">Clients</span>
         </h2>
-      </v-flex> -->
+      </v-flex>
 
-      <!-- <v-flex v-for="client in clients" :key="client.src" xs6 sm4 md3 lg2 xl2>
+      <v-flex v-for="client in clients" :key="client.src" xs6 sm4 md3 lg2 xl2>
         <v-card flat :href="client.href" target="_blank" color="transparent">
           <v-hover>
             <v-img
@@ -53,7 +53,7 @@
             </v-img>
           </v-hover>
         </v-card>
-      </v-flex> -->
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -89,51 +89,20 @@ export default {
   data() {
     return {
       clients: [
-        {
-          name: "Brandly",
-          src: "https://i.imgur.com/BLJ16wb.png",
-          href: "https://www.brandly.com/"
+       {
+        name: "元美電器",
+        src: "https://i.imgur.com/BLJ16wb.png",
+        href: "https://www.brandly.com/"
         },
         {
-          name: "EEVOY",
-          src: "https://i.imgur.com/lIJePVb.png",
-          href: "https://www.eevoy.com/"
+        name: "德豐紙器",
+        src: "https://i.imgur.com/BLJ16wb.png",
+        href: "https://www.brandly.com/"
         },
         {
-          name: "Riders Share",
-          src: "https://i.imgur.com/pgkY80b.png",
-          href: "https://www.riders-share.com/"
-        },
-        {
-          name: "Esthetician Connection",
-          src:
-            "https://estheticianconnection.com/wp-content/uploads/2019/01/EC-logo.png",
-          href: "https://estheticianconnection.com/"
-        },
-        {
-          name: "Goldentimepieces",
-          src: "https://i.imgur.com/sEybxZ5.png",
-          href: "https://goldentimepieces.com/"
-        },
-        {
-          name: "MFS-EMMAUS",
-          src: "https://i.imgur.com/33xPmQ8.png",
-          href: "https://mfs-emmaus.ba/"
-        },
-        {
-          name: "Scanlister",
-          src: "https://i.imgur.com/5K7h7c4.png",
-          href: "https://www.scanlister.com/"
-        },
-        {
-          name: "Unbroken Designs",
-          src: "https://i.imgur.com/kDLRh64.png",
-          href: "https://www.unbrokendesigns.com/"
-        },
-        {
-          name: "VilaShirts",
-          src: "https://i.imgur.com/Fg26T32.png",
-          href: "https://www.instagram.com/_vilashirts_/"
+        name: "大林濕地保育協會",
+        src: "https://i.imgur.com/BLJ16wb.png",
+        href: "https://www.brandly.com/"
         }
       ],
       services: [

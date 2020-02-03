@@ -31,13 +31,12 @@
             <h3 class="headline mb-0">
               <span>Technology</span>
             </h3>
-            <v-chip color="green" text-color="white">{{project.tech.tech1}}</v-chip>
-            <v-chip color="green" text-color="white">{{project.tech.tech2}}</v-chip>
-            <v-chip color="green" text-color="white">{{project.tech.tech3}}</v-chip>
-            <v-chip color="green" text-color="white">{{project.tech.tech4}}</v-chip>
+            <span v-for="techitem in project.tech" :key="techitem">
+              <v-chip color="green" text-color="white">{{techitem}}</v-chip>
+            </span>
           </v-card-text>
           <v-card-actions>
-            <v-btn flat large dark color="green" :href="project.git" target="_blank">
+            <v-btn v-if="project.git" flat large dark color="green" :href="project.git" target="_blank">
               <v-icon left>fab fa-github</v-icon>GitHub
             </v-btn>
             <v-btn large flat dark color="green" :href="project.demo" target="_blank">
@@ -84,74 +83,101 @@ export default {
       projects: [
          {
           dialog: false,
-          title: "Euphoric Voyage",
-          git: "https://github.com/EldinZaimovic/euphoric-voyage",
-          demo: "https://www.euphoric-voyage.com/",
+          title: "yabo-mobile-practice (vpn: china or HG )",
+          demo: "https://xj-mbs-yabo.prdasbbwla1.com/m/en-gb/",
           tech: {
-            tech1: "Gatsby",
-            tech2: "JavaScript",
-            tech3: "SCSS",
-            tech4: "Markdown"
+            tech1: "vue-cli",
+            tech2: "webpack config",
+            tech3: "RESTful API",
+            tech4: "javascript ES6",
+            tech5: "Route",
+            tech6: "vuex",
+            tech7: "element ui",
+            tech8: "SASS"
           },
-          poster: "https://i.imgur.com/9Ww2bvm.png"
+          poster: "https://i.imgur.com/nkUJLrm.jpg",
+        },
+         {
+          dialog: false,
+          title: "creat-fun",
+          git: "https://cdn.neow.in/news/images/uploaded/2018/11/1543476286_cybersecurity.jpg",
+          demo: "https://www.brandly.com/",
+          tech: {
+            tech1: "ui design",
+            tech2: "css",
+            tech3: "html",
+            tech4: "JQery"
+          },
+          poster: "https://i.imgur.com/TO4wz9M.jpg",
         },
         {
           dialog: false,
           title: "This Site",
-          git: "https://github.com/EldinZaimovic/Eldin-Space-Vue",
-          demo: "https://eldin.space/",
+          git: "https://github.com/artminda/artminda",
+          demo: "https://artminda.github.io/artminda",
           tech: {
-            tech1: "VUE",
-            tech2: "Storyblok",
-            tech3: "HTML",
-            tech4: "JavaScript"
+            tech1: "vue-cli",
+            tech2: "JavaScript",
+            tech3: "vuetify",
+            tech4: "storyblok"
           },
-          poster: "https://i.imgur.com/sGUofpv.png"
+          poster: "https://i.imgur.com/7MxhQDD.jpg",
         },
         {
           dialog: false,
-          title: "Frontend Developer at Brandly.com",
-          git: "https://cdn.neow.in/news/images/uploaded/2018/11/1543476286_cybersecurity.jpg",
-          demo: "https://www.brandly.com/",
+          title: "My Old Web Portfolio",
+          git: "https://github.com/artminda/artminda",
+          demo: "https://artminda.github.io/artminda",
           tech: {
-            tech1: "VUE",
-            tech2: "SCSS",
-            tech3: "HTML",
-            tech4: "JavaScript"
+            tech1: "ui design",
+            tech2: "bootstrap",
           },
-          poster: "https://i.imgur.com/nVqtTAf.png"
+          poster: "https://i.imgur.com/5KnIrGS.jpg",
+        }, 
+        {
+          dialog: false,
+          title: "oasis bitcoin",
+          git: "https://github.com/artminda/artminda",
+          demo: "http://oasis.byethost9.com/index.php",
+          tech: {
+            tech1: "ui design",
+            tech2: "bootstrap",
+            tech3: "php",
+          },
+          poster: "https://i.imgur.com/Tm5cS5K.jpg",
         },
         {
           dialog: false,
-          title: "Digital Madness Test",
-          git: "https://github.com/EldinZaimovic/Digital-Madness-test",
-          demo: "https://digital-madness-test.netlify.com/",
-          tech: {
-            tech1: "VUE",
-            tech2: "CSS",
-            tech3: "HTML",
-            tech4: "JavaScript"
-          },
-          poster: "https://i.imgur.com/GOIIL06.png"
+          title: "Admin dashboard",
+          git: "https://github.com/artminda/artminda-management",
+          demo: "https://artminda.github.io/artminda-management/",
+          tech: [
+             "vue cli",
+             "JavaScript",
+             "sass",
+             "element ui",
+             "proxy api"
+          ],
+          poster: "https://i.imgur.com/0kctvSn.jpg"
         },
+        // {
+        //   dialog: false,
+        //   title: "GraphQL practice",
+        //   git: "https://github.com/EldinZaimovic/SnowBall-Project",
+        //   demo: "https://artminda.github.io/GraphQL-practice/index.html",
+        //   tech: {
+        //     tech1: "VUE",
+        //     tech2: "GraphQL",
+        //     tech3: "Axios",
+        //     tech4: "JavaScript"
+        //   },
+        //   poster: "https://i.imgur.com/rXHBs36.png"
+        // },
         {
           dialog: false,
-          title: "Snowball Coding Challenge",
-          git: "https://github.com/EldinZaimovic/SnowBall-Project",
-          demo: "https://snowball-test.netlify.com/",
-          tech: {
-            tech1: "VUE",
-            tech2: "GraphQL",
-            tech3: "Axios",
-            tech4: "JavaScript"
-          },
-          poster: "https://i.imgur.com/rXHBs36.png"
-        },
-        {
-          dialog: false,
-          title: "IBM Coding Challenge - Films Location",
+          title: "Lodash practice",
           git: "https://github.com/EldinZaimovic/Film-Location-List",
-          demo: "https://film-location-ibm-cc.netlify.com/",
+          demo: "https://artminda.github.io/Lodash-practice/index.html",
           tech: {
             tech1: "VUE",
             tech2: "Lodash",
@@ -162,43 +188,16 @@ export default {
         },
         {
           dialog: false,
-          title: "Stock Trader",
-          git: "https://github.com/EldinZaimovic/Stock-Trader",
-          demo: "https://stock-trader-eldin.netlify.com/",
+          title: "poople",
+          git: "https://github.com/EldinZaimovic/Digital-Madness-test",
+          demo: "https://artminda.github.io/poople/",
           tech: {
-            tech1: "VUE",
-            tech2: "Vuex",
-            tech3: "Firebase",
-            tech4: "JavaScript"
-          },
-          poster: "https://i.imgur.com/wK5dqP7.png"
-        },
-        {
-          dialog: false,
-          title: "Riders Share Newsleter",
-          git: "",
-          demo: "https://imgur.com/zTMJhGk",
-          tech: {
-            tech1: "HTML",
+            tech1: "bootstrp",
             tech2: "CSS",
-            tech3: "MailChimp",
-            tech4: "JavaScript"
+            tech3: "HTML"
           },
-          poster: "https://i.imgur.com/zTMJhGk.jpg"
+          poster: "https://i.imgur.com/VDE7Bdp.jpg"
         },
-        {
-          dialog: false,
-          title: "My Old Web Portfolio",
-          git: "https://github.com/EldinZaimovic/EldinZaimovic.github.io",
-          demo: "https://eldinzaimovic.github.io/index.html",
-          tech: {
-            tech1: "HTML",
-            tech2: "CSS",
-            tech3: "JavaScript",
-            tech4: "jQuery"
-          },
-          poster: "https://i.imgur.com/AW7CXD5.jpg"
-        }
       ]
     };
   }

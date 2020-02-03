@@ -142,10 +142,10 @@ export default {
         }
       ],
       text1: ["Front-End Developer", "Web Developer", "Web Designer"],
-      leftImage: require('../assets/artmindaTwo.png'),
-      rightImage: require('../assets/artmindaOne.png'),
-      leftImage2: require('../assets/artmindaTwoTwo.png'),
-      rightImage2: require('../assets/artmindaOneOne.png'),
+      leftImage: "https://i.imgur.com/okK8qil.jpg",
+      rightImage: "https://i.imgur.com/f8NTpow.jpg",
+      leftImage2: "https://i.imgur.com/owrCaj3.jpg",
+      rightImage2: "https://i.imgur.com/kNmA7qB.jpg",
       sliderLine: 0,
       hSize: 0,
       sliderPosition: 0.5
