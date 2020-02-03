@@ -127,7 +127,7 @@ export default {
           dialog: false,
           title: "My Old Web Portfolio",
           git: "https://github.com/artminda/artminda",
-          demo: "https://artminda.github.io/artminda",
+          demo: "https://artminda.github.io/artminda-old",
           tech: {
             tech1: "ui design",
             tech2: "bootstrap",
@@ -193,7 +193,7 @@ export default {
           demo: "https://artminda.github.io/poople/",
           tech: {
             tech1: "bootstrp",
-            tech2: "CSS",
+            tech2: "RWD",
             tech3: "HTML"
           },
           poster: "https://i.imgur.com/VDE7Bdp.jpg"

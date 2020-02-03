@@ -36,7 +36,7 @@
                 <div class="caption font-weight-bold green--text">AUG 2008 -</div>
                 <div class="caption font-weight-bold green--text">JUL 2011</div>
               </v-flex>
-              <v-flex class="pl-2">
+              <v-flex xs7 class="pl-2">
                 <strong>Major of Art</strong>
                 <div class="caption mb-2">National Singang Senior High School of Arts</div>
               </v-flex>
