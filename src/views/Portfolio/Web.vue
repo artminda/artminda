@@ -176,7 +176,7 @@ export default {
         {
           dialog: false,
           title: "Lodash practice",
-          git: "https://github.com/EldinZaimovic/Film-Location-List",
+          git: "https://github.com/artminda/Lodash-practice",
           demo: "https://artminda.github.io/Lodash-practice/index.html",
           tech: {
             tech1: "VUE",

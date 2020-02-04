@@ -58,4 +58,14 @@ export default {
 </script>
 <style>
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
+
+code {
+  font-size: 1rem;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #282c34;
+  background: #282c34;
+  color: #DCDCDC;
+  margin: 16px;
+}
 </style>

@@ -18,7 +18,7 @@
 <script>
 import PostPreview from "../components/PostPreview";
 import StoryblokClient from "storyblok-js-client";
-const token = "iyPj3vEKmPladyz3zeqKuwtt";
+const token = "mUT1Vr0FJ9aOLrdlHaMSbQtt";
 let storyapi = new StoryblokClient({
   accessToken: token
 });
@@ -59,13 +59,14 @@ export default {
       accessToken: token
     });
     window.storyblok.on("change", () => {
-      this.getStory("home", "draft");
+      console.log("change-clik")
+      this.getStory("article", "draft");
     });
     window.storyblok.pingEditor(() => {
       if (window.storyblok.isInEditor()) {
-        this.getStory("home", "draft");
+        this.getStory("article", "draft");
       } else {
-        this.getStory("home", "published");
+        this.getStory("article", "published");
       }
     });
   },
@@ -75,7 +76,7 @@ export default {
       storyapi
         .get("cdn/stories", {
           version: "draft",
-          starts_with: "blog/"
+          starts_with: "article/"
         })
         .then(res => {
           this.posts = res.data.stories.map(bp => {
@@ -83,7 +84,7 @@ export default {
               id: bp.slug,
               title: bp.content.title,
               previewText: bp.content.summary,
-              thumbnailUrl: bp.content.thumbnail
+              thumbnailUrl: bp.content.teaser_image
             };
           });
         })

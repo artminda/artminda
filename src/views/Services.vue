@@ -8,7 +8,7 @@
         </h2>
       </v-flex>
       <v-flex v-for="service in services" :key="service.src" xs6 sm3 md3 lg3 xl3>
-        <v-card hover flat color="transparent" :style="{'cursor':'context-menu'}">
+        <v-card  flat color="transparent" :style="{'cursor':'context-menu'}">
           <v-card-title></v-card-title>
           <v-img
             :src="service.src"
@@ -30,7 +30,7 @@
         </h2>
       </v-flex>
 
-      <v-flex v-for="client in clients" :key="client.src" xs6 sm4 md3 lg2 xl2>
+      <v-flex v-for="client in clients" :key="client.name" xs6 sm4 md3 lg2 xl2>
         <v-card flat :href="client.href" target="_blank" color="transparent">
           <v-hover>
             <v-img
@@ -45,8 +45,8 @@
             >
               <v-expand-transition>
                 <div
-                  v-if="!hover"
-                  class="transition-fast-in-fast-out green v-img--reveal"
+                  v-if="hover"
+                  class="transition-fast-in-fast-out teal green lighten-3 v-img--reveal"
                   style="height: 100%;"
                 ></div>
               </v-expand-transition>
@@ -91,18 +91,28 @@ export default {
       clients: [
        {
         name: "元美電器",
-        src: "https://i.imgur.com/BLJ16wb.png",
-        href: "https://www.brandly.com/"
+        src: "https://i.imgur.com/37J0C1y.png",
+        href: "https://www.facebook.com/am2213113/"
         },
-        {
-        name: "德豐紙器",
-        src: "https://i.imgur.com/BLJ16wb.png",
-        href: "https://www.brandly.com/"
+       {
+        name: "怡安藥局",
+        src: "https://i.imgur.com/EzYZ15g.png",
+        href: "https://www.facebook.com/pages/%E6%80%A1%E5%AE%89%E8%97%A5%E5%B1%80/157407534395817"
         },
         {
         name: "大林濕地保育協會",
-        src: "https://i.imgur.com/BLJ16wb.png",
-        href: "https://www.brandly.com/"
+        src: "https://i.imgur.com/YmiYD93.png",
+        href: ""
+        },
+        {
+        name: "taxi",
+        src: "https://i.imgur.com/XBCrKaw.png",
+        href: ""
+       },
+        {
+        name: "spa",
+        src: "https://i.imgur.com/WTzttHV.png",
+        href: ""
         }
       ],
       services: [
@@ -114,14 +124,13 @@ export default {
           src: "https://i.imgur.com/g74mGuU.png",
           title: "Web Design"
         },
-
+         {
+          src: "https://i.imgur.com/bgSxyzI.jpg",
+          title: "Package Design"
+        },
         {
           src: "https://i.imgur.com/wXLtLKy.png",
           title: "Video Editing"
-        },
-        {
-          src: "https://i.imgur.com/tcZnDep.png",
-          title: "Advertising"
         }
       ]
     };

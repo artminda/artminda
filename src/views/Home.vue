@@ -15,7 +15,7 @@
     <VueCompareImage
       class="hidden-lg-and-up"
       hover
-      :style="{ maxWidth: '300px' }"
+      :style="{ maxWidth: '400px' }"
       :sliderLineWidth="sliderLine"
       :handleSize="hSize"
       :leftImage="leftImage2"
