@@ -29,6 +29,7 @@
               <v-img
                 :src="image.poster"
                 height="230"
+                :position="image.position"
                 :alt="image.title"
                 lazy-src="https://i.imgur.com/MrbPiPS.gif"
               ></v-img>
@@ -78,7 +79,7 @@ export default {
       select: "ALL",
       dialog: false,
       items:[
-        "ALL","LOGO","BANNER","UI","PACKAGE"
+        "ALL","LOGO","BANNER","UI","PACKAGE","PRINT","EXHIBITION"
       ],
       images: [
         { 
@@ -166,22 +167,18 @@ export default {
           poster: "https://i.imgur.com/Dz6iBC5.jpg"
         },
         { 
-          type: "UI",
-          dialog: false,
-          title: "sport practice",
-          poster: "https://i.imgur.com/jqDq9R1.png"
-        },
-        { 
+          position:"top",
           type: "UI",
           dialog: false,
           title: "practice",
-          poster: "https://i.imgur.com/Em4E9Ri.jpg"
+          poster: "https://i.imgur.com/OwYp710.jpg"
         },
-         { 
+         {
+          position:"top",  
           type: "UI",
           dialog: false,
           title: "practice",
-          poster: "https://i.imgur.com/A3hCsYj.jpg"
+          poster: "https://i.imgur.com/Ie7oZtj.jpg"
         },
          { 
           type: "PACKAGE",
@@ -206,6 +203,65 @@ export default {
           dialog: false,
           title: "Skincare package",
           poster: "https://i.imgur.com/sgzGXjW.jpg"
+        },
+         {
+          position:"bottom",  
+          type: "PRINT",
+          dialog: false,
+          title: "Skincare adv",
+          poster: "https://i.imgur.com/kABMfXy.jpg"
+        },
+         {
+          position:"bottom", 
+          type: "PRINT",
+          dialog: false,
+          title: "Skincare adv",
+          poster: "https://i.imgur.com/1OlMiCy.jpg"
+        }, 
+        { 
+          position:"bottom",
+          type: "PRINT",
+          dialog: false,
+          title: "Skincare adv",
+          poster: "https://i.imgur.com/x1OrJCL.jpg"
+        },
+        { 
+          position:"top",
+          type: "PRINT",
+          dialog: false,
+          title: "I-AN adv",
+          poster: "https://i.imgur.com/0p4GYNP.jpg"
+        },
+         { 
+          type: "PRINT",
+          dialog: false,
+          title: "愛之味 adv",
+          poster: "https://i.imgur.com/JdiZbux.jpg"
+        },
+        { 
+          position:"bottom",
+          type: "PRINT",
+          dialog: false,
+          title: "T-shirt",
+          poster: "https://i.imgur.com/FRdKHZS.jpg"
+        },
+         { 
+          type: "PRINT",
+          dialog: false,
+          title: "toy",
+          poster: "https://i.imgur.com/gKJIYMg.jpg"
+        },
+         { 
+          type: "EXHIBITION",
+          dialog: false,
+          title: "頂員林埤濕地保育展",
+          poster: "https://i.imgur.com/fFn59iD.jpg"
+        },
+         { 
+          type: "EXHIBITION",
+          dialog: false,
+          title: "頂員林埤濕地保育展",
+          poster: "https://i.imgur.com/FgH4lci.jpg"
         }
       ]
     };
