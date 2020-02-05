@@ -59,13 +59,25 @@ export default {
 <style>
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
 
+pre {
+    font-size: 1rem;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #282c34;
+    background: #282c34;
+    color: #DCDCDC;
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
+ }
+
 code {
-  font-size: 1rem;
-  padding: 20px;
-  border-radius: 5px;
-  border: 1px solid #282c34;
   background: #282c34;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
   color: #DCDCDC;
-  margin: 16px;
 }
+
 </style>

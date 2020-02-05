@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-xl>
-    <v-layout row justify-center align-center wrap class="mt-4 pt-2">
+    <v-layout row align-center wrap class="mt-4 pt-2">
       <v-flex v-for="portfolio in portfolios" :key="portfolio.src" xs12 sm12 md4 lg4 xl4>
         <v-card
           :to="'/portfolio/'+(portfolio.title).toLowerCase()"
@@ -55,14 +55,14 @@ export default {
           src: "https://i.imgur.com/GvTt5GG.png",
           title: "Web"
         },
-        // {
-        //   src: "https://i.imgur.com/wXLtLKy.png",
-        //   title: "Video"
-        // },
-        // {
-        //   src: "https://i.imgur.com/g74mGuU.png",
-        //   title: "Graphic"
-        // }
+        {
+          src: "https://i.imgur.com/g74mGuU.png",
+          title: "Graphic"
+        },
+        {
+          src: "https://i.imgur.com/wXLtLKy.png",
+          title: "Video"
+        },
       ]
     };
   }
