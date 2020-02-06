@@ -13,5 +13,14 @@ export default {
     art_por: "PORTFOLIO",
     art_blog: "BLOG",
     art_con: "CONTACT",
-    art_home: "HOME" 
+    art_home: "HOME",
+    art_getIn: "GetIn",
+    art_tou: "Touch",
+    art_site: "Taichung or Kaohsiung",
+    art_tai: "Taiwan",
+    art_contact: "Contact",
+    art_form: "Form", 
+    art_send: "SEND MESSAGE",
+    art_clear: "CLEAR",
+    art_textarea: "Textarea"     
 }

@@ -1,7 +1,7 @@
 export default {
     art_content_top: "嗨！ 我是Artminda Chen, 我非常熱衷於前端開發項目:",
     art_vue: "vue  ",
-    art_content_but:"建立良好的用戶體驗，為簡化而努力，並不斷學習。當我不在coding或製作廣告時，您會發現我在健身~",
+    art_content_but:"建立良好的用戶體驗，為簡化而努力，並不斷學習。當我不在coding或製作廣告時，您會發現我在健身",
     art_name: "artminda chen",
     art_about: "關於",
     art_me: "我",
@@ -13,5 +13,14 @@ export default {
     art_por: "作品集",
     art_blog: "部落格",
     art_con: "聯繫我吧",
-    art_home: "首頁" 
+    art_home: "首頁",
+    art_getIn: "保持",
+    art_tou: "聯絡",
+    art_site: "臺中或高雄",
+    art_tai: "臺灣",
+    art_contact: "聯繫",
+    art_form: "表單",
+    art_send: "送出",
+    art_clear: "清除",
+    art_textarea: "內容"  
 }

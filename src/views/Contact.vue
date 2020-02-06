@@ -3,13 +3,13 @@
     <v-layout row justify-center align-center wrap class="mt-4 pt-2">
       <v-flex xs12 sm12 md6 lg6 xl6>
         <h2 class="pb-4 mt-2">
-          <span>GetIn</span>
-          <span class="green--text">Touch</span>
+          <span>{{$t('art_getIn')}}</span>
+          <span class="green--text">{{$t('art_tou')}}</span>
         </h2>
         <div class="py-4 subheading font-weight-bold">
           <v-icon large color="green" left>fas fa-map-marker-alt</v-icon>
-          <span>Taichung or Kaohsiung,&nbsp;</span>
-          <span class="green--text">Taiwan</span>
+          <span>{{$t('art_site')}},&nbsp;</span>
+          <span class="green--text">{{$t('art_tai')}}</span>
         </div>
         <div class="py-4 subheading font-weight-bold">
           <v-icon large color="green" left>fas fa-envelope</v-icon>
@@ -30,8 +30,8 @@
 
       <v-flex xs12 sm12 md6 lg6 xl6>
         <h2 class="pb-4 mb-4">
-          <span>Contact</span>
-          <span class="green--text">Form</span>
+          <span>{{$t('art_contact')}}</span>
+          <span class="green--text">{{$t('art_form')}}</span>
         </h2>
 
         <form method="POST" action="https://formspree.io/xknrokpw">
@@ -72,8 +72,8 @@
             color="green"
             class="white--text"
             :disabled=" (body.length<=20)"
-          >SEND MESSAGE</v-btn>
-          <v-btn @click="clear">clear</v-btn>
+          >{{$t('art_send')}}</v-btn>
+          <v-btn @click="clear">{{$t('art_clear')}}</v-btn>
         </form>
       </v-flex>
     </v-layout>
