@@ -6,6 +6,12 @@ export default {
     art_about: "about",
     art_me: "Me",
     art_job1: "Front- End Developer",
-    art_job2:  "Web Developer",
-    art_job3: "Web Designer"
+    art_job2: "Web Developer",
+    art_job3: "Web Designer",
+    art_re: "RESUME",
+    art_ser: "SERVICES",
+    art_por: "PORTFOLIO",
+    art_blog: "BLOG",
+    art_con: "CONTACT",
+    art_home: "HOME" 
 }

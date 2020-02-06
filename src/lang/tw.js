@@ -7,5 +7,11 @@ export default {
     art_me: "我",
     art_job1: "前端工程師",
     art_job2: "UI設計",
-    art_job3: "美術設計"
+    art_job3: "美術設計",
+    art_re: "履歷",
+    art_ser: "工作項目",
+    art_por: "作品集",
+    art_blog: "部落格",
+    art_con: "聯繫我吧",
+    art_home: "首頁" 
 }

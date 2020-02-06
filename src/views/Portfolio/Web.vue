@@ -86,7 +86,7 @@ export default {
       projects: [
          {
           dialog: false,
-          title: "yabo_mobile_practice",
+          title: "yabo_mobile_practice (vpn: China)",
           demo: "https://xj-mbs-yabo.prdasbbwla1.com/m/en-gb/",
           tech: {
             tech1: "vue-cli",
