@@ -1,6 +1,5 @@
 <template>
   <v-layout column justify-center align-center class="mt-4 pt-2">
-   
     <VueCompareImage
       class="hidden-md-and-down"
       hover
@@ -45,18 +44,15 @@
         <v-card-title primary-title>
           <div>
             <h3 class="headline mb-0">
-              <span>About</span>
-              <span class="green--text">Me</span>
+              <span>{{$t('art_about')}}</span>
+              <span class="green--text">{{$t('art_me')}}</span>
             </h3>
             <div>
               <p>
-                Hello! I’m Artminda Chen. I'm a front-end developer who
-                is passionate about
+               {{$t('art_content_top')}}
                 <span
                   class="green--text font-weight-bold"
-                >VUE</span>, building great user experiences,
-                fighting for simplicity over complexity and constantly learning.
-                When I'm not coding or making videos, you'll find me workouts.
+                >{{$t('art_vue')}}</span>, {{$t('art_content_but')}}
               </p>
             </div>
           </div>
@@ -141,7 +137,7 @@ export default {
           icon: "fas fa-underline"
         }
       ],
-      text1: ["Front-End Developer", "Web Developer", "Web Designer"],
+      text1: [this.$t("art_job1"), this.$t("art_job2"), this.$t("art_job3")],
       leftImage: "https://i.imgur.com/okK8qil.jpg",
       rightImage: "https://i.imgur.com/f8NTpow.jpg",
       leftImage2: "https://i.imgur.com/owrCaj3.jpg",

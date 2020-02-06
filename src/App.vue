@@ -2,7 +2,7 @@
   <v-app :dark="goDark">
     <v-content>
       <v-container align-center>
-        <TheHeader :goDark="goDark" @changeTheme="updateTheme($event)"/>
+        <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/>
 
         <transition
           name="router-animation"
@@ -21,6 +21,7 @@
 <script>
 import TheHeader from "./components/TheHeader";
 import TheFooter from "./components/TheFooter";
+import i18n from 'i18n'
 
 export default {
   name: "App",
@@ -47,17 +48,35 @@ export default {
     TheFooter
   },
   data() {
-    return { goDark: false };
+    return { 
+      goDark: false, 
+      lang: "en"  
+    };
   },
+
   methods: {
     updateTheme(updatedTheme) {
       this.goDark = !updatedTheme;
+    },
+    updateLang(newLang){
+      console.log("APP-newLang-EMIT:", typeof newLang, newLang)
+      if (newLang === "中文"){
+        this.$i18n.locale = "tw"
+        localStorage.setItem("lang", "tw")
+        return
+      }
+      this.$i18n.locale = newLang
+      localStorage.setItem("lang", newLang)
     }
   }
 };
 </script>
 <style>
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
+
+* {
+  font-family:'Microsoft JhengHei',sans-serif;  
+}
 
 pre {
     font-size: 1rem;

@@ -41,6 +41,9 @@
             </v-btn>
             <v-btn large flat dark color="green" :href="project.demo" target="_blank">
               <v-icon left>fas fa-desktop</v-icon>Demo
+              <span v-if="project.title == 'yabo_mobile_practice'" class="ml-1">
+                ( vpn need China )
+              </span>
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -83,7 +86,7 @@ export default {
       projects: [
          {
           dialog: false,
-          title: "yabo-mobile-practice (vpn: china or HG )",
+          title: "yabo_mobile_practice",
           demo: "https://xj-mbs-yabo.prdasbbwla1.com/m/en-gb/",
           tech: {
             tech1: "vue-cli",
@@ -99,9 +102,9 @@ export default {
         },
          {
           dialog: false,
-          title: "creat-fun",
-          git: "https://cdn.neow.in/news/images/uploaded/2018/11/1543476286_cybersecurity.jpg",
-          demo: "https://www.brandly.com/",
+          title: "creat_fun",
+          git: "https://github.com/artminda/creatFun",
+          demo: "https://artminda.github.io/creatFun",
           tech: {
             tech1: "ui design",
             tech2: "css",
@@ -126,7 +129,7 @@ export default {
         {
           dialog: false,
           title: "My Old Web Portfolio",
-          git: "https://github.com/artminda/artminda",
+          git: "https://github.com/artminda/artminda-old",
           demo: "https://artminda.github.io/artminda-old",
           tech: {
             tech1: "ui design",
@@ -137,7 +140,7 @@ export default {
         {
           dialog: false,
           title: "oasis bitcoin",
-          git: "https://github.com/artminda/artminda",
+          git: "https://github.com/artminda/oasis",
           demo: "http://oasis.byethost9.com/index.php",
           tech: {
             tech1: "ui design",
@@ -189,7 +192,7 @@ export default {
         {
           dialog: false,
           title: "poople",
-          git: "https://github.com/EldinZaimovic/Digital-Madness-test",
+          git: "https://github.com/artminda/poople",
           demo: "https://artminda.github.io/poople/",
           tech: {
             tech1: "bootstrp",

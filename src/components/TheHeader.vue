@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" absolute temporary app width="150" height="340">
+    <v-navigation-drawer v-model="drawer" absolute temporary app width="150" height="380">
       <v-list class="pt-4">
         <v-list-tile active-class="green--text" to="/">
           <v-list-tile-content>
@@ -32,6 +32,18 @@
             <v-list-tile-title>CONTACT</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile>
+            <v-flex class="xs10">
+             <v-select
+              v-model="selectLang" 
+              class="hidden-md-and-up"
+              :items="items"
+              label="select"
+              dense
+              single-line
+              ></v-select>
+            </v-flex> 
+        </v-list-tile>  
       </v-list>
     </v-navigation-drawer>
     <v-toolbar flat dense color="transparent" scroll-off-screen>
@@ -45,6 +57,7 @@
         <v-icon v-if="goDark==true">fas fa-sun</v-icon>
         <v-icon v-else>fas fa-moon</v-icon>
       </v-btn>
+    <!-- pc -->
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat to="/" active-class="green--text headline">Home</v-btn>
         <v-btn flat to="/resume" active-class="green--text headline">Resume</v-btn>
@@ -52,6 +65,14 @@
         <v-btn flat to="/portfolio" active-class="green--text headline">Portfolio</v-btn>
         <v-btn flat to="/blog" active-class="green--text headline">Blog</v-btn>
         <v-btn flat to="/contact" active-class="green--text headline">Contact</v-btn>
+        <v-select
+          v-model="selectLang"
+          class="selectWidth ml-3 mr-3"
+          :items="items"
+          label="select lang"
+          dense
+          single-line
+        ></v-select>
         <v-btn @click="changeTheme" depressed small icon>
           <v-icon v-if="goDark==true">fas fa-sun</v-icon>
           <v-icon v-else>fas fa-moon</v-icon>
@@ -66,12 +87,22 @@ export default {
   props: {
     goDark: {
       type: Boolean
+    },
+    lang: {
+      type: String
     }
   },
   data() {
     return {
+      selectLang: localStorage.getItem('lang') === "tw" ? "中文" : "English" ,
+      items:["English","中文"],
       drawer: null
     };
+  },
+  watch:{
+    selectLang(val){
+      this.$emit("changeLang", val);
+    }
   },
   methods: {
     changeTheme() {
@@ -82,4 +113,12 @@ export default {
 </script>
 
 <style >
+.selectWidth {
+  width: 109px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
 </style>
