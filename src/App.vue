@@ -3,7 +3,7 @@
     <v-content>
       <v-container align-center>
         <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/>
-
+        <!-- <TheTips v-if="$route.name === 'home'"/> -->
         <transition
           name="router-animation"
           mode="out-in"
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import TheTips from "./components/TheTips";
 import TheHeader from "./components/TheHeader";
 import TheFooter from "./components/TheFooter";
 import i18n from 'i18n'
@@ -45,7 +46,8 @@ export default {
   },
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    TheTips
   },
   data() {
     return { 
@@ -53,7 +55,6 @@ export default {
       lang: "en"  
     };
   },
-
   methods: {
     updateTheme(updatedTheme) {
       this.goDark = !updatedTheme;

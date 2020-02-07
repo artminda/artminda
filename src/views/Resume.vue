@@ -36,7 +36,7 @@
                 <div class="caption font-weight-bold green--text">AUG 2008 -</div>
                 <div class="caption font-weight-bold green--text">JUL 2011</div>
               </v-flex>
-              <v-flex xs7 class="pl-2">
+              <v-flex xs8 class="pl-2">
                 <strong>Major of Art</strong>
                 <div class="caption mb-2">National Singang Senior High School of Arts</div>
               </v-flex>
@@ -68,8 +68,8 @@
                 <div class="caption font-weight-bold green--text">JUL 2018 -</div>
                 <div class="caption font-weight-bold green--text">MAY 2019</div>
               </v-flex>
-              <v-flex class="pl-2">
-                <strong>Web Designer</strong>
+              <v-flex xs8 class="pl-2">
+                <strong>Front-End Developer<br> + Web Designer</strong>
                 <div class="caption mb-2">Rocket Technology Co., Ltd.</div>
               </v-flex>
             </v-layout>

@@ -22,5 +22,13 @@ export default {
     art_form: "表單",
     art_send: "送出",
     art_clear: "清除",
-    art_textarea: "內容"  
+    art_textarea: "想對我說的話",
+    art_textarea_name: "姓名",
+    art_textarea_email: "信箱",
+    art_err_name: "您的大名不可以超過20個字唷",
+    art_err_email: "請填寫正確信箱",
+    art_err_body: "請最少留言20個字唷",
+    art_required_name: "大哥請留下大名",
+    art_required_email: "信箱是必須的",
+    art_required_body: "诶等等您沒留言阿",  
 }

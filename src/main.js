@@ -5,7 +5,7 @@ import App from './App.vue'
 import router from './router'
 import StoryblokVue from 'storyblok-vue'
 import VueAnalytics from 'vue-analytics'
-
+import './bus'
 import English from './lang/en.js'
 import tw from './lang/tw.js'
 
@@ -33,8 +33,5 @@ Vue.use(VueAnalytics, {
 new Vue({
   router,
   i18n,
-  created() {
-     i18n.locale = localStorage.getItem('lang') 
-  },
   render: h => h(App)
 }).$mount('#app')

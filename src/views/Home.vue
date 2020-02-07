@@ -1,9 +1,10 @@
 <template>
   <v-layout column justify-center align-center class="mt-4 pt-2">
+
     <VueCompareImage
       class="hidden-md-and-down"
       hover
-      :style="{ minWidth: '1300px' }"
+      :style="{ maxWidth: '1200px' }"
       :sliderLineWidth="sliderLine"
       :handleSize="hSize"
       :leftImage="leftImage"
@@ -13,8 +14,7 @@
 
     <VueCompareImage
       class="hidden-lg-and-up"
-      hover
-      :style="{ maxWidth: '400px' }"
+      :style="{ maxWidth: '300px' }"
       :sliderLineWidth="sliderLine"
       :handleSize="hSize"
       :leftImage="leftImage2"
@@ -147,7 +147,7 @@ export default {
       sliderPosition: 0.5
     };
   }
-};
+}
 </script>
 <style>
 @keyframes rocking {

@@ -41,7 +41,7 @@
             background-color="transparent"
             v-model="name"
             :error-messages="nameErrors"
-            label="Name"
+            v-bind:label="$t('art_textarea_name')"
             required
             @blur="$v.name.$touch()"
           ></v-text-field>
@@ -52,7 +52,7 @@
             name="email"
             v-model="email"
             :error-messages="emailErrors"
-            label="E-mail"
+            v-bind:label="$t('art_textarea_email')"
             required
             @blur="$v.email.$touch()"
           ></v-text-field>
@@ -62,7 +62,7 @@
             :counter="200"
             :error-messages="bodyErrors"
             v-model="body"
-            label="Textarea"
+            v-bind:label="$t('art_textarea')"
             name="body"
             @blur="$v.body.$touch()"
           ></v-textarea>
@@ -144,23 +144,23 @@ export default {
       const errors = [];
       if (!this.$v.name.$dirty) return errors;
       !this.$v.name.maxLength &&
-        errors.push("Name must be at most 20 characters long");
-      !this.$v.name.required && errors.push("Name is required.");
+        errors.push(this.$t('art_err_name'));
+      !this.$v.name.required && errors.push(this.$t('art_required_name'));
       return errors;
     },
     emailErrors() {
       const errors = [];
       if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push("Must be valid e-mail");
-      !this.$v.email.required && errors.push("E-mail is required");
+      !this.$v.email.email && errors.push(this.$t('art_err_email'));
+      !this.$v.email.required && errors.push(this.$t('art_required_email'));
       return errors;
     },
     bodyErrors() {
       const errors = [];
       if (!this.$v.body.$dirty) return errors;
       !this.$v.body.minLength &&
-        errors.push("Text must be at least 20 characters long");
-      !this.$v.body.required && errors.push("Text is required");
+        errors.push(this.$t('art_err_body'));
+      !this.$v.body.required && errors.push(this.$t('art_required_body'));
       return errors;
     }
   }

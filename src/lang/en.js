@@ -22,5 +22,13 @@ export default {
     art_form: "Form", 
     art_send: "SEND MESSAGE",
     art_clear: "CLEAR",
-    art_textarea: "Textarea"     
+    art_textarea: "Textarea",
+    art_textarea_name: "Name",     
+    art_textarea_email: "E-mail",
+    art_err_name: "Name must be at most 20 characters long",
+    art_err_email: "Must be valid e-mail",
+    art_err_body: "Text must be at least 20 characters long",
+    art_required_name: "Name is required.",
+    art_required_email: "E-mail is required",    
+    art_required_body: "Text is required",  
 }
