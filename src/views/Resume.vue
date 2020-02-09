@@ -90,13 +90,15 @@
         </v-timeline>
       </v-card-text>
     </v-flex>
-    <v-layout row justify-center align-center wrap class="mt-4 pt-2">
+    <v-layout row justify-center wrap class="mt-4 pt-2">
       <v-flex xs12 sm12 md4 lg5 xl5 class="mx-2 pt-4">
         <h2>
           <span>Design</span>
           <span class="green--text">Skills</span>
         </h2>
         <br>
+        <strong>CSS Animation / Transform / Transition</strong>
+        <v-progress-linear v-model="buffer7" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
         <strong>Photoshop</strong>
         <v-progress-linear v-model="buffer1" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
         <strong>Illustrator</strong>
@@ -170,6 +172,7 @@ export default {
       buffer4: 0,
       buffer5: 0,
       buffer6: 0,
+      buffer7: 0,
       bufferValue: 100,
       interval: 0
     };
@@ -191,6 +194,7 @@ export default {
         this.buffer4 = 80;
         this.buffer5 = 90;
         this.buffer6 = 70;
+        this.buffer7 = 90
       }, 800);
     }
   }

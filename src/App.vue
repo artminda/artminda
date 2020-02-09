@@ -7,8 +7,8 @@
         <transition
           name="router-animation"
           mode="out-in"
-          enter-active-class="animated fadeIn fast"
-          leave-active-class="animated fadeOut faster"
+          enter-active-class="animated bounceInDown fast"
+          leave-active-class="animated bounceOutDown faster"
         >
           <router-view></router-view>
         </transition>

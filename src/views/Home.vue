@@ -1,7 +1,7 @@
 <template>
   <v-layout column justify-center align-center class="mt-4 pt-2">
 
-    <VueCompareImage
+    <!-- <VueCompareImage
       class="hidden-md-and-down"
       hover
       :style="{ maxWidth: '1200px' }"
@@ -10,8 +10,21 @@
       :leftImage="leftImage"
       :rightImage="rightImage"
       :sliderPositionPercentage="sliderPosition"
-    />
+    /> -->
 
+      <ball
+       :style="{ maxWidth: '1200px' }"
+       />
+
+  
+    <!-- <lottie
+    class="hidden-md-and-down" 
+    :options="defaultOptions" 
+    :height="400" 
+    :width="400"
+    v-on:animCreated="handleAnimation"
+    /> -->
+   
     <VueCompareImage
       class="hidden-lg-and-up"
       :style="{ maxWidth: '300px' }"
@@ -96,6 +109,8 @@
 <script>
 import { VueTyper } from "vue-typer";
 import VueCompareImage from "vue-compare-image";
+import ball from "@/components/3d_ball";
+import * as animationData from '@/assets/pinjump.json';
 
 export default {
   metaInfo: {
@@ -118,10 +133,14 @@ export default {
   },
   components: {
     "vue-typer": VueTyper,
-    VueCompareImage
+    VueCompareImage,
+    ball
   },
   data() {
     return {
+      defaultOptions: {animationData: animationData.default},
+      animationSpeed: 1,
+      anim: {},
       icons: [
         { href: "https://github.com/artminda", icon: "fab fa-github" },
         {
@@ -146,7 +165,13 @@ export default {
       hSize: 0,
       sliderPosition: 0.5
     };
-  }
+  },
+    methods: {
+       handleAnimation (anim) {
+        this.anim = anim;
+        console.log(anim); //这里可以看到 lottie 对象的全部属性
+    }
+  }   
 }
 </script>
 <style>
@@ -182,4 +207,3 @@ export default {
   background-color: #e91e63;
 }
 </style>
-
