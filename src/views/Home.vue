@@ -12,18 +12,18 @@
       :sliderPositionPercentage="sliderPosition"
     /> -->
 
-      <ball
+      <!-- <ball
        :style="{ maxWidth: '1200px' }"
-       />
+       /> -->
 
   
-    <!-- <lottie
+    <lottie
     class="hidden-md-and-down" 
     :options="defaultOptions" 
     :height="400" 
     :width="400"
     v-on:animCreated="handleAnimation"
-    /> -->
+    />
    
     <VueCompareImage
       class="hidden-lg-and-up"
