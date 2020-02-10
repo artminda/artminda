@@ -2,6 +2,7 @@ export default {
     art_content_top: "嗨！ 我是Artminda Chen, 我非常熱衷於前端開發項目:",
     art_vue: "vue  ",
     art_content_but:"建立良好的用戶體驗，為簡化而努力，並不斷學習。當我不在coding或製作廣告時，您會發現我在健身",
+    art_good2: "樂於接受批評，為了讓自己更好",
     art_name: "artminda chen",
     art_about: "關於",
     art_me: "我",
@@ -30,5 +31,7 @@ export default {
     art_err_body: "請最少留言20個字唷",
     art_required_name: "大哥請留下大名",
     art_required_email: "信箱是必須的",
-    art_required_body: "诶等等您沒留言阿",  
+    art_required_body: "诶等等您沒留言阿",
+    art_education: "學歷",
+    art_experience: "經歷"    
 }

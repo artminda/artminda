@@ -1,7 +1,7 @@
 <template>
   <v-layout row justify-center align-center wrap class="mt-4 pt-2">
     <v-flex xs12 sm12 md5 lg6 xl6 class="mt-4 pt-4">
-      <h2 class="mb-4 pl-4 pt-2">Education</h2>
+      <h2 class="mb-4 pl-4 pt-2">{{$t("art_education")}}</h2>
       <v-card-text class="py-0">
         <v-timeline align-top dense>
           <v-timeline-item color="green" small>
@@ -46,7 +46,7 @@
       </v-card-text>
     </v-flex>
     <v-flex xs12 sm12 md4 lg6 xl6 class="mt-4 pt-2">
-      <h2 class="mb-4 pl-4">Experience</h2>
+      <h2 class="mb-4 pl-4">{{$t("art_experience")}}</h2>
       <v-card-text class="py-0">
         <v-timeline align-top dense>
           <v-timeline-item color="green" small>

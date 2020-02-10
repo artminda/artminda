@@ -2,6 +2,7 @@ export default {
     art_content_top: "Hello! I’m Artminda Chen. I'm a front-end developer who is passionate about",
     art_vue: "vue",
     art_content_but: "building great user experiences,fighting for simplicity over complexity and constantly learning. When I'm not coding or making graphic adv, you'll find me workouts.",
+    art_good2: "Willing to accept criticism in order to make myself better",
     art_name: "artminda chen",
     art_about: "about",
     art_me: "Me",
@@ -30,5 +31,7 @@ export default {
     art_err_body: "Text must be at least 20 characters long",
     art_required_name: "Name is required.",
     art_required_email: "E-mail is required",    
-    art_required_body: "Text is required",  
+    art_required_body: "Text is required",
+    art_education: "Education",  
+    art_experience: "Experience"
 }

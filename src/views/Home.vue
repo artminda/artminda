@@ -12,18 +12,18 @@
       :sliderPositionPercentage="sliderPosition"
     /> -->
 
-      <ball
+      <!-- <ball
        :style="{ maxWidth: '1200px' }"
-       />
+       /> -->
 
   
-    <!-- <lottie
+    <lottie
     class="hidden-md-and-down" 
     :options="defaultOptions" 
     :height="400" 
     :width="400"
     v-on:animCreated="handleAnimation"
-    /> -->
+    />
    
     <VueCompareImage
       class="hidden-lg-and-up"
@@ -60,6 +60,8 @@
               <span>{{$t('art_about')}}</span>
               <span class="green--text">{{$t('art_me')}}</span>
             </h3>
+            <!-- <h3 class="headline mb-0"> <span>{{$t('art_good1')}}</span></h3> -->
+            <h3 class="text--secondary mb-0 border-left"> <span>{{$t('art_good2')}}</span></h3>
             <div>
               <p>
                {{$t('art_content_top')}}
@@ -205,5 +207,11 @@ export default {
 .vue-typer .custom.caret.selecting {
   display: inline-block;
   background-color: #e91e63;
+}
+.border-left {
+  border-left-style: solid;
+  border-left-color: #4caf50b8;
+  padding: 5px;
+  font-style:italic;
 }
 </style>
