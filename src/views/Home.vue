@@ -1,5 +1,5 @@
 <template>
-  <v-layout column justify-center align-center class="mt-4 pt-2">
+  <v-layout row justify-center align-center class="mt-4 pt-2">
 
     <!-- <VueCompareImage
       class="hidden-md-and-down"
@@ -15,7 +15,7 @@
       <!-- <ball
        :style="{ maxWidth: '1200px' }"
        /> -->
-
+<v-flex xs12 sm6 md6>
   
     <lottie
     class="hidden-md-and-down" 
@@ -39,6 +39,7 @@
 
     <vue-typer class="headline" :repeat="0" text="artminda chen"></vue-typer>
     <vue-typer
+      class="trper"
       :text="text1"
       :repeat="Infinity"
       :shuffle="false"
@@ -51,8 +52,9 @@
       :erase-on-complete="false"
       caret-animation="smooth"
     ></vue-typer>
-    <br>
-    <v-flex xs12 sm6 md4 lg4 xl4>
+    </v-flex>
+
+    <v-flex xs12 sm6 md6>
       <v-card flat color="transparent" max-width="500">
         <v-card-title primary-title>
           <div>
@@ -213,5 +215,9 @@ export default {
   border-left-color: #4caf50b8;
   padding: 5px;
   font-style:italic;
+}
+.trper{
+    position: absolute;
+    margin: 10px 20px;
 }
 </style>

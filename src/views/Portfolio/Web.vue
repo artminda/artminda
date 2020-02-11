@@ -100,19 +100,6 @@ export default {
           },
           poster: "https://i.imgur.com/nkUJLrm.jpg",
         },
-         {
-          dialog: false,
-          title: "creat_fun",
-          git: "https://github.com/artminda/creatFun",
-          demo: "https://artminda.github.io/creatFun",
-          tech: {
-            tech1: "ui design",
-            tech2: "css",
-            tech3: "html",
-            tech4: "JQery"
-          },
-          poster: "https://i.imgur.com/TO4wz9M.jpg",
-        },
         {
           dialog: false,
           title: "This Site",
@@ -125,6 +112,34 @@ export default {
             tech4: "storyblok"
           },
           poster: "https://i.imgur.com/7MxhQDD.jpg",
+        },
+        {
+          dialog: false,
+          title: "Portfolio_basic",
+          git: "https://github.com/artminda/Portfolio_basic",
+          demo: "https://artminda.github.io/Portfolio_basic",
+          tech: {
+            tech1: "vue-cli",
+            tech2: "JavaScript",
+            tech3: "vuetify",
+            tech4: "storyblok API",
+            tech5: "i18n",
+            tech6: "lottie"
+          },
+          poster: "https://i.imgur.com/bY1oT8G.jpg",
+        },
+        {
+          dialog: false,
+          title: "creat_fun",
+          git: "https://github.com/artminda/creatFun",
+          demo: "https://artminda.github.io/creatFun",
+          tech: {
+            tech1: "ui design",
+            tech2: "css",
+            tech3: "html",
+            tech4: "JQery"
+          },
+          poster: "https://i.imgur.com/TO4wz9M.jpg",
         },
         {
           dialog: false,

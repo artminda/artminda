@@ -1,24 +1,37 @@
 <template>
   <v-app :dark="goDark">
     <v-content>
-      <v-container align-center>
-        <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/>
-        <!-- <TheTips v-if="$route.name === 'home'"/> -->
+      <div>
+        <hamburger :goDark="goDark" :lang="lang" @menu="showMenu($event)" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)" />
+        <!-- <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/> -->
+        <!-- <TheTips v-if="$route.name === 'home'"/> --> 
+         <transition
+          name="router-animation"
+          mode="out-in"
+          enter-active-class="animated fadeInRight fast"
+          leave-active-class="animated fadeOutRight faster"
+        > 
+        <TheMenu v-if="menu" :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/>
+        </transition>
+        <div class="screenHight">     
         <transition
           name="router-animation"
           mode="out-in"
           enter-active-class="animated bounceInDown fast"
           leave-active-class="animated bounceOutDown faster"
-        >
+        > 
           <router-view></router-view>
         </transition>
-      </v-container>
+        <!-- <TheFooter/> -->
+        </div>
+      </div>
     </v-content>
-    <TheFooter/>
   </v-app>
 </template>
 
 <script>
+import TheMenu from "./components/TheMenu";
+import hamburger from "./components/hamburger";
 import TheTips from "./components/TheTips";
 import TheHeader from "./components/TheHeader";
 import TheFooter from "./components/TheFooter";
@@ -45,17 +58,24 @@ export default {
     ]
   },
   components: {
+    hamburger,
     TheHeader,
     TheFooter,
-    TheTips
+    TheTips,
+    TheMenu
   },
   data() {
-    return { 
+    return {
+      menu: false, 
       goDark: false, 
       lang: "en"  
     };
   },
   methods: {
+    showMenu(val){
+      this.menu = val
+      console.log("showMenu:",this.menu)
+    },
     updateTheme(updatedTheme) {
       this.goDark = !updatedTheme;
     },
@@ -69,6 +89,9 @@ export default {
       this.$i18n.locale = newLang
       localStorage.setItem("lang", newLang)
     }
+  },
+  mounted(){
+    console.log("APP-menu:", this.menu) 
   }
 };
 </script>
@@ -77,6 +100,28 @@ export default {
 
 * {
   font-family:'Microsoft JhengHei',sans-serif;  
+}
+
+::-webkit-scrollbar {
+width: 5px;
+}
+::-webkit-scrollbar-track {
+-webkit-border-radius: 10px;
+border-radius: 10px;
+margin:80px 0 5px 0;
+}
+::-webkit-scrollbar-thumb {
+-webkit-border-radius: 4px;
+border-radius: 4px;
+background: rgb(219,219,219);
+}
+
+.screenHight {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  padding: 2rem;
+  border: 10px red solid;
 }
 
 pre {
