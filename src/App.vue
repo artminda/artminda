@@ -1,28 +1,37 @@
 <template>
   <v-app :dark="goDark">
     <v-content>
-      <div>
-        <hamburger :goDark="goDark" :lang="lang" @menu="showMenu($event)" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)" />
+      <div class="appbg">
         <!-- <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/> -->
-        <!-- <TheTips v-if="$route.name === 'home'"/> --> 
-         <transition
-          name="router-animation"
-          mode="out-in"
-          enter-active-class="animated fadeInRight fast"
-          leave-active-class="animated fadeOutRight faster"
-        > 
-        <TheMenu v-if="menu" :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/>
-        </transition>
-        <div class="screenHight">     
-        <transition
-          name="router-animation"
-          mode="out-in"
-          enter-active-class="animated bounceInDown fast"
-          leave-active-class="animated bounceOutDown faster"
-        > 
-          <router-view></router-view>
-        </transition>
-        <!-- <TheFooter/> -->
+        <!-- <TheTips v-if="$route.name === 'home'"/> -->
+        <div class="screenHight">
+        <v-btn @click="updateTheme(goDark = !goDark)" depressed small icon>
+          <v-icon v-if="goDark==true">fas fa-sun</v-icon>
+          <v-icon v-else>fas fa-moon</v-icon>
+        </v-btn>
+         <hamburger
+          :lang="lang"
+          @menu="showMenu($event)"
+          @changeTheme="updateTheme($event)"
+          @changeLang="updateLang($event)"
+        />
+          <transition
+            mode="out-in"
+            name="fade"
+            enter-active-class="animated fadeInLeft"
+            leave-active-class="animated fadeOutLeft faster"
+            :duration="{ enter: 800, leave: 1400 }"
+          >
+            <router-view></router-view>
+          </transition>
+          <transition
+          name="load"
+          enter-active-class="animated slideInUp "
+          leave-active-class="animated slideOutUp"
+          >
+          <div v-if="sideBlock" id='sideBlock'></div>
+           </transition>
+           <!-- <TheFooter/> -->
         </div>
       </div>
     </v-content>
@@ -30,12 +39,12 @@
 </template>
 
 <script>
-import TheMenu from "./components/TheMenu";
 import hamburger from "./components/hamburger";
 import TheTips from "./components/TheTips";
 import TheHeader from "./components/TheHeader";
 import TheFooter from "./components/TheFooter";
 import i18n from 'i18n'
+import $ from 'jquery'
 
 export default {
   name: "App",
@@ -61,23 +70,53 @@ export default {
     hamburger,
     TheHeader,
     TheFooter,
-    TheTips,
-    TheMenu
+    TheTips
   },
   data() {
     return {
+      sideBlock: false,
       menu: false, 
       goDark: false, 
       lang: "en"  
     };
   },
   methods: {
-    showMenu(val){
-      this.menu = val
-      console.log("showMenu:",this.menu)
+     showMenu(val) {
+       setTimeout(()=>{
+      this.sideBlock = !val
+      setTimeout(()=>{
+         this.sideBlock = val;
+      },600);
+     },300)
     },
-    updateTheme(updatedTheme) {
-      this.goDark = !updatedTheme;
+    slideOnSideBlock(){
+      $('#sideBlock').removeClass('un-active-side-block')
+      $('#sideBlock').addClass('is-active-side-block')
+    },
+    beforeEnter(el) {
+      setTimeout(function () {
+        this.sideBlock = true
+        this.slideOnSideBlock()
+    }, 2000);
+      console.log('beforeEnter')
+    },
+    enter(el, done) {
+      console.log('enter')
+       this.sideBlock = false
+      console.log("this.sideBlock:",this.sideBlock)
+       done()
+    },
+    leave(el, done) {
+      console.log('leave')
+      this.sideBlock = true
+       setTimeout(function () {
+        this.slideOnSideBlock()
+    }, 2000);
+       console.log("this.sideBlock:",this.sideBlock)
+     done()
+  },
+   updateTheme(updatedTheme) {
+      // console.log("goDark:",updatedTheme)
     },
     updateLang(newLang){
       console.log("APP-newLang-EMIT:", typeof newLang, newLang)
@@ -89,60 +128,56 @@ export default {
       this.$i18n.locale = newLang
       localStorage.setItem("lang", newLang)
     }
-  },
-  mounted(){
-    console.log("APP-menu:", this.menu) 
   }
 };
 </script>
+<style lang="scss" scoped src="@/assets/css/pageTrans.scss"/>
 <style>
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
 
 * {
-  font-family:'Microsoft JhengHei',sans-serif;  
+  font-family: "Microsoft JhengHei", sans-serif;
 }
 
 ::-webkit-scrollbar {
-width: 5px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
--webkit-border-radius: 10px;
-border-radius: 10px;
-margin:80px 0 5px 0;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 80px 0 5px 0;
 }
 ::-webkit-scrollbar-thumb {
--webkit-border-radius: 4px;
-border-radius: 4px;
-background: rgb(219,219,219);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: rgb(219, 219, 219);
 }
 
 .screenHight {
   overflow: scroll;
   overflow-x: hidden;
   height: 100vh;
-  padding: 2rem;
   border: 10px red solid;
 }
 
 pre {
-    font-size: 1rem;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #282c34;
-    background: #282c34;
-    color: #DCDCDC;
-    display: block;
-    font-family: monospace;
-    white-space: pre;
-    margin: 1em 0px;
- }
+  font-size: 1rem;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #282c34;
+  background: #282c34;
+  color: #dcdcdc;
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0px;
+}
 
 code {
   background: #282c34;
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  color: #DCDCDC;
+  color: #dcdcdc;
 }
-
 </style>

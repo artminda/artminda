@@ -1,8 +1,100 @@
+// .fade-enter {
+//   background-color: red;
+//   left: 100vw;
+// //   position: absolute;
+//   z-index: 1000;
+// }
+// .fade-enter-active {
+//   transition: 5s;
+// }
+// .fade-enter-to {
+//   top: 5rem;
+//   left: 0;
+// //   position: absolute;
+//   z-index: 1000;
+// }
+// .fade-leave {
+//   background-color: plum;
+//   left: 0;
+// //   position: absolute;
+//   z-index: 1000;
+// }
+// .fade-leave-active {
+//   transition: 5s;
+// }
+// .fade-leave-to {
+//    background-color: green;
+//    left: 1000vw;
+// //    position: absolute;
+//    z-index: 1000;
+// }
+
+
+	.is-active-side-block {
+		left: -300px;
+		animation: slideOnLeft 1s cubic-bezier(0.5, 0.0, 0.0, 1);
+	}
+	
+	.un-active-side-block {
+		left: -600px;
+		animation: slideOffLeft 1s cubic-bezier(0.5, 0.0, 0.0, 1);
+	}
+	
+	#sideBlock {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 200vh;
+		width: 100vw;
+		background: #222 center center no-repeat;
+		background-size: cover;
+		z-index: 666;
+	}
+	.appbg{
+		background: url("https://i.imgur.com/ovRIoIK.jpg") center center no-repeat;
+		background-size: cover;
+	}
+	.content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 503;
+		padding: 1rem 2rem;
+		
+		.is-active-content {
+			top: 0;
+			opacity: 1;
+			animation: fadeIn 0.5s cubic-bezier(0.5, 0.0, 0.0, 1);
+		}
+		
+		.un-active-content {
+			top: 1rem;
+			opacity: 0;
+			animation: fadeOut 0.5s cubic-bezier(0.5, 0.0, 0.0, 1);
+		}
+	}
+
+.load-enter-active {
+  animation: load-in .5s;
+}
+.load-leave-active {
+  animation: load-in .5s reverse;
+}
+// ANIMATIONS
+// .load_in {
+// 	animation: loadIn 1.5s cubic-bezier(0.5, 0.0, 0.0, 1);
+// }
 // Anim for loader
-@keyframes loadIn {
-	0%   {top: 100%;}
-	50%  {top: -10%;}
-	100% {top: -120%;}
+@keyframes load-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 //Anims for moving the grey block

@@ -5,7 +5,7 @@ import App from './App.vue'
 import router from './router'
 import StoryblokVue from 'storyblok-vue'
 import VueAnalytics from 'vue-analytics'
-import './bus'
+import eventBus from './bus.js'
 import English from './lang/en.js'
 import tw from './lang/tw.js'
 import lottie from 'vue-lottie';
@@ -35,6 +35,12 @@ Vue.use(StoryblokVue)
 // })
 
 new Vue({
+  data() {
+    return {
+      // Bind our event bus to our $root Vue model
+      bus: eventBus
+    }
+  },
   router,
   i18n,
   render: h => h(App)

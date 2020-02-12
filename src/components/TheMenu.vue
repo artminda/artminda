@@ -2,13 +2,13 @@
   <div class="TheMenu">
     <v-layout row justify-center align-center wrap class="mt-4 pt-2">
       <v-flex xs12 md6 lg6 >
-         <v-toolbar-items class="">
-        <v-btn flat to="/" active-class="green--text headline">{{$t('art_home')}}</v-btn>
-        <v-btn flat to="/resume" active-class="green--text headline">{{$t('art_re')}}</v-btn>
-        <v-btn flat to="/services" active-class="green--text headline">{{$t('art_ser')}}</v-btn>
-        <v-btn flat to="/portfolio" active-class="green--text headline">{{$t('art_por')}}</v-btn>
-        <v-btn flat to="/blog" active-class="green--text headline">{{$t('art_blog')}}</v-btn>
-        <v-btn flat to="/contact" active-class="green--text headline">{{$t('art_con')}}</v-btn>
+        <v-toolbar-items class="">
+        <v-btn @click="closeMenu" to="/" active-class="green--text headline">{{$t('art_home')}}</v-btn>
+        <v-btn @click="closeMenu" to="/resume" active-class="green--text headline">{{$t('art_re')}}</v-btn>
+        <v-btn @click="closeMenu" to="/services" active-class="green--text headline">{{$t('art_ser')}}</v-btn>
+        <v-btn @click="closeMenu" to="/portfolio" active-class="green--text headline">{{$t('art_por')}}</v-btn>
+        <v-btn @click="closeMenu" to="/blog" active-class="green--text headline">{{$t('art_blog')}}</v-btn>
+        <v-btn @click="closeMenu" to="/contact" active-class="green--text headline">{{$t('art_con')}}</v-btn>
         <v-select
           v-model="selectLang"
           class="selectWidth ml-3 mr-3"
@@ -17,10 +17,6 @@
           dense
           single-line
         ></v-select>
-        <v-btn @click="changeTheme" depressed small icon>
-          <v-icon v-if="goDark==true">fas fa-sun</v-icon>
-          <v-icon v-else>fas fa-moon</v-icon>
-        </v-btn>
       </v-toolbar-items>
       <v-container>
         <div class="infoArea">
@@ -113,6 +109,14 @@ import {
   minLength
 } from "vuelidate/lib/validators";
 export default {
+props: {
+  goDark: {
+    type: Boolean
+  },
+  lang: {
+    type: String
+  }
+},  
   metaInfo: {
     title: "Contact",
     titleTemplate: "%s ← artminda's web",
@@ -152,7 +156,8 @@ export default {
       body: "",
       selectLang: localStorage.getItem('lang') === "tw" ? "中文" : "English" ,
       items:["English","中文"],
-      drawer: null
+      drawer: null,
+      Theclose: false
     };
   },
   watch:{
@@ -172,6 +177,9 @@ export default {
       this.name = "";
       this.email = "";
       this.body = "";
+    },
+    closeMenu(){
+      this.$emit('menu', false)
     }
   },
   computed: {

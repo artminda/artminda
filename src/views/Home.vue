@@ -18,14 +18,14 @@
 <v-flex xs12 sm6 md6>
   
     <lottie
-    class="hidden-md-and-down" 
+    class="" 
     :options="defaultOptions" 
     :height="400" 
     :width="400"
     v-on:animCreated="handleAnimation"
     />
    
-    <VueCompareImage
+    <!-- <VueCompareImage
       class="hidden-lg-and-up"
       :style="{ maxWidth: '300px' }"
       :sliderLineWidth="sliderLine"
@@ -33,7 +33,7 @@
       :leftImage="leftImage2"
       :rightImage="rightImage2"
       :sliderPositionPercentage="sliderPosition"
-    />
+    /> -->
 
     <br>
 
@@ -173,7 +173,6 @@ export default {
     methods: {
        handleAnimation (anim) {
         this.anim = anim;
-        console.log(anim); //这里可以看到 lottie 对象的全部属性
     }
   }   
 }
