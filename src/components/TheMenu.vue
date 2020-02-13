@@ -1,23 +1,14 @@
 <template>
   <div class="TheMenu">
-    <v-layout row justify-center align-center wrap class="mt-4 pt-2">
+    <v-layout row justify-center align-center wrap class="">
       <v-flex xs12 md6 lg6 >
-        <v-toolbar-items class="">
-        <v-btn @click="closeMenu" to="/" active-class="green--text headline">{{$t('art_home')}}</v-btn>
-        <v-btn @click="closeMenu" to="/resume" active-class="green--text headline">{{$t('art_re')}}</v-btn>
-        <v-btn @click="closeMenu" to="/services" active-class="green--text headline">{{$t('art_ser')}}</v-btn>
-        <v-btn @click="closeMenu" to="/portfolio" active-class="green--text headline">{{$t('art_por')}}</v-btn>
-        <v-btn @click="closeMenu" to="/blog" active-class="green--text headline">{{$t('art_blog')}}</v-btn>
-        <v-btn @click="closeMenu" to="/contact" active-class="green--text headline">{{$t('art_con')}}</v-btn>
-        <v-select
-          v-model="selectLang"
-          class="selectWidth ml-3 mr-3"
-          :items="items"
-          label="select lang"
-          dense
-          single-line
-        ></v-select>
-      </v-toolbar-items>
+        <div class="d-flex shineBtn mt-8">
+        <shineBtn :text="$t('art_home')" :path="'/'" @menu="closeMenu($event)"></shineBtn>
+        <shineBtn :text="$t('art_re')"  :path="'/resume'" @menu="closeMenu($event)"></shineBtn>
+        <shineBtn :text="$t('art_ser')" :path="'/services'" @menu="closeMenu($event)"></shineBtn>
+        <shineBtn :text="$t('art_por')" :path="'/portfolio'" @menu="closeMenu($event)"></shineBtn>
+        <shineBtn :text="$t('art_blog')" :path="'/blog'" @menu="closeMenu($event)"></shineBtn>
+      </div>
       <v-container>
         <div class="infoArea">
            <h2 class="pb-4 mt-2">
@@ -102,6 +93,7 @@
 
 <script>
 import { validationMixin } from "vuelidate";
+import shineBtn from "./shine_btn";
 import {
   required,
   maxLength,
@@ -112,9 +104,6 @@ export default {
 props: {
   goDark: {
     type: Boolean
-  },
-  lang: {
-    type: String
   }
 },  
   metaInfo: {
@@ -149,21 +138,18 @@ props: {
     email: { required, email },
     body: { required, minLength: minLength(20) }
   },
+  components: {
+    shineBtn
+  },
   data() {
     return {
+      router:"",
       name: "",
       email: "",
       body: "",
-      selectLang: localStorage.getItem('lang') === "tw" ? "中文" : "English" ,
-      items:["English","中文"],
       drawer: null,
-      Theclose: false
+      Theclose: false,
     };
-  },
-  watch:{
-    selectLang(val){
-      this.$emit("changeLang", val);
-    }
   },
   methods: {
     changeTheme() {
@@ -178,8 +164,8 @@ props: {
       this.email = "";
       this.body = "";
     },
-    closeMenu(){
-      this.$emit('menu', false)
+    closeMenu(data){
+      this.$emit('menu', data)
     }
   },
   computed: {
@@ -215,9 +201,14 @@ props: {
     width: 100%;
     position: absolute;
     z-index: 888;
-    background-color: #ffa7a7;
+    background-color: #fb8e8e;
     top: 0;
+    left: 0;
     bottom: 0;
-    // opacity: 50%;
+  }
+  .shineBtn {
+    margin-top: 17vh;
+    padding: 1.5vh;
+    background-color: #616161;
   }
 </style>

@@ -5,10 +5,18 @@
         <!-- <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/> -->
         <!-- <TheTips v-if="$route.name === 'home'"/> -->
         <div class="screenHight">
-        <v-btn @click="updateTheme(goDark = !goDark)" depressed small icon>
+        <v-btn class="godark" @click="updateTheme(goDark = !goDark)" depressed small icon>
           <v-icon v-if="goDark==true">fas fa-sun</v-icon>
           <v-icon v-else>fas fa-moon</v-icon>
         </v-btn>
+         <v-select
+          v-model="selectLang"
+          class="selectWidth ml-3 mr-3 golang"
+          :items="items"
+          label="select lang"
+          dense
+          single-line
+        ></v-select>
          <hamburger
           :lang="lang"
           @menu="showMenu($event)"
@@ -18,16 +26,15 @@
           <transition
             mode="out-in"
             name="fade"
-            enter-active-class="animated fadeInLeft"
+            enter-active-class="animated fadeInLeft fast"
             leave-active-class="animated fadeOutLeft faster"
             :duration="{ enter: 800, leave: 1400 }"
           >
             <router-view></router-view>
           </transition>
+           <!-- <div id='sideBlock'></div> -->
           <transition
           name="load"
-          enter-active-class="animated slideInUp "
-          leave-active-class="animated slideOutUp"
           >
           <div v-if="sideBlock" id='sideBlock'></div>
            </transition>
@@ -74,18 +81,28 @@ export default {
   },
   data() {
     return {
+      selectLang: localStorage.getItem('lang') === "tw" ? "中文" : "English" ,
+      items:["English","中文"],
       sideBlock: false,
       menu: false, 
       goDark: false, 
       lang: "en"  
     };
   },
+   watch:{
+    selectLang(val){
+      this.updateLang(val);
+    }
+  },
   methods: {
-     showMenu(val) {
+     showMenu(data) {
+       if(data.run === 'noRun'){
+         return
+       }
        setTimeout(()=>{
-      this.sideBlock = !val
+      this.sideBlock = !data.sta
       setTimeout(()=>{
-         this.sideBlock = val;
+         this.sideBlock = data.sta;
       },600);
      },300)
     },
@@ -119,7 +136,6 @@ export default {
       // console.log("goDark:",updatedTheme)
     },
     updateLang(newLang){
-      console.log("APP-newLang-EMIT:", typeof newLang, newLang)
       if (newLang === "中文"){
         this.$i18n.locale = "tw"
         localStorage.setItem("lang", "tw")
@@ -157,7 +173,7 @@ export default {
   overflow: scroll;
   overflow-x: hidden;
   height: 100vh;
-  border: 10px red solid;
+  border: 10px #4caf50 solid;
 }
 
 pre {
@@ -179,5 +195,36 @@ code {
   overflow-x: auto;
   padding: 0.5em;
   color: #dcdcdc;
+}
+
+.godark {
+  top: 31px;
+  right: 88px;
+  right: 80px;
+  z-index: 999;
+  float: right;
+  margin: 2vh;
+  display: block;
+  position: absolute ;
+  cursor: pointer;
+}
+
+.godark:hover {
+  position: absolute ;
+}
+
+.golang {
+  top: 11px;
+  right: 131px;
+  z-index: 999;
+  float: right;
+  margin: 2vh;
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+
+.golang:hover{
+  position: absolute ;
 }
 </style>

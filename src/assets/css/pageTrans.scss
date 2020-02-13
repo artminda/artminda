@@ -41,17 +41,16 @@
 	}
 	
 	#sideBlock {
-		position: absolute;
+	   position: absolute;
 		top: 0;
-		left: 0;
-		height: 200vh;
-		width: 100vw;
-		background: #222 center center no-repeat;
-		background-size: cover;
-		z-index: 666;
+		height: 100%;
+		width: 100%;
+		background: url("https://media.giphy.com/media/U5DuR8bPh5iI2oIwXD/giphy.gif") center center no-repeat;
+		z-index: 1;
+		left: 98vw;
 	}
 	.appbg{
-		background: url("https://i.imgur.com/ovRIoIK.jpg") center center no-repeat;
+		// background: url("https://i.imgur.com/ovRIoIK.jpg") center center no-repeat;
 		background-size: cover;
 	}
 	.content {
@@ -74,11 +73,13 @@
 		}
 	}
 
+// load
+
 .load-enter-active {
-  animation: load-in .5s;
+  animation: load-in 1.5s;
 }
 .load-leave-active {
-  animation: load-in .5s reverse;
+  animation: load-in 1.8s;
 }
 // ANIMATIONS
 // .load_in {
@@ -86,15 +87,10 @@
 // }
 // Anim for loader
 @keyframes load-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
+ 0% {left: -34vw; transform:scale(0);}
+ 50% {left: 5vw; transform:scale(1);}
+ 80% {left: 8vw; transform:scale(1);}
+ 100% {left: 98vw; transform:scale(0);}
 }
 
 //Anims for moving the grey block

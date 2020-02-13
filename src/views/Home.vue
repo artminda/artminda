@@ -1,5 +1,5 @@
 <template>
-  <v-layout row justify-center align-center class="mt-4 pt-2">
+  <v-layout row justify-center align-center class="flex-wrap mt-4 pt-2 wrap">
 
     <!-- <VueCompareImage
       class="hidden-md-and-down"
@@ -16,14 +16,17 @@
        :style="{ maxWidth: '1200px' }"
        /> -->
 <v-flex xs12 sm6 md6>
-  
-    <lottie
+    
+    <div class="cube">
+    <cube/>
+    </div>  
+    <!-- <lottie
     class="" 
     :options="defaultOptions" 
     :height="400" 
     :width="400"
     v-on:animCreated="handleAnimation"
-    />
+    /> -->
    
     <!-- <VueCompareImage
       class="hidden-lg-and-up"
@@ -36,10 +39,10 @@
     /> -->
 
     <br>
-
+    <div class="layout mt-4 pt-2 column justify-center align-center">
     <vue-typer class="headline" :repeat="0" text="artminda chen"></vue-typer>
+    <div class="typer mt-2 pl-2">
     <vue-typer
-      class="trper"
       :text="text1"
       :repeat="Infinity"
       :shuffle="false"
@@ -52,6 +55,8 @@
       :erase-on-complete="false"
       caret-animation="smooth"
     ></vue-typer>
+    </div>
+    </div>
     </v-flex>
 
     <v-flex xs12 sm6 md6>
@@ -113,8 +118,9 @@
 <script>
 import { VueTyper } from "vue-typer";
 import VueCompareImage from "vue-compare-image";
-import ball from "@/components/3d_ball";
+// import ball from "@/components/3d_ball";
 import * as animationData from '@/assets/pinjump.json';
+import cube from "@/components/cube_slide";
 
 export default {
   metaInfo: {
@@ -138,7 +144,7 @@ export default {
   components: {
     "vue-typer": VueTyper,
     VueCompareImage,
-    ball
+    cube
   },
   data() {
     return {
@@ -215,8 +221,20 @@ export default {
   padding: 5px;
   font-style:italic;
 }
-.trper{
-    position: absolute;
-    margin: 10px 20px;
+.typer{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    min-width: 0;
+}
+.cube {
+    width: 100%;
+    position: relative;
+    height: 400px;
 }
 </style>

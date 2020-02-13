@@ -98,10 +98,10 @@ export default {
     this.isClosed = !event;
   },
   methods: {
-    showMenu(val) {
-      this.menu = val
+    showMenu(data) {
+      this.menu = data.sta
       this.burgerTime()
-      this.$emit('menu', false)
+      this.$emit('menu', data)
     },
     changeTheme() {
       this.$emit("changeTheme", this.goDark);
