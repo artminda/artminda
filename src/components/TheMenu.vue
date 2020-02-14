@@ -2,32 +2,30 @@
   <div class="TheMenu">
     <v-layout row justify-center align-center wrap class="">
       <v-flex xs12 md6 lg6 >
-        <div class="d-flex shineBtn mt-8">
-        <shineBtn :text="$t('art_home')" :path="'/'" @menu="closeMenu($event)"></shineBtn>
+      <div class="d-flex shineBtn">
         <shineBtn :text="$t('art_re')"  :path="'/resume'" @menu="closeMenu($event)"></shineBtn>
         <shineBtn :text="$t('art_ser')" :path="'/services'" @menu="closeMenu($event)"></shineBtn>
         <shineBtn :text="$t('art_por')" :path="'/portfolio'" @menu="closeMenu($event)"></shineBtn>
         <shineBtn :text="$t('art_blog')" :path="'/blog'" @menu="closeMenu($event)"></shineBtn>
       </div>
-      <v-container>
-        <div class="infoArea">
-           <h2 class="pb-4 mt-2">
-          <span>{{$t('art_getIn')}}</span>
+      <div class="py-3 px-3 infoArea teal lighten-5">
+        <h2 class="pb-1 mt-2">
+          <span class="black--text">{{$t('art_getIn')}}</span>
           <span class="green--text">{{$t('art_tou')}}</span>
         </h2>
-        <div class="py-4 subheading font-weight-bold">
-          <v-icon large color="green" left>fas fa-map-marker-alt</v-icon>
-          <span>{{$t('art_site')}},&nbsp;</span>
+        <div class="py-1 subheading font-weight-bold">
+          <v-icon color="green" left>fas fa-map-marker-alt</v-icon>
+          <span class="grey--text text--darken-3">{{$t('art_site')}},&nbsp;</span>
           <span class="green--text">{{$t('art_tai')}}</span>
         </div>
-        <div class="py-4 subheading font-weight-bold">
-          <v-icon large color="green" left>fas fa-envelope</v-icon>
-          <span>doai10007118@</span>
+        <div class="py-1 subheading font-weight-bold">
+          <v-icon color="green" left>fas fa-envelope</v-icon>
+          <span class="grey--text text--darken-3">doai10007118@</span>
           <span class="green--text">gmail.com</span>
         </div>
-        <div class="py-4 subheading font-weight-bold">
-          <v-icon large color="green" left>fas fa-phone</v-icon>
-          <span>0937&nbsp;</span>
+        <div class="py-1 subheading font-weight-bold">
+          <v-icon color="green" left>fas fa-phone</v-icon>
+          <span class="grey--text text--darken-3">0937&nbsp;</span>
           <span class="green--text">828 251</span>
         </div>
         <!-- <div class="py-4 subheading font-weight-bold">
@@ -35,17 +33,17 @@
           <span>Freelance</span>
           <span class="green--text">Available</span>
         </div> -->
-        </div>
-       </v-container> 
+       </div> 
       </v-flex>
-      <v-flex xs12 md6 >
+      <v-flex xs12 md6  class="con_area">
       <v-container>
-         <h2 class="pb-4 mb-4">
-          <span>{{$t('art_contact')}}</span>
+         <h2 class="pb-1 mb-4">
+          <span class="blue-grey--text">{{$t('art_contact')}}</span>
           <span class="green--text">{{$t('art_form')}}</span>
         </h2>
         <form method="POST" action="https://formspree.io/xknrokpw">
           <v-text-field
+            light
             name="name"
             color="green"
             background-color="transparent"
@@ -56,6 +54,7 @@
             @blur="$v.name.$touch()"
           ></v-text-field>
           <v-text-field
+            light
             type="email"
             color="green"
             background-color="transparent"
@@ -67,6 +66,7 @@
             @blur="$v.email.$touch()"
           ></v-text-field>
           <v-textarea
+            light
             color="green"
             background-color="transparent"
             :counter="200"
@@ -77,13 +77,14 @@
             @blur="$v.body.$touch()"
           ></v-textarea>
           <v-btn
+            light
             @click="submit"
             type="submit"
             color="green"
             class="white--text"
             :disabled=" (body.length<=20)"
           >{{$t('art_send')}}</v-btn>
-          <v-btn @click="clear">{{$t('art_clear')}}</v-btn>
+          <v-btn light @click="clear">{{$t('art_clear')}}</v-btn>
         </form>
         </v-container>
       </v-flex>
@@ -198,17 +199,38 @@ props: {
 
 <style lang="scss" scoped>
   .TheMenu {
-    width: 100%;
-    position: absolute;
+    width: 100vw;
+    position: fixed;
     z-index: 888;
-    background-color: #fb8e8e;
+    background-color: #55b55994;
     top: 0;
     left: 0;
     bottom: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100vh;
   }
   .shineBtn {
-    margin-top: 17vh;
+    margin-top: 3vh;
     padding: 1.5vh;
     background-color: #616161;
+    padding: 4rem 1rem;
+    @media(max-width: 960px) {
+       padding: 1rem 1rem;
+       margin-top: 14vh;
+     } 
+  }
+  .infoArea{
+    background-color: #616161;
+    float: right;
+    width: 100%;
+    max-width: 420px;
+  }
+  .con_area {
+    margin-top: 16vh; 
+    background-color: aliceblue;
+     @media(max-width: 960px) {
+       margin-top: 0vh;
+     } 
   }
 </style>

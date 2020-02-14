@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl>
+  <v-container grid-list-xl mt-5>
     <h2 class="pl-4 xs12 sm4">
       <span>Graphic</span>
       <span class="green--text">Portfolio</span>
@@ -14,7 +14,7 @@
       single-line
     ></v-select>
     </v-flex>
-    <v-layout row justify-center align-center wrap class="mt-4 pt-2">
+    <v-layout row justify-center align-center wrap class="">
       <!-- <transition-group> -->
       <v-dialog
         v-model="image.dialog"

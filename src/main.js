@@ -17,7 +17,7 @@ const isProd = process.env.NODE_ENV === "production"
 Vue.component('lottie', lottie)
 
 Vue.use(VueI18n)
-const locale = localStorage.getItem('lang') || localStorage.setItem('lang', 'English')
+const locale = localStorage.getItem('lang') || 'English'
 const i18n = new VueI18n({
   locale,
   messages: { English, tw }
@@ -35,11 +35,8 @@ Vue.use(StoryblokVue)
 // })
 
 new Vue({
-  data() {
-    return {
-      // Bind our event bus to our $root Vue model
-      bus: eventBus
-    }
+  created(){
+    localStorage.setItem('lang', 'English')
   },
   router,
   i18n,

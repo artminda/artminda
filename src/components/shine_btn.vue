@@ -1,6 +1,9 @@
 <template>
-    <div @click="closeMenu(path)" class="btn btn-5" :class="{ 'shine': routerName === path}">
+    <div v-if="path !== '/'" @click="closeMenu(path)" class="btn btn-5" :class="{ 'shine': routerName === path}">
         {{text}}  
+    </div>
+    <div v-else @click="closeMenu(path)" class="btn btn-3" :class="{ 'btn-3_shine': homeRouter === path}">
+        Artminda  
     </div>    
 </template>    
 <script>
@@ -18,6 +21,11 @@ data(){
    routerName:''
   }  
 },
+computed:{
+  homeRouter(){
+    return this.$route.path
+  }
+},
 mounted(){
     this.routerName = this.$route.path
 },  
@@ -29,7 +37,7 @@ methods: {
       }  
       this.$router.push(path)
       this.router = path
-      this.$emit('menu', false)
+      this.$emit('menu', {sta:false, run:'Run'})
     }
 }   
 }
@@ -38,7 +46,7 @@ methods: {
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
 
 //colors
-$red: #E1332D;
+$red: #4caf50;
 $white: #fff;
 
 //base styles
@@ -58,7 +66,7 @@ $white: #fff;
     font-weight: 400;
     line-height: 50px;
     height: 50px;
-    margin: 0 2em;
+    margin: 0 7px;
     max-width: 160px;
     position: relative;
     text-decoration: none;
@@ -94,29 +102,40 @@ $white: #fff;
 }
 
 /////////////////////////////////
-//button one
+//button 
 ///////////////////////////////
-.btn-1 {
-  background: darken($red, 1.5%);
-  font-weight: 100;
-  
-  svg {
-    height: 45px;
-    left: 0;
-    position: absolute;
-    top: 0; 
-    width: 100%; 
-  }
-  
-  rect {
-    fill: none;
-    stroke: #fff;
-    stroke-width: 2;
-    stroke-dasharray: 422, 0;
-    transition: all 0.35s linear;
-  }
+.btn-3 {
+  max-width: 130px;
+  margin: 0 0 0 2em;
+  background: lighten($red, 3%);  
+  border: 1px solid darken($red, 4%);
+  box-shadow: 0px 2px 0 darken($red, 5%), 2px 4px 6px darken($red, 2%);
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: all 150ms linear;
 }
 
+.btn-3:hover{
+  margin: 0 0 0 2em;
+  background: darken($red, 1.5%);
+  border: 1px solid rgba(#000, .05);
+  box-shadow: 1px 1px 2px rgba(#fff, .2);
+  color: lighten($red, 18%); 
+  text-decoration: none;
+  text-shadow: -1px -1px 0 darken($red, 9.5%);
+  transition: all 250ms linear;
+}
+
+.btn-3_shine{
+  margin: 0 0 0 2em;
+  background: darken($red, 1.5%);
+  border: 1px solid rgba(#000, .05);
+  box-shadow: 1px 1px 2px rgba(#fff, .2);
+  color: lighten($red, 18%); 
+  text-decoration: none;
+  text-shadow: -1px -1px 0 darken($red, 9.5%);
+  transition: all 250ms linear;
+}
 
 /////////////////////////////
 //button-5 

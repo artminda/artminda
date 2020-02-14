@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl>
+  <v-container grid-list-xl mt-5>
     <h2 class="pl-4">
       <span>Video</span>
       <span class="green--text">Portfolio</span>
@@ -83,7 +83,7 @@ export default {
         },
         {
           dialog: false,
-          title: "text title adv",
+          title: "text title adv2",
           href: "https://www.youtube.com/embed/50oe_7CfIQw",
           type: "text/html",
           youtube: "50oe_7CfIQw",

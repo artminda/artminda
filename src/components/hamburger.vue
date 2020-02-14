@@ -36,17 +36,20 @@
             fill="none"
             stroke="#ff0000"
             stroke-miterlimit="10"
-            stroke-width="4"
+            stroke-width="2"
             d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"
           />
         </mask>
       </svg>
+
+      <!-- 往上那一撇 -->
       <div class="path-burger">
         <div class="animate-path">
           <div class="path-rotation"></div>
         </div>
       </div>
     </div>
+    <shineBtn @menu="showMenu($event)" class="homeBtn" :text="$t('art_home')" :path="'/'"></shineBtn>
     <transition
       name="router-animation"
       mode="out-in"
@@ -67,7 +70,7 @@
 
 <script>
 import TheMenu from "./TheMenu";
-
+import shineBtn from "./shine_btn";
 export default {
   props: {
     goDark: {
@@ -81,7 +84,8 @@ export default {
     }
   },
   components: {
-    TheMenu
+    TheMenu,
+    shineBtn
   },
   data() {
     return {
@@ -92,13 +96,18 @@ export default {
       drawer: null
     };
   },
-  created() {
-    // [註冊監聽事件]
-    this.$bus.$on("closeMenu", event);
-    this.isClosed = !event;
-  },
+  // created() {
+  //   // [註冊監聽事件]
+  //   this.$bus.$on("closeMenu", event);
+  //   this.isClosed = !event;
+  // },
+
   methods: {
     showMenu(data) {
+      if(this.menu === false){
+       this.$emit('menu', data)
+       return  
+      }
       this.menu = data.sta
       this.burgerTime()
       this.$emit('menu', data)
@@ -120,53 +129,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.selectWidth {
-  width: 109px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
+
 // vars
 $color: #4caf50; // icon color
 $blue: transparent; // background color
 $animation: 0.6s; // animation speed
 $scale: 1; // icon scale 68/68 default
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-// spacing + background-color
-body {
-  background: $blue;
-  padding: 40px;
-}
-
-h4 {
-  font-family: arial, helvetica, serif;
-  color: $color;
-  font-size: 18px;
-  text-align: center;
-  margin: 40px 0 0;
-}
-
 .hamburglar {
-  float: right;
-  transform: scale($scale);
-  // margin: 40px auto;
   position: absolute;
   z-index: 999;
-  right: 0;
-  margin: 2vh;
+  right: 0vw;
+  float: right;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  margin: 0 1em;
   display: block;
   width: 68px;
   height: 68px;
-  background: $blue;
+  background: transparent;
   -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
 }
@@ -507,5 +492,13 @@ h4 {
     width: 0;
     left: 36px;
   }
+}
+
+.homeBtn {
+  left: -22px;
+    position: absolute;
+    z-index: 999;
+    margin: 0 2em;
+    cursor: pointer;
 }
 </style>

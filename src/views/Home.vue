@@ -95,7 +95,7 @@
           </v-btn>
         </v-card-actions>
 
-        <v-card-actions class="hidden-md-and-up justify-center">
+        <v-card-actions class="hidden-md-and-up justify-center mb-3">
           <v-btn
             v-for="icon in icons"
             :key="icon.icon"
@@ -199,7 +199,7 @@ export default {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 .vue-typer .custom.char.typed {
-  color: green;
+  color: #4caf50;
 }
 .vue-typer .custom.char.selected {
   color: #e91e63;
@@ -209,7 +209,7 @@ export default {
   animation: rocking 1s ease-in-out 0s infinite;
 }
 .vue-typer .custom.caret.typing {
-  background-color: green;
+  background-color: #4caf50;
 }
 .vue-typer .custom.caret.selecting {
   display: inline-block;
@@ -235,6 +235,6 @@ export default {
 .cube {
     width: 100%;
     position: relative;
-    height: 400px;
+    height: 50vh;
 }
 </style>

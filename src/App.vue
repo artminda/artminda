@@ -5,6 +5,13 @@
         <!-- <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/> -->
         <!-- <TheTips v-if="$route.name === 'home'"/> -->
         <div class="screenHight">
+        <div class="screenContent">
+        <hamburger
+          :lang="lang"
+          @menu="showMenu($event)"
+          @changeTheme="updateTheme($event)"
+          @changeLang="updateLang($event)"
+        />
         <v-btn class="godark" @click="updateTheme(goDark = !goDark)" depressed small icon>
           <v-icon v-if="goDark==true">fas fa-sun</v-icon>
           <v-icon v-else>fas fa-moon</v-icon>
@@ -17,12 +24,8 @@
           dense
           single-line
         ></v-select>
-         <hamburger
-          :lang="lang"
-          @menu="showMenu($event)"
-          @changeTheme="updateTheme($event)"
-          @changeLang="updateLang($event)"
-        />
+        
+        
           <transition
             mode="out-in"
             name="fade"
@@ -39,6 +42,7 @@
           <div v-if="sideBlock" id='sideBlock'></div>
            </transition>
            <!-- <TheFooter/> -->
+        </div>
         </div>
       </div>
     </v-content>
@@ -93,6 +97,9 @@ export default {
     selectLang(val){
       this.updateLang(val);
     }
+  },
+  mounted(){
+    localStorage.getItem('lang', 'English')
   },
   methods: {
      showMenu(data) {
@@ -170,10 +177,8 @@ export default {
 }
 
 .screenHight {
-  overflow: scroll;
-  overflow-x: hidden;
   height: 100vh;
-  border: 10px #4caf50 solid;
+  padding: 10px;
 }
 
 pre {
@@ -198,33 +203,57 @@ code {
 }
 
 .godark {
-  top: 31px;
-  right: 88px;
-  right: 80px;
+  position: absolute;
   z-index: 999;
+ right: 177px;
+    top: 5vh;
   float: right;
-  margin: 2vh;
+  margin: 0 1em;
   display: block;
-  position: absolute ;
   cursor: pointer;
 }
 
 .godark:hover {
-  position: absolute ;
+  margin: 0 1em;
+  position: absolute;
+  z-index: 999;
+  right: 177px;
+  top: 5vh;
 }
 
 .golang {
-  top: 11px;
-  right: 131px;
+  right: 85px;
+  top: 2vh;
+  position: absolute;
   z-index: 999;
   float: right;
-  margin: 2vh;
+  margin: 0 1em;
   display: block;
-  position: absolute;
   cursor: pointer;
 }
 
 .golang:hover{
-  position: absolute ;
+  margin: 0 1em;
+  position: absolute;
+  z-index: 999;
+  right: 85px;
+  top: 2vh;
+}
+
+.selectWidth {
+  width: 65px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.screenContent {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: inherit;
+  height: 97vh;
+  border: #4caf50 2px solid;
 }
 </style>

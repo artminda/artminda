@@ -119,7 +119,7 @@
         <strong>JavaScript</strong>
         <v-progress-linear v-model="buffer6" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
       </v-flex>
-      <div class="mt-4 pt-2">
+      <div class="mt-4 pt-2 mb-3">
         <v-btn
           href="https://docs.google.com/document/d/14wZAIgwog7Lo5EdK7AeU4D311ADfNKnO4YEsiwBlcYY/edit?usp=sharing"
           target="_blank"
