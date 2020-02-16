@@ -60,17 +60,17 @@
     </v-flex>
 
     <v-flex xs12 sm6 md6>
-      <v-card flat color="transparent" max-width="500">
-        <v-card-title primary-title>
+      <v-card text color="transparent" max-width="500" class="noShadow px-3">
+        <v-card-title primary-title class="font-weight-thin subtitle-1">
           <div>
             <h3 class="headline mb-0">
               <span>{{$t('art_about')}}</span>
               <span class="green--text">{{$t('art_me')}}</span>
             </h3>
             <!-- <h3 class="headline mb-0"> <span>{{$t('art_good1')}}</span></h3> -->
-            <h3 class="text--secondary mb-0 border-left"> <span>{{$t('art_good2')}}</span></h3>
+            <h3 class="BOLD ITALIC text--secondary mb-0 border-left"> <span>{{$t('art_good2')}}</span></h3>
             <div>
-              <p>
+              <p class="wordbreak">
                {{$t('art_content_top')}}
                 <span
                   class="green--text font-weight-bold"
@@ -86,7 +86,7 @@
             :key="icon.icon"
             fab
             dark
-            outline
+            outlined
             color="green"
             :href="icon.href"
             target="_blank"
@@ -102,7 +102,7 @@
             small
             fab
             dark
-            outline
+            outlined
             color="green"
             :href="icon.href"
             target="_blank"
@@ -183,7 +183,7 @@ export default {
   }   
 }
 </script>
-<style>
+<style lang="scss">
 @keyframes rocking {
   0%,
   100% {
@@ -235,6 +235,15 @@ export default {
 .cube {
     width: 100%;
     position: relative;
-    height: 50vh;
+    height: 350px;
+}
+.wordbreak {
+  word-break: normal;
+}
+.noShadow{
+  box-shadow: none;
+  @media(min-width: 960px){
+    margin-top: 13vh !important;
+}
 }
 </style>

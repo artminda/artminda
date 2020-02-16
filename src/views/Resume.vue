@@ -1,4 +1,5 @@
 <template>
+ <v-container grid-list-xl>
   <v-layout row justify-center align-center wrap class="mt-4 pt-2">
     <v-flex xs12 sm12 md5 lg6 xl6 class="mt-4 pt-4">
       <h2 class="mb-4 pl-4 pt-2">{{$t("art_education")}}</h2>
@@ -133,6 +134,7 @@
       </div>
     </v-layout>
   </v-layout>
+ </v-container>
 </template>
 
 <script>

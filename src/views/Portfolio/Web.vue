@@ -7,14 +7,13 @@
     <v-layout row justify-center align-center wrap class="mt-4 pt-2">
       <v-dialog
         v-model="project.dialog"
-        lazy
         max-width="1000"
         v-for="project in projects"
         :key="project.title"
       >
         <template v-slot:activator="{ on }">
           <v-flex xs12 sm6 md4 lg4 xl4 v-on="on">
-            <v-card hover flat color="transparent">
+            <v-card hover text color="transparent">
               <v-img
                 :src="project.poster"
                 :alt="project.title"
@@ -36,10 +35,10 @@
             </span>
           </v-card-text>
           <v-card-actions>
-            <v-btn v-if="project.git" flat large dark color="green" :href="project.git" target="_blank">
+            <v-btn v-if="project.git" text large dark color="green" :href="project.git" target="_blank">
               <v-icon left>fab fa-github</v-icon>GitHub
             </v-btn>
-            <v-btn large flat dark color="green" :href="project.demo" target="_blank">
+            <v-btn large text dark color="green" :href="project.demo" target="_blank">
               <v-icon left>fas fa-desktop</v-icon>Demo
               <span v-if="project.title == 'yabo_mobile_practice'" class="ml-1">
                 ( vpn need China )

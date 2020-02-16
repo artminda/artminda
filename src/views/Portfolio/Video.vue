@@ -7,14 +7,13 @@
     <v-layout row justify-center align-center wrap class="mt-4 pt-2">
       <v-dialog
         v-model="video.dialog"
-        lazy
         max-width="800"
         v-for="video in videos"
         :key="video.title"
       >
         <template v-slot:activator="{ on }">
           <v-flex xs12 sm6 md4 lg4 xl4 v-on="on">
-            <v-card hover flat color="transparent">
+            <v-card hover text color="transparent">
               <v-img
                 :src="video.poster"
                 aspect-ratio="1.7778"

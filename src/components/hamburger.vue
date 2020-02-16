@@ -51,12 +51,11 @@
     </div>
     <shineBtn @menu="showMenu($event)" class="homeBtn" :text="$t('art_home')" :path="'/'"></shineBtn>
     <transition
-      name="router-animation"
-      mode="out-in"
-      enter-active-class="animated fadeInRight fast"
-      leave-active-class="animated fadeOutRight faster"
+      enter-active-class="animated bounceInUp fast"
+      leave-active-class="animated bounceOutUp faster"
     >
       <TheMenu
+        style="position: fixed;z-index: 888;top: 0;left: 0;bottom: 0; right: 0;"
         v-if="menu"
         :goDark="goDark"
         :lang="lang"

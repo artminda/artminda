@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import './plugins/vuetify'
+import vuetify from './plugins/vuetify';
 import App from './App.vue'
 import router from './router'
 import StoryblokVue from 'storyblok-vue'
@@ -12,7 +12,6 @@ import lottie from 'vue-lottie';
 
 Vue.config.productionTip = false
 const isProd = process.env.NODE_ENV === "production"
-
 
 Vue.component('lottie', lottie)
 
@@ -38,6 +37,7 @@ new Vue({
   created(){
     localStorage.setItem('lang', 'English')
   },
+  vuetify,
   router,
   i18n,
   render: h => h(App)

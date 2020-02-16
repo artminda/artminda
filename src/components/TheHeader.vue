@@ -46,7 +46,7 @@
         </v-list-tile>  
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar flat dense color="transparent" scroll-off-screen>
+    <v-toolbar text dense color="transparent" scroll-off-screen>
       <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="headline">
         <span class="font-weight-light">artminda</span>
@@ -59,12 +59,12 @@
       </v-btn>
     <!-- pc -->
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat to="/" active-class="green--text headline">{{$t('art_home')}}</v-btn>
-        <v-btn flat to="/resume" active-class="green--text headline">{{$t('art_re')}}</v-btn>
-        <v-btn flat to="/services" active-class="green--text headline">{{$t('art_ser')}}</v-btn>
-        <v-btn flat to="/portfolio" active-class="green--text headline">{{$t('art_por')}}</v-btn>
-        <v-btn flat to="/blog" active-class="green--text headline">{{$t('art_blog')}}</v-btn>
-        <v-btn flat to="/contact" active-class="green--text headline">{{$t('art_con')}}</v-btn>
+        <v-btn text to="/" active-class="green--text headline">{{$t('art_home')}}</v-btn>
+        <v-btn text to="/resume" active-class="green--text headline">{{$t('art_re')}}</v-btn>
+        <v-btn text to="/services" active-class="green--text headline">{{$t('art_ser')}}</v-btn>
+        <v-btn text to="/portfolio" active-class="green--text headline">{{$t('art_por')}}</v-btn>
+        <v-btn text to="/blog" active-class="green--text headline">{{$t('art_blog')}}</v-btn>
+        <v-btn text to="/contact" active-class="green--text headline">{{$t('art_con')}}</v-btn>
         <v-select
           v-model="selectLang"
           class="selectWidth ml-3 mr-3"

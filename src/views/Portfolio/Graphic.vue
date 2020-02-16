@@ -18,14 +18,13 @@
       <!-- <transition-group> -->
       <v-dialog
         v-model="image.dialog"
-        lazy
         max-width="800"
         v-for="image in reversed"
         :key="image.poster"
       >
         <template v-slot:activator="{ on }">
           <v-flex xs12 sm6 md4 lg4 xl4 v-on="on">
-            <v-card hover flat color="transparent">
+            <v-card hover text color="transparent">
               <v-img
                 :src="image.poster"
                 height="230"

@@ -5,7 +5,7 @@
         <v-card
           :to="'/portfolio/'+(portfolio.title).toLowerCase()"
           hover
-          flat
+          text
           color="transparent"
           height="230"
         >
