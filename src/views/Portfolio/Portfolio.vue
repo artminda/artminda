@@ -8,6 +8,7 @@
           text
           color="transparent"
           height="230"
+          @click.native="portfolioLoading()"
         >
           <v-card-title></v-card-title>
           <v-img :src="portfolio.src" aspect-ratio="2.75" height="130" contain></v-img>
@@ -65,6 +66,11 @@ export default {
         },
       ]
     };
+  },
+  methods:{
+    portfolioLoading(){
+      
+    }
   }
 };
 </script>

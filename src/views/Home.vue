@@ -70,7 +70,7 @@
             <!-- <h3 class="headline mb-0"> <span>{{$t('art_good1')}}</span></h3> -->
             <h3 class="BOLD ITALIC text--secondary mb-0 border-left"> <span>{{$t('art_good2')}}</span></h3>
             <div>
-              <p class="wordbreak">
+              <p class="wordbreak font-weight-regular">
                {{$t('art_content_top')}}
                 <span
                   class="green--text font-weight-bold"

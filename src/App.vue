@@ -32,7 +32,7 @@
               leave-active-class="animated fadeOutLeft faster"
               :duration="{ enter: 800, leave: 1400 }"
             >
-              <router-view class="routerMargin"></router-view>
+              <router-view class="routerMargin" @portfolioLoading="portfolio($event)"></router-view>
             </transition>
             <!-- <div id='sideBlock'></div> -->
             <transition name="load">
@@ -104,6 +104,15 @@ export default {
         return;
       }
       setTimeout(() => {
+        this.sideBlock = !data.sta;
+        setTimeout(() => {
+          this.sideBlock = data.sta;
+        }, 600);
+      }, 300);
+    },
+    portfolio(data){
+      console.log('portfolio-data')
+       setTimeout(() => {
         this.sideBlock = !data.sta;
         setTimeout(() => {
           this.sideBlock = data.sta;
@@ -237,14 +246,6 @@ code {
   cursor: pointer;
 }
 
-.golang:hover {
-  margin: 0 1em;
-  position: absolute;
-  z-index: 999;
-  right: 85px;
-  top: 4vh;
-}
-
 .selectWidth {
   width: 65px;
   -webkit-box-align: center;
@@ -272,6 +273,15 @@ code {
   .screenContent {
   height: 100vh;
   border: none;
-  } 
+  }
+  .godark {
+    top: 3vh;
+  }
+  .godark:hover {
+    top: 3vh;
+  }
+  .golang {
+    top: 2vh;
+  }  
 }
 </style>

@@ -142,7 +142,7 @@ $scale: 1; // icon scale 68/68 default
   float: right;
   -webkit-transform: scale(1);
   transform: scale(1);
-  margin: 0 1em;
+  margin: 0 10px;
   display: block;
   width: 68px;
   height: 68px;

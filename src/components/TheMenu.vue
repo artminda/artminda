@@ -245,19 +245,19 @@ methods: {
   background: -moz-linear-gradient(
     top,
     rgba(255, 255, 255, 0) 0%,
-    rgba(214, 214, 214, 1) 30%,
+    rgba(214, 214, 214, 0.507) 30%,
     rgba(117, 117, 117, 1) 100%
   ); /* FF3.6-15 */
   background: -webkit-linear-gradient(
     top,
     rgba(255, 255, 255, 0) 0%,
-    rgba(214, 214, 214, 1) 30%,
+    rgba(214, 214, 214, 0.507) 30%,
     rgba(117, 117, 117, 1) 100%
   ); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0) 0%,
-    rgba(214, 214, 214, 1) 30%,
+    rgba(214, 214, 214, 0.507) 30%,
     rgba(117, 117, 117, 1) 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
