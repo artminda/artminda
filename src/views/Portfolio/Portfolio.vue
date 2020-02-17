@@ -1,19 +1,19 @@
 <template>
   <v-container grid-list-xl mt-5>
-    <v-layout row align-center wrap class="mt-4 pt-2">
-      <v-flex v-for="portfolio in portfolios" :key="portfolio.src" xs12 sm12 md4 lg4 xl4>
+    <v-layout row align-center justify-center wrap class="mt-4 py-2 px-2 portfolio_top">
+      <v-flex v-for="portfolio in portfolios" :key="portfolio.src" xs6 sm6 md4 lg4 xl4>
         <v-card
           :to="'/portfolio/'+(portfolio.title).toLowerCase()"
           hover
           text
-          color="transparent"
+          color="rgba(167, 255, 170, 0.53)"
           height="230"
           @click.native="portfolioLoading()"
         >
           <v-card-title></v-card-title>
           <v-img :src="portfolio.src" aspect-ratio="2.75" height="130" contain></v-img>
           <v-card-title primary-title class="justify-center">
-            <v-flex text-xs-center subheading font-weight-bold>{{portfolio.title}}</v-flex>
+            <v-flex text-center subheading font-weight-bold>{{portfolio.title}}</v-flex>
           </v-card-title>
         </v-card>
       </v-flex>
@@ -53,15 +53,15 @@ export default {
     return {
       portfolios: [
         {
-          src: "https://i.imgur.com/GvTt5GG.png",
+          src: "https://i.imgur.com/nWjbVgU.png",
           title: "Web"
         },
         {
-          src: "https://i.imgur.com/g74mGuU.png",
+          src: "https://i.imgur.com/OCabWSH.png",
           title: "Graphic"
         },
         {
-          src: "https://i.imgur.com/wXLtLKy.png",
+          src: "https://i.imgur.com/weuqlNn.png",
           title: "Video"
         },
       ]
@@ -76,4 +76,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.portfolio_top {
+   margin-top: 3rem !important;
+}
+
+@media(min-width: 960px){
+
+.portfolio_top {
+    margin-top: 9rem !important;
+ }
+}
 </style>

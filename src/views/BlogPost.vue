@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center class="mt-4 pt-2" v-editable="result">
-    <h1 class="text-xs-center mb-4 pb-2">{{result.title}}</h1>
+  <v-layout column justify-center  class="mt-4 pt-2 blog_post" v-editable="result">
+    <h1 class="text-xs-center mb-4 pb-2 ">{{result.title}}</h1>
     <span v-if="result && result.date">{{result.date}}</span>
     <v-img :src="result.image" aspect-ratio="2.75" height="330" contain :alt="result.title"></v-img>
     <v-layout column justify-center align-center class="mt-4 pt-2">
@@ -113,4 +113,9 @@ export default {
 </script>
 
 <style scoped>
+.blog_post {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 7rem 1rem!important;
+}
 </style>

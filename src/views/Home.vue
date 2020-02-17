@@ -39,9 +39,10 @@
     /> -->
 
     <br>
-    <div class="layout mt-4 pt-2 column justify-center align-center">
+    <!-- mobile -->
+    <div class="layout mt-4 pt-2 column justify-center align-center hidden-lg-and-up">
     <vue-typer class="headline" :repeat="0" text="artminda chen"></vue-typer>
-    <div class="typer mt-2 pl-2">
+    <div class="typer mt-2 pl-2 ">
     <vue-typer
       :text="text1"
       :repeat="Infinity"
@@ -57,6 +58,29 @@
     ></vue-typer>
     </div>
     </div>
+
+     <!-- pc -->
+    <div class="layout mt-4 pt-2 column hidden-md-and-down">
+    <vue-typer class="typer_title " :repeat="0" text="artminda"></vue-typer>
+    <vue-typer class="typer_title " :repeat="0" text="chen"></vue-typer>
+     <div class="typer_pc mt-2 pl-2 ">
+     <vue-typer
+      :text="text1"
+      :repeat="Infinity"
+      :shuffle="false"
+      initial-action="erasing"
+      :pre-type-delay="70"
+      :type-delay="70"
+      :pre-erase-delay="1980"
+      :erase-delay="150"
+      erase-style="select-back"
+      :erase-on-complete="false"
+      caret-animation="smooth"
+    ></vue-typer>
+     </div>
+    </div>
+
+
     </v-flex>
 
     <v-flex xs12 sm6 md6>
@@ -70,7 +94,7 @@
             <!-- <h3 class="headline mb-0"> <span>{{$t('art_good1')}}</span></h3> -->
             <h3 class="BOLD ITALIC text--secondary mb-0 border-left"> <span>{{$t('art_good2')}}</span></h3>
             <div>
-              <p class="wordbreak font-weight-regular">
+              <p class="wordbreak font-weight-regular grey--text text--darken-1">
                {{$t('art_content_top')}}
                 <span
                   class="green--text font-weight-bold"
@@ -221,6 +245,18 @@ export default {
   padding: 5px;
   font-style:italic;
 }
+.typer_title {
+  font-size: 9rem;
+  word-break: keep-all;
+  line-height: 8rem;
+  letter-spacing: normal;
+  font-family: fantasy ;
+  margin-left: 5px;
+  transform: rotate(-33deg);
+  position: relative;
+  right: 58px;
+  top: -52px;
+}
 .typer{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -232,18 +268,46 @@ export default {
     flex-wrap: nowrap;
     min-width: 0;
 }
+.typer_pc{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    min-width: 0;
+    transform: rotate(-33deg);
+    right: -147px;
+    position: relative;
+    top: -148px;
+    font-size: 2rem;
+}
 .cube {
     width: 100%;
-    position: relative;
+    position: absolute;
     height: 350px;
+    top: 58px;
 }
+
 .wordbreak {
   word-break: normal;
 }
 .noShadow{
+  top: 20px;
+  left: 161px;
   box-shadow: none;
-  @media(min-width: 960px){
-    margin-top: 13vh !important;
+  margin-top: 13vh;
+  word-break: normal;
 }
-}
+@media(max-width: 960px){
+  .noShadow{
+    margin-top: 39vh;
+    margin-bottom: 6vh;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+}  
 </style>

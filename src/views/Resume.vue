@@ -1,6 +1,6 @@
 <template>
  <v-container grid-list-xl>
-  <v-layout row justify-center align-center wrap class="mt-4 pt-2">
+  <v-layout row justify-center align-center wrap class="my-4 pt-2">
     <v-flex xs12 sm12 md5 lg6 xl6 class="mt-4 pt-4">
       <h2 class="mb-4 pl-4 pt-2">{{$t("art_education")}}</h2>
       <v-card-text class="py-0">
@@ -120,7 +120,7 @@
         <strong>JavaScript</strong>
         <v-progress-linear v-model="buffer6" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
       </v-flex>
-      <div class="mt-4 pt-2 mb-3">
+      <div class="mt-4 mb-4 pt-2 mb-5">
         <v-btn
           href="https://docs.google.com/document/d/14wZAIgwog7Lo5EdK7AeU4D311ADfNKnO4YEsiwBlcYY/edit?usp=sharing"
           target="_blank"

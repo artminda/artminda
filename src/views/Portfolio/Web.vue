@@ -1,9 +1,12 @@
 <template>
-  <v-container grid-list-xl mt-5>
+  <v-container grid-list-xl class="potfolio_top">
     <h2 class="pl-4">
       <span>Web</span>
       <span class="green--text">Portfolio</span>
     </h2>
+    <v-btn large text to="/portfolio" class="green--text xs4 md2 mt-3">
+      <v-icon>arrow_back</v-icon>Back to portfolio
+    </v-btn>
     <v-layout row justify-center align-center wrap class="mt-4 pt-2">
       <v-dialog
         v-model="project.dialog"
@@ -221,5 +224,12 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style lang="scss">
+.potfolio_top{
+  margin-top: 13vh;
+  @media (max-width:960px){
+     margin-top: 11vh;
+  }  
+} 
+
 </style>

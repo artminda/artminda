@@ -1,8 +1,8 @@
 <template>
   <v-container grid-list-xl>
-    <v-layout row justify-center align-center wrap class="mt-5 pt-3">
+    <v-layout row justify-center align-center wrap class="mt-5 my-3 pt-3">
       <v-flex xs12 sm12 md12 lg12 xl12>
-        <h2 class="pl-4">
+        <h2 class="pl-4 mt-2">
           <span>My</span>
           <span class="green--text">Services</span>
         </h2>
@@ -11,19 +11,23 @@
       <v-flex v-for="service in services" :key="service.src" xs12 sm6 lg3 xl3>
          <v-expansion-panels popout  class="hidden-lg-and-up">
           <v-expansion-panel >
-            <v-expansion-panel-header>
+            <v-expansion-panel-header class="justify-center align-center">
               <v-img
                 :src="service.src"
+                max-width="111"
+                width="88"
                 height="100"
                 aspect-ratio="2.75"
                 :alt="'artminda do '+service.title"
                 lazy-src="https://cdn.dribbble.com/users/503653/screenshots/3143656/fluid-loader.gif"
                 contain
               ></v-img>
-              {{service.title}}</v-expansion-panel-header>
-            <v-expansion-panel-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-expansion-panel-content>
+              <h4 class="text-center">
+              {{service.title}}</h4></v-expansion-panel-header>
+            <v-expansion-panel-content v-html="service.content"></v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
+
         <v-card text color="transparent" :style="{'cursor':'context-menu'}" class="hidden-md-and-down">
           <v-card-title></v-card-title>
           <v-img
@@ -37,8 +41,7 @@
           <v-card-title class="justify-center">
             <v-flex text-xs-center subheading font-weight-bold>{{service.title}}</v-flex>
           </v-card-title>
-          <v-card-text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <v-card-text v-html="service.content">
           </v-card-text>  
         </v-card>
       </v-flex>
@@ -49,29 +52,19 @@
         </h2>
       </v-flex>
 
-      <v-flex v-for="client in clients" :key="client.name" xs6 sm4 md3 lg2 xl2>
-        <v-card text :href="client.href" target="_blank" color="transparent">
-          <v-hover>
+      <v-flex v-for="client in clients" :key="client.name" xs5 sm4 md3 lg2 xl2>
+       
             <v-img
-              slot-scope="{ hover }"
+               style="filter:contrast(50%);"
               :src="client.src"
               :alt="client.name+' logo'"
               lazy-src="https://cdn.dribbble.com/users/503653/screenshots/3143656/fluid-loader.gif"
               height="100"
-              width="160"
-              aspect-ratio="2.75"
+              outlined="true"
               contain
             >
-              <v-expand-transition>
-                <div
-                  v-if="hover"
-                  class="transition-fast-in-fast-out teal green lighten-3 v-img--reveal"
-                  style="height: 100%;"
-                ></div>
-              </v-expand-transition>
             </v-img>
-          </v-hover>
-        </v-card>
+        
       </v-flex>
     </v-layout>
   </v-container>
@@ -110,47 +103,51 @@ export default {
       clients: [
         {
           name: "元美電器",
-          src: "https://i.imgur.com/37J0C1y.png",
+          src: "https://i.imgur.com/kW3Mvd2.png",
           href: "https://www.facebook.com/am2213113/"
         },
         {
           name: "怡安藥局",
-          src: "https://i.imgur.com/EzYZ15g.png",
+          src: "https://i.imgur.com/rHOZNe9.png",
           href:
             "https://www.facebook.com/pages/%E6%80%A1%E5%AE%89%E8%97%A5%E5%B1%80/157407534395817"
         },
         {
           name: "大林濕地保育協會",
-          src: "https://i.imgur.com/YmiYD93.png",
+          src: "https://i.imgur.com/qTTPaw0.png",
           href: ""
         },
         {
           name: "taxi",
-          src: "https://i.imgur.com/XBCrKaw.png",
+          src: "https://i.imgur.com/dwGsXlO.png",
           href: ""
         },
         {
           name: "spa",
-          src: "https://i.imgur.com/WTzttHV.png",
+          src: "https://i.imgur.com/NRedBVN.png",
           href: ""
         }
       ],
       services: [
         {
-          src: "https://i.imgur.com/GvTt5GG.png",
-          title: "Web Development"
+          src: "https://i.imgur.com/nWjbVgU.png",
+          title: "Web Development",
+          content: `<div class="services_cont"><ul><li>前端資料處理</li><li>效能優化</li><li>API串接</li></ul></div>`
         },
         {
-          src: "https://i.imgur.com/g74mGuU.png",
-          title: "Web Design"
+          src: "https://i.imgur.com/OCabWSH.png",
+          title: "Web Design",
+          content: `<div class="services_cont"><ul><li>視覺總體設計</li><li>網站切版</li><li>RWD設計</li></ul></div>`
         },
         {
-          src: "https://i.imgur.com/bgSxyzI.jpg",
-          title: "Package Design"
+          src: "https://i.imgur.com/oMftESd.png",
+          title: "Package Design",
+          content: `<div class="services_cont"><ul><li>視覺識別系統</li><li>環保材質</li><li>防震包材</li></ul></div>`
         },
         {
-          src: "https://i.imgur.com/wXLtLKy.png",
-          title: "Video Editing"
+          src: "https://i.imgur.com/weuqlNn.png",
+          title: "Video Editing",
+          content: `<div class="services_cont"><ul><li>短片剪接</li><li>特效動畫</li><li>字體特效</li></ul></div>`
         }
       ]
     };
@@ -158,7 +155,18 @@ export default {
 };
 </script>
 <style >
+
 .v-img--reveal {
   opacity: 0.3;
+}
+.services_cont {
+  text-align-last: left;
+    padding: 1em 2em;
+    background: rgb(85, 181, 89);
+    color: rgb(251, 251, 251);
+    width: 100%;
+}
+.v-card__text{
+    padding: 16px 0 0 0;
 }
 </style>

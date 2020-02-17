@@ -136,7 +136,7 @@ $animation: 0.6s; // animation speed
 $scale: 1; // icon scale 68/68 default
 
 .hamburglar {
-  position: absolute;
+  position: fixed;
   z-index: 999;
   right: 0vw;
   float: right;
@@ -495,9 +495,9 @@ $scale: 1; // icon scale 68/68 default
 
 .homeBtn {
   left: -22px;
-    position: absolute;
-    z-index: 999;
-    margin: 0 2em;
-    cursor: pointer;
+  position: fixed;
+  z-index: 999;
+  margin: 0 2em;
+  cursor: pointer;
 }
 </style>

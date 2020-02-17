@@ -1,10 +1,14 @@
 <template>
-  <v-container grid-list-xl mt-5>
-    <h2 class="pl-4 xs12 sm4">
+  <v-container grid-list-xl class="potfolio_top">
+    <v-flex column xs12>
+
+    <h2 class="pl-4 xs12">
       <span>Graphic</span>
       <span class="green--text">Portfolio</span>
-    </h2> 
-    <v-flex xs6 sm4 md2>
+    </h2>
+   
+    <v-row :justify="'space-between'">
+    <v-col xs="5" md="2">
       <v-select
       v-model="select" 
       class="my-2 pl-4"
@@ -13,6 +17,14 @@
       dense
       single-line
     ></v-select>
+    </v-col>
+    <v-col xs="5" md="3">
+    <v-btn large text to="/portfolio" class="green--text xs4 md2">
+      <v-icon>arrow_back</v-icon>Back to portfolio
+    </v-btn>
+    </v-col>
+    </v-row>
+    
     </v-flex>
     <v-layout row justify-center align-center wrap class="">
       <!-- <transition-group> -->
@@ -276,7 +288,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+.potfolio_top{
+  margin-top: 13vh;
+  @media (max-width:960px){
+     margin-top: 11vh;
+  }  
+} 
 .item {
   width: 2rem;
 }

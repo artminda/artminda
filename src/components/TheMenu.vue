@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-show="flymenu" class="flymenu">
+    <div v-show="flymenu || flymenu_d" class="flymenu">
       <shineBtn :text="$t('art_re')" :path="'/resume'" @menu="closeMenu($event)"></shineBtn>
       <shineBtn :text="$t('art_ser')" :path="'/services'" @menu="closeMenu($event)"></shineBtn>
       <shineBtn :text="$t('art_por')" :path="'/portfolio'" @menu="closeMenu($event)"></shineBtn>
@@ -14,7 +14,7 @@
             <shineBtn :text="$t('art_ser')" :path="'/services'" @menu="closeMenu($event)"></shineBtn>
             <shineBtn :text="$t('art_por')" :path="'/portfolio'" @menu="closeMenu($event)"></shineBtn>
             <shineBtn :text="$t('art_blog')" :path="'/blog'" @menu="closeMenu($event)"></shineBtn>
-            <div class="dispearBlack" :class="{'dispear':flymenu}"></div>
+            <div class="dispearBlack" :class="{'dispear':flymenu,'dispear_d':flymenu_d}"></div>
           </div>
           <div class="py-3 px-5 infoArea teal lighten-5">
             <h2 class="pb-1 mt-2">
@@ -44,13 +44,15 @@
           </div>
         </v-flex>
         <v-flex xs12 md6 class="con_area">
-          <v-container class="px-5">
-            <h2 class="pb-1 mb-4">
+          <v-container class="px-5 py-5">
+            <h2 class="pb-1">
               <span class="blue-grey--text">{{$t('art_contact')}}</span>
               <span class="green--text">{{$t('art_form')}}</span>
             </h2>
-            <form method="POST" action="https://formspree.io/xknrokpw">
+            <form method="POST" action="https://formspree.io/xknrokpw" class="pb-3">
               <v-text-field
+                rows="1"
+                row-height="20"
                 light
                 name="name"
                 color="green"
@@ -62,6 +64,8 @@
                 @blur="$v.name.$touch()"
               ></v-text-field>
               <v-text-field
+                rows="1"
+                row-height="20"
                 light
                 type="email"
                 color="green"
@@ -74,6 +78,9 @@
                 @blur="$v.email.$touch()"
               ></v-text-field>
               <v-textarea
+                class="mb-4"
+                rows="5"
+                row-height="20"
                 light
                 color="green"
                 background-color="transparent"
@@ -84,15 +91,15 @@
                 name="body"
                 @blur="$v.body.$touch()"
               ></v-textarea>
-              <v-btn
+                <v-btn light @click="clear">{{$t('art_clear')}}</v-btn>
+                <v-btn
                 light
                 @click="submit"
                 type="submit"
                 color="green"
-                class="white--text"
-                :disabled=" (body.length<=20)"
+                class="ml-4 white--text"
+                :disabled=" (body.length<20)"
               >{{$t('art_send')}}</v-btn>
-              <v-btn light @click="clear">{{$t('art_clear')}}</v-btn>
             </form>
           </v-container>
         </v-flex>
@@ -153,6 +160,7 @@ props: {
   },
   data() {
     return {
+      flymenu_d: false,
       flymenu: false,
       router:"",
       name: "",
@@ -195,11 +203,16 @@ methods: {
         //如果資料有在載入中則這次請求退出
     if(this.isLoading) return; 
         //scrollTop 獲取到頂部的滾動距離
-    if($list.scrollTop> 0 ){
-        this.flymenu = true     
-    }else{
-      this.flymenu = false
+    if($list.scrollTop> 0 && this.$vuetify.theme.dark === false){
+        this.flymenu = true
+        return     
     }
+    if($list.scrollTop> 0 && this.$vuetify.theme.dark === true){
+        this.flymenu_d = true     
+        return
+    }
+      this.flymenu = false
+      this.flymenu_d = false
   }  
 }, 
   computed: {
@@ -263,7 +276,7 @@ methods: {
 }
 .shineBtn {
   display: flex;
-  margin-top: 3vh;
+  margin-top: 0vh;
   padding: 1.5vh;
   background-color: #616161;
   padding: 4rem 1rem;
@@ -310,5 +323,15 @@ methods: {
   z-index: 1000;
   top: 79px;
   background-color: #fafafa;
+}
+.dispear_d {
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 83px;
+  width: inherit;
+  z-index: 1000;
+  top: 79px;
+  background-color: #121212;
 }
 </style>

@@ -9,14 +9,13 @@
             <hamburger
               :lang="lang"
               @menu="showMenu($event)"
-              @changeTheme="updateTheme($event)"
-              @changeLang="updateLang($event)"
             />
             <v-btn class="godark" @click="updateTheme(goDark = !goDark)" depressed small icon>
               <v-icon v-if="goDark===true">fas fa-sun</v-icon>
               <v-icon v-else>fas fa-moon</v-icon>
             </v-btn>
             <v-select
+              append-icon=""
               v-model="selectLang"
               class="selectWidth ml-3 mr-3 golang"
               :items="items"
@@ -196,13 +195,10 @@ body{
 }
 
 pre {
-  font-size: 1rem;
-  padding: 20px;
+ font-size: 1rem;
+  padding: 9px;
   border-radius: 5px;
-  border: 1px solid #282c34;
-  background: #282c34;
-  color: #dcdcdc;
-  display: block;
+  background: #517b53;
   font-family: monospace;
   white-space: pre;
   margin: 1em 0px;
@@ -217,7 +213,7 @@ code {
 }
 
 .godark {
-  position: absolute;
+  position: fixed;
   z-index: 999;
   right: 177px;
   top: 5vh;
@@ -229,7 +225,7 @@ code {
 
 .godark:hover {
   margin: 0 1em;
-  position: absolute;
+  position: fixed;
   z-index: 999;
   right: 177px;
   top: 5vh;
@@ -238,7 +234,7 @@ code {
 .golang {
   right: 85px;
   top: 4vh;
-  position: absolute;
+  position: fixed;
   z-index: 999;
   float: right;
   margin: 0 1em;
@@ -282,6 +278,9 @@ code {
   }
   .golang {
     top: 2vh;
-  }  
+  }
+  .v-application--is-ltr .v-text-field .v-input__append-inner {
+    display: none;
+  }
 }
 </style>
