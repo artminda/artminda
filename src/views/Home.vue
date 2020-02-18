@@ -15,7 +15,7 @@
       <!-- <ball
        :style="{ maxWidth: '1200px' }"
        /> -->
-<v-flex xs12 sm6 md6>
+<v-flex xs12 md6>
     
     <div class="cube">
     <cube/>
@@ -40,7 +40,7 @@
 
     <br>
     <!-- mobile -->
-    <div class="layout mt-4 pt-2 column justify-center align-center hidden-lg-and-up typer_mobile">
+    <div class="layout mt-4 pt-2 column justify-center align-center hidden-md-and-up typer_mobile">
     <vue-typer class="headline" :repeat="0" text="artminda chen"></vue-typer>
     <div class="typer mt-2 pl-2 ">
     <vue-typer
@@ -60,7 +60,7 @@
     </div>
 
      <!-- pc -->
-    <div class="layout mt-4 pt-2 column hidden-md-and-down">
+    <div class="layout mt-4 pt-2 column hidden-sm-and-down">
     <vue-typer class="typer_title " :repeat="0" text="artminda"></vue-typer>
     <vue-typer class="typer_title " :repeat="0" text="chen"></vue-typer>
      <div class="typer_pc mt-2 pl-2 ">
@@ -83,8 +83,8 @@
 
     </v-flex>
 
-    <v-flex xs12 sm6 md6>
-      <v-card text color="transparent" max-width="500" class="noShadow px-3">
+    <v-flex xs12 md6 row justify-center align-center>
+      <v-card text color="transparent" max-width="373" class="noShadow px-3">
         <v-card-title primary-title class="font-weight-thin subtitle-1">
           <div>
             <h3 class="headline mb-0">
@@ -92,7 +92,7 @@
               <span class="green--text">{{$t('art_me')}}</span>
             </h3>
             <!-- <h3 class="headline mb-0"> <span>{{$t('art_good1')}}</span></h3> -->
-            <h3 class="BOLD ITALIC text--secondary mb-0 border-left"> <span>{{$t('art_good2')}}</span></h3>
+            <h3 class="BOLD ITALIC text--secondary mb-0 border-left wordbreak"> <span>{{$t('art_good2')}}</span></h3>
             <div>
               <p class="wordbreak font-weight-regular grey--text text--darken-1">
                {{$t('art_content_top')}}
@@ -246,6 +246,7 @@ export default {
   font-style:italic;
 }
 .typer_title {
+  overflow: hidden;
   font-size: 9rem;
   word-break: keep-all;
   line-height: 8rem;
@@ -254,9 +255,11 @@ export default {
   margin-left: 5px;
   transform: rotate(-33deg);
   position: relative;
-  right: 58px;
-  top: -52px;
+  right: 76px;
+  top: -10px;
 }
+
+
 .typer{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -275,6 +278,7 @@ export default {
     top: 10vh;
 }
 .typer_pc{
+    position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -301,19 +305,35 @@ export default {
   word-break: normal;
 }
 .noShadow{
+  left: 64px;
   top: 20px;
-  left: 161px;
   box-shadow: none;
   margin-top: 13vh;
   word-break: normal;
 }
 @media(max-width: 960px){
   .noShadow{
+    left: 0;
     margin-top: 51vh;
     margin-bottom: 6vh;
-    left: 0;
     width: 100%;
     justify-content: center;
+  }  
+}
+@media (min-width: 600px) and (max-width: 960px) {
+  .cube {
+    top: 156px;
+}
+}
+@media(max-width: 1264px){
+  .typer_title {
+    left: -61px;
+    top: 51px;
   }
-}  
+  .typer_pc {
+    position: fixed;
+    top: 53px;
+    left: 0;
+  }
+}    
 </style>

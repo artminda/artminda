@@ -34,7 +34,13 @@ methods: {
       if (this.$route.path === path){
         this.$emit('menu', {sta:false, run:'noRun'})
         return  
-      }  
+      }
+      if (path === '/portfolio'){
+        this.$emit('menu', {sta:false, run:'portfolio'})
+        this.$router.push(path)
+        this.router = path
+        return  
+      }   
       this.$router.push(path)
       this.router = path
       this.$emit('menu', {sta:false, run:'Run'})

@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xl>
-    <v-layout justify-center align-center class="mt-4 pt-2">
-      <v-layout row wrap class="mt-4 pt-2">
+    <v-layout  row wrap  class="mt-4 pt-4 blogTop ">
+      
         <PostPreview
           v-for="post in posts"
           :key="post.id"
@@ -10,7 +10,7 @@
           :thumbnailImage="post.thumbnailUrl"
           :id="post.id"
         />
-      </v-layout>
+   
     </v-layout>
   </v-container>
 </template>
@@ -101,4 +101,7 @@ export default {
 </script>
 
 <style scoped>
+.blogTop{
+  margin-top: 6vh !important;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-xl>
-    <v-layout row justify-center align-center wrap class="mt-5 my-3 pt-3">
+    <v-layout row justify-center  wrap class="mt-5 my-3 pt-3">
       <v-flex xs12 sm12 md12 lg12 xl12>
         <h2 class="pl-4 mt-2">
           <span>My</span>

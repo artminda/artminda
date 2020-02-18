@@ -1,7 +1,7 @@
 <template>
  <v-container grid-list-xl>
   <v-layout row justify-center align-center wrap class="my-4 pt-2">
-    <v-flex xs12 sm12 md5 lg6 xl6 class="mt-4 pt-4">
+    <v-flex xs12 sm10 md10 lg6 xl6 class="mt-4 pt-4">
       <h2 class="mb-4 pl-4 pt-2">{{$t("art_education")}}</h2>
       <v-card-text class="py-0">
         <v-timeline align-top dense>
@@ -46,7 +46,7 @@
         </v-timeline>
       </v-card-text>
     </v-flex>
-    <v-flex xs12 sm12 md4 lg6 xl6 class="mt-4 pt-2">
+    <v-flex xs12 sm10 md10 lg6 xl6 class="mt-4 pt-2">
       <h2 class="mb-4 pl-4">{{$t("art_experience")}}</h2>
       <v-card-text class="py-0">
         <v-timeline align-top dense>
@@ -92,7 +92,7 @@
       </v-card-text>
     </v-flex>
     <v-layout row justify-center wrap class="mt-4 pt-2">
-      <v-flex xs12 sm12 md4 lg5 xl5 class="mx-2 pt-4">
+      <v-flex xs12 sm10 md10 lg5 xl5 class="mx-2 pt-4">
         <h2>
           <span>Design</span>
           <span class="green--text">Skills</span>
@@ -107,7 +107,7 @@
         <strong>Premiere</strong>
         <v-progress-linear v-model="buffer3" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
       </v-flex>
-      <v-flex xs12 sm12 md4 lg5 xl5 class="mx-2 pt-4">
+      <v-flex xs12 sm10 md10 lg5 xl5 class="mx-2 pt-4">
         <h2>
           <span>Coding</span>
           <span class="green--text">Skills</span>

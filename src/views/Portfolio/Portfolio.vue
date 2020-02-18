@@ -10,7 +10,7 @@
           @click.native="portfolioLoading()"
         >
           <v-card-title></v-card-title>
-          <v-img :src="portfolio.src" aspect-ratio="2.75" height="130" contain></v-img>
+          <v-img :src="portfolio.src" lazy-src="https://i.imgur.com/MrbPiPS.gif" aspect-ratio="2.75" height="130" contain></v-img>
           <v-card-title primary-title class="justify-center">
             <v-flex text-center subheading font-weight-bold>{{portfolio.title}}</v-flex>
           </v-card-title>
@@ -79,7 +79,7 @@ export default {
    margin-top: 3rem !important;
 }
 
-@media(min-width: 960px){
+@media(min-width: 600px){
 
 .portfolio_top {
     margin-top: 9rem !important;

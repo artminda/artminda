@@ -106,7 +106,7 @@ export default {
   },
   methods: {
     showMenu(data) {
-      if (data.run === "noRun" || this.$route.path === '/portfolio') {
+      if (data.run === "noRun" || data.run === 'portfolio') {
         return;
       }
       setTimeout(() => {
@@ -201,6 +201,10 @@ code {
   overflow-x: auto;
   padding: 0.5em;
   color: #dcdcdc;
+}
+
+.wordbreak {
+  word-break: normal;
 }
 
 .godark {
