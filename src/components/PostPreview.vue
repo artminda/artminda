@@ -7,7 +7,7 @@
         <div>
           <h3 class="headline mb-0 textNobreak">{{title}}</h3>
           <div>
-            <p class="green--text font-weight-medium">{{excerpt}}</p>
+            <p class="green--text font-weight-medium pt-3">{{excerpt}}</p>
           </div>
         </div>
       </v-card-title>

@@ -286,7 +286,7 @@ export default {
 }
 .cube {
     width: 100%;
-    position: absolute;
+    position: fixed;
     height: 350px;
     top: 58px;
 }

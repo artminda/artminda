@@ -4,7 +4,6 @@
       <v-flex v-for="portfolio in portfolios" :key="portfolio.src" xs6 sm6 md4 lg4 xl4>
         <v-card
           :to="'/portfolio/'+(portfolio.title).toLowerCase()"
-          hover
           text
           color="rgba(167, 255, 170, 0.53)"
           height="230"
