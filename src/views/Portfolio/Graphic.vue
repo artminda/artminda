@@ -63,7 +63,7 @@ export default {
     title: "Graphic Portfolio ",
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
       {
         name: "description",
         content:

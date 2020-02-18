@@ -40,7 +40,7 @@
 
     <br>
     <!-- mobile -->
-    <div class="layout mt-4 pt-2 column justify-center align-center hidden-lg-and-up">
+    <div class="layout mt-4 pt-2 column justify-center align-center hidden-lg-and-up typer_mobile">
     <vue-typer class="headline" :repeat="0" text="artminda chen"></vue-typer>
     <div class="typer mt-2 pl-2 ">
     <vue-typer
@@ -151,7 +151,7 @@ export default {
     title: "Home",
     titleTemplate: "%s ← Artminda's Web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
       { name: "description", content: "Artminda Chen's Portfolio" },
       { charset: "utf-8" },
       { property: "og:title", content: "Artminda' Web" },
@@ -268,6 +268,12 @@ export default {
     flex-wrap: nowrap;
     min-width: 0;
 }
+.typer_mobile{
+   position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    top: 10vh;
+}
 .typer_pc{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -288,7 +294,7 @@ export default {
     width: 100%;
     position: fixed;
     height: 350px;
-    top: 58px;
+    top: 78px;
 }
 
 .wordbreak {
@@ -303,7 +309,7 @@ export default {
 }
 @media(max-width: 960px){
   .noShadow{
-    margin-top: 39vh;
+    margin-top: 51vh;
     margin-bottom: 6vh;
     left: 0;
     width: 100%;

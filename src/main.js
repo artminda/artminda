@@ -5,7 +5,6 @@ import App from './App.vue'
 import router from './router'
 import StoryblokVue from 'storyblok-vue'
 import VueAnalytics from 'vue-analytics'
-import eventBus from './bus.js'
 import English from './lang/en.js'
 import tw from './lang/tw.js'
 import lottie from 'vue-lottie';

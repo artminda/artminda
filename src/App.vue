@@ -3,7 +3,6 @@
     <v-content>
       <div class="appbg">
         <!-- <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/> -->
-        <!-- <TheTips v-if="$route.name === 'home'"/> -->
         <div class="screenHight">
           <div class="screenContent">
             <hamburger
@@ -30,14 +29,22 @@
               enter-active-class="animated fadeInLeft fast"
               leave-active-class="animated fadeOutLeft faster"
               :duration="{ enter: 800, leave: 1400 }"
+              v-on:before-leave="beforeLeave"
+            
             >
-              <router-view class="routerMargin" @portfolioLoading="portfolio($event)"></router-view>
+              <router-view class="routerMargin"></router-view>
             </transition>
             <!-- <div id='sideBlock'></div> -->
             <transition name="load">
               <div v-if="sideBlock" id="sideBlock"></div>
             </transition>
-            <!-- <TheFooter/> -->
+            <transition name="load">
+              <div v-if="sidePort_back" id="sidePort_back"></div>
+            </transition>
+             <transition name="load">
+              <div v-if="sidePort" id="sidePort"></div>
+            </transition>
+            <!-- <TheFooter/> --> 
           </div>
         </div>
       </div>
@@ -47,7 +54,6 @@
 
 <script>
 import hamburger from "./components/hamburger";
-import TheTips from "./components/TheTips";
 import TheHeader from "./components/TheHeader";
 import TheFooter from "./components/TheFooter";
 import i18n from "i18n";
@@ -59,7 +65,7 @@ export default {
     title: "Home",
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
       { name: "description", content: "artminda chen's Portfolio" },
       { charset: "utf-8" },
       { property: "og:title", content: "artminda' web" },
@@ -76,14 +82,15 @@ export default {
   components: {
     hamburger,
     TheHeader,
-    TheFooter,
-    TheTips
+    TheFooter
   },
   data() {
     return {
       selectLang: localStorage.getItem("lang") === "tw" ? "中文" : "English",
       items: ["English", "中文"],
       sideBlock: false,
+      sidePort: false,
+      sidePort_back: false,
       menu: false,
       goDark: false,
       lang: "en"
@@ -99,7 +106,7 @@ export default {
   },
   methods: {
     showMenu(data) {
-      if (data.run === "noRun") {
+      if (data.run === "noRun" || this.$route.path === '/portfolio') {
         return;
       }
       setTimeout(() => {
@@ -109,40 +116,24 @@ export default {
         }, 600);
       }, 300);
     },
-    portfolio(data){
-      console.log('portfolio-data')
-       setTimeout(() => {
-        this.sideBlock = !data.sta;
-        setTimeout(() => {
-          this.sideBlock = data.sta;
-        }, 600);
-      }, 300);
-    },
-    slideOnSideBlock() {
-      $("#sideBlock").removeClass("un-active-side-block");
-      $("#sideBlock").addClass("is-active-side-block");
-    },
-    beforeEnter(el) {
-      setTimeout(function() {
-        this.sideBlock = true;
-        this.slideOnSideBlock();
-      }, 2000);
-      console.log("beforeEnter");
-    },
-    enter(el, done) {
-      console.log("enter");
-      this.sideBlock = false;
-      console.log("this.sideBlock:", this.sideBlock);
-      done();
-    },
-    leave(el, done) {
-      console.log("leave");
-      this.sideBlock = true;
-      setTimeout(function() {
-        this.slideOnSideBlock();
-      }, 2000);
-      console.log("this.sideBlock:", this.sideBlock);
-      done();
+    beforeLeave(el) {
+      if(this.$route.path === '/portfolio/web' || this.$route.path === '/portfolio/graphic' || this.$route.path === '/portfolio/video') {
+      setTimeout(()=>{
+        this.sidePort = true;
+           setTimeout(() => {
+          this.sidePort = false;
+        }, 0);
+      }, 0);
+      }
+       if(this.$route.path === '/portfolio' ) {
+      setTimeout(()=>{
+        this.sidePort_back = true;
+           setTimeout(() => {
+          this.sidePort_back = false;
+        }, 0);
+      }, 0);
+      }
+     
     },
     updateTheme(updatedTheme) {
       this.$vuetify.theme.dark = updatedTheme

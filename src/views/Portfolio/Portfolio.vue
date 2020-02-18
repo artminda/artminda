@@ -5,7 +5,7 @@
         <v-card
           :to="'/portfolio/'+(portfolio.title).toLowerCase()"
           text
-          color="rgba(167, 255, 170, 0.53)"
+          color="transparent"
           height="230"
           @click.native="portfolioLoading()"
         >
@@ -26,7 +26,7 @@ export default {
     title: "Portfolio",
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
       {
         name: "description",
         content:

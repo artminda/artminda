@@ -127,7 +127,7 @@ props: {
     title: "Contact",
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
       {
         name: "description",
         content:
@@ -186,18 +186,6 @@ methods: {
   closeMenu(data){
     this.$emit('menu', data)
   },
-  // handleScroll(){
-  //   // 頁面滾動距頂部距離
-  //   var i = 0
-  //   var scrollTop = document.documentElement.scrollTop
-  //   var scroll = scrollTop - this.i;
-  //   this.i = scrollTop;
-  //   if(scroll<0){
-  //       console.log('up',scrollTop)
-  //   }else{
-  //       console.log('down',scroll,'scrollTop---',scrollTop)
-  //   }
-  // },
   handleScroll(){
     const $list = this.$refs.list;
         //如果資料有在載入中則這次請求退出

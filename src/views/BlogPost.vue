@@ -1,5 +1,9 @@
 <template>
-  <v-layout column justify-center  class="mt-4 pt-2 blog_post" v-editable="result">
+  <v-layout column justify-center  class="mt-1 pt-2 blog_post" v-editable="result">
+    <v-btn text to="/blog" class="green--text col-md-3 my-4">
+      <v-icon>arrow_back</v-icon>Back to Blog
+    </v-btn>
+    <img v-if="loading" src="https://cdn.dribbble.com/users/503653/screenshots/3143656/fluid-loader.gif" alt="loading">
     <h1 class="text-xs-center mb-4 pb-2 ">{{result.title}}</h1>
     <span v-if="result && result.date">{{result.date}}</span>
     <v-img :src="result.image" aspect-ratio="2.75" height="330" contain :alt="result.title"></v-img>
@@ -25,6 +29,7 @@ let storyapi = new StoryblokClient({
 export default {
   data() {
     return {
+      loading: false,
       posts: [],
       result: {}
     };
@@ -34,7 +39,7 @@ export default {
       title: this.result.title,
       titleTemplate: "%s ← artminda's Blog",
       meta: [
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
         {
           name: "description",
           content: this.result.content
@@ -82,6 +87,7 @@ export default {
 
   methods: {
     getStory(version) {
+      this.loading = true
       storyapi
         .get("cdn/stories", {
           version: "draft",
@@ -98,11 +104,12 @@ export default {
               date: bp.content.date
             };
           });
-          console.log('this.posts:',this.posts)
+          // console.log('this.posts:',this.posts)
+          this.loading = false
           this.result = this.posts.find(
             rightPost => rightPost.id === this.$route.params.id
           );
-          console.log('this.result:',this.result)
+          // console.log('this.result:',this.result)
         })
         .catch(error => {
           console.log(error);

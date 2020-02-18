@@ -28,7 +28,7 @@ export default {
     title: "Blog",
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
       {
         name: "description",
         content: "artminda chen's Blog"
@@ -59,7 +59,7 @@ export default {
       accessToken: token
     });
     window.storyblok.on("change", () => {
-      console.log("change-clik")
+      // console.log("change-clik")
       this.getStory("article", "draft");
     });
     window.storyblok.pingEditor(() => {

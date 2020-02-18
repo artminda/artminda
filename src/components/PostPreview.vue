@@ -46,7 +46,6 @@ export default {
 }
 .textNobreak {
   word-break: normal;
-   height: 50px;
   font-family: "Microsoft JhengHei", sans-serif !important; 
 }
 </style>

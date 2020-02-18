@@ -39,7 +39,28 @@
 		left: -600px;
 		animation: slideOffLeft 1s cubic-bezier(0.5, 0.0, 0.0, 1);
 	}
-	
+	#sidePort {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-size: initial;
+		background: url("https://media.giphy.com/media/cgU9YTJpOWefS/giphy.gif");
+		z-index: 1;
+	}
+
+	#sidePort_back {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-size: initial;
+		background: url("https://i.giphy.com/media/aKjnUBa0nSGn6/giphy.gif") center center;
+		z-index: 1;
+	}
+
 	#sideBlock {
 	   position: absolute;
 		top: 0;
