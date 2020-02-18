@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl class="potfolio_top">
+  <v-container grid-list-md class="potfolio_top">
     <h2 class="pl-4">
       <span>Web</span>
       <span class="green--text">Portfolio</span>

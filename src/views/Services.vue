@@ -1,10 +1,10 @@
 <template>
-  <v-container grid-list-xl>
+  <v-container grid-list-md>
     <v-layout row justify-center  wrap class="mt-5 my-3 pt-3">
       <v-flex xs12 sm12 md12 lg12 xl12>
         <h2 class="pl-4 mt-2">
-          <span>My</span>
-          <span class="green--text">Services</span>
+          <span>{{$t("art_my")}}</span>
+          <span class="green--text">{{$t("art_ser")}}</span>
         </h2>
       </v-flex>
    
@@ -47,8 +47,8 @@
       </v-flex>
       <v-flex xs12 sm12 md12 lg12 xl12>
         <h2 class="pl-4">
-          <span>My</span>
-          <span class="green--text">Clients</span>
+          <span>{{$t("art_my")}}</span>
+          <span class="green--text">{{$t("art_cli")}}</span>
         </h2>
       </v-flex>
 
@@ -131,7 +131,7 @@ export default {
       services: [
         {
           src: "https://i.imgur.com/nWjbVgU.png",
-          title: "Web Development",
+          title: this.$t("art_ser_dev"),
           content: `<div class="services_cont"><ul><li>前端資料處理</li><li>效能優化</li><li>API串接</li></ul></div>`
         },
         {

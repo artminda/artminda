@@ -1,5 +1,5 @@
 <template>
-  <v-layout row justify-center align-center class="flex-wrap mt-4 pt-2 wrap">
+  <v-layout row justify-center align-center class="flex-wrap  pt-2 wrap">
 
     <!-- <VueCompareImage
       class="hidden-md-and-down"

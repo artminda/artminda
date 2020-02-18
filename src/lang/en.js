@@ -33,5 +33,21 @@ export default {
     art_required_email: "E-mail is required",    
     art_required_body: "Text is required",
     art_education: "Education",  
-    art_experience: "Experience"
+    art_experience: "Experience",
+    art_master: "Master of Fine Arts",
+    art_chiayi: "National Chiayi University",
+    art_bachelor: "Bachelor of Fine Arts",
+    art_taitung: "National Taitung University",
+    art_major: "Major of Art",
+    art_singang: "National Singang Senior High School of Arts",
+    art_front: "Front-End Developer",
+    art_chung: "Chung Yo Group",
+    art_web: "Web Designer",
+    art_rock: "Rocket Technology Co., Ltd.",
+    art_visual: "Senior Visual Designer",
+    art_avg: "A.G.V. Products Corporation",
+    art_my: "My",
+    art_ser: "Services",
+    art_cli: "Clients",
+    art_ser_dev: "Web Development"
 }

@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl class="potfolio_top">
+  <v-container grid-list-md class="potfolio_top">
     <v-flex column xs12>
 
     <h2 class="pl-4 xs12">

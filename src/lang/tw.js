@@ -33,5 +33,21 @@ export default {
     art_required_email: "信箱是必須的",
     art_required_body: "诶等等您沒留言阿",
     art_education: "學歷",
-    art_experience: "經歷"    
+    art_experience: "經歷",
+    art_master: "視覺藝術研究所",
+    art_chiayi: "國立嘉義大學",
+    art_bachelor: "美術系",
+    art_taitung: "國立臺東大學",
+    art_major: "普通科美術專長",
+    art_singang: "國立新港藝術高中",
+    art_front: "前端工程師",
+    art_chung: "中佑集團",
+    art_web: "美術設計",
+    art_rock: "火箭科技有限公司",
+    art_visual: "平面廣告設計師",
+    art_avg: "愛之味股份有限公司",
+    art_my: "我的",
+    art_ser: "服務項目",
+    art_cli: "客戶",
+    art_ser_dev: "網站前端開發"    
 }

@@ -101,9 +101,7 @@ export default {
       this.updateLang(val);
     }
   },
-  mounted() {
-    localStorage.getItem("lang", "English");
-  },
+ 
   methods: {
     showMenu(data) {
       if (data.run === "noRun" || data.run === 'portfolio') {
@@ -140,12 +138,14 @@ export default {
     },
     updateLang(newLang) {
       if (newLang === "中文") {
-        this.$i18n.locale = "tw";
+        // this.$i18n.locale = "tw";
         localStorage.setItem("lang", "tw");
+        this.$router.go(0)
         return;
       }
-      this.$i18n.locale = newLang;
+      // this.$i18n.locale = newLang;
       localStorage.setItem("lang", newLang);
+      this.$router.go(0)
     }
   }
 };
@@ -256,7 +256,14 @@ code {
 .routerMargin {
   margin-top: 4vh;
 }
-
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .routerMargin {
+  margin-top: 12vh;
+}
+.cube {
+    top: 259px !important;
+}
+}
 @media (max-width: 960px) {
   .screenHight {
     padding: 0;
@@ -278,4 +285,5 @@ code {
     display: none;
   }
 }
+
 </style>

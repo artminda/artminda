@@ -1,5 +1,5 @@
 <template>
- <v-container grid-list-xl>
+ <v-container grid-list-md>
   <v-layout row justify-center align-center wrap class="my-4 pt-2">
     <v-flex xs12 sm10 md10 lg6 xl6 class="mt-4 pt-4">
       <h2 class="mb-4 pl-4 pt-2">{{$t("art_education")}}</h2>
@@ -12,8 +12,8 @@
                 <div class="caption font-weight-bold green--text">PRESENT</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>Master of Fine Arts</strong>
-                <div class="caption mb-2">National Chiayi University</div>
+                <strong>{{$t("art_master")}}</strong>
+                <div class="caption mb-2">{{$t("art_chiayi")}}</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -25,8 +25,8 @@
                 <div class="caption font-weight-bold green--text">MAY 2015</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>Bachelor of Fine Arts</strong>
-                <div class="caption mb-2">National Taitung University</div>
+                <strong>{{$t("art_bachelor")}}</strong>
+                <div class="caption mb-2">{{$t("art_taitung")}}</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -38,8 +38,8 @@
                 <div class="caption font-weight-bold green--text">JUL 2011</div>
               </v-flex>
               <v-flex xs8 class="pl-2">
-                <strong>Major of Art</strong>
-                <div class="caption mb-2">National Singang Senior High School of Arts</div>
+                <strong>{{$t("art_major")}}</strong>
+                <div class="caption mb-2">{{$t("art_singang")}}</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -57,8 +57,8 @@
                 <div class="caption font-weight-bold green--text">JAN 2020</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>Front-End Developer</strong>
-                <div class="caption mb-2">Chung Yo Group</div>
+                <strong>{{$t('art_front')}}<br> + {{$t("art_web")}}</strong>
+                <div class="caption mb-2">{{$t("art_chung")}}</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -70,8 +70,8 @@
                 <div class="caption font-weight-bold green--text">MAY 2019</div>
               </v-flex>
               <v-flex xs8 class="pl-2">
-                <strong>Front-End Developer<br> + Web Designer</strong>
-                <div class="caption mb-2">Rocket Technology Co., Ltd.</div>
+                <strong>{{$t('art_front')}}<br> + {{$t("art_web")}}</strong>
+                <div class="caption mb-2">{{$t("art_rock")}}</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>
@@ -83,8 +83,8 @@
                 <div class="caption font-weight-bold green--text">AUG 2016</div>
               </v-flex>
               <v-flex class="pl-2">
-                <strong>Senior Visual Designer</strong>
-                <div class="caption mb-2">A.G.V. Products Corporation</div>
+                <strong>{{$t("art_visual")}}</strong>
+                <div class="caption mb-2">{{$t("art_avg")}}</div>
               </v-flex>
             </v-layout>
           </v-timeline-item>

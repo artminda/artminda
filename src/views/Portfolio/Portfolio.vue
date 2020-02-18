@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl mt-5>
+  <v-container grid-list-md mt-5>
     <v-layout row align-center justify-center wrap class="mt-4 py-2 px-2 portfolio_top">
       <v-flex v-for="portfolio in portfolios" :key="portfolio.src" xs6 sm6 md4 lg4 xl4>
         <v-card

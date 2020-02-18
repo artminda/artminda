@@ -34,7 +34,7 @@ Vue.use(StoryblokVue)
 
 new Vue({
   created(){
-    localStorage.setItem('lang', 'English')
+    localStorage.getItem('lang') 
   },
   vuetify,
   router,

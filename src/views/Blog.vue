@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl>
+  <v-container grid-list-md>
     <v-layout  row wrap  class="mt-4 pt-4 blogTop ">
       
         <PostPreview
