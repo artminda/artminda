@@ -34,7 +34,7 @@
               <span>Technology</span>
             </h3>
             <span v-for="techitem in project.tech" :key="techitem">
-              <v-chip color="green" text-color="white">{{techitem}}</v-chip>
+              <v-chip color="green" text-color="white" class="mx-1 my-1">{{techitem}}</v-chip>
             </span>
           </v-card-text>
           <v-card-actions>
@@ -44,7 +44,7 @@
             <v-btn large text dark color="green" :href="project.demo" target="_blank">
               <v-icon left>fas fa-desktop</v-icon>Demo
               <span v-if="project.title == 'yabo_mobile_practice'" class="ml-1">
-                ( vpn need China )
+                ( vpn required China )
               </span>
             </v-btn>
           </v-card-actions>
@@ -88,7 +88,7 @@ export default {
       projects: [
          {
           dialog: false,
-          title: "yabo_mobile_practice (vpn: China)",
+          title: "yabo_mobile_practice",
           demo: "https://xj-mbs-yabo.prdasbbwla1.com/m/en-gb/",
           tech: {
             tech1: "vue-cli",

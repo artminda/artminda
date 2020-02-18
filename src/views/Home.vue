@@ -119,7 +119,7 @@
           </v-btn>
         </v-card-actions>
 
-        <v-card-actions class="hidden-md-and-up justify-center mb-3">
+        <v-card-actions class="hidden-md-and-up justify-center mb-4 pb-3">
           <v-btn
             v-for="icon in icons"
             :key="icon.icon"

@@ -7,13 +7,14 @@
       <shineBtn :text="$t('art_blog')" :path="'/blog'" @menu="closeMenu($event)"></shineBtn>
     </div>
     <div class="TheMenu" ref="list" @scroll="handleScroll">
-      <v-layout row justify-center align-center wrap class>
+      <v-layout  justify-center align-center wrap class>
         <v-flex xs12 md6 lg6 class="p-0">
           <div class="shineBtn">
             <shineBtn :text="$t('art_re')" :path="'/resume'" @menu="closeMenu($event)"></shineBtn>
             <shineBtn :text="$t('art_ser')" :path="'/services'" @menu="closeMenu($event)"></shineBtn>
             <shineBtn :text="$t('art_por')" :path="'/portfolio'" @menu="closeMenu($event)"></shineBtn>
             <shineBtn :text="$t('art_blog')" :path="'/blog'" @menu="closeMenu($event)"></shineBtn>
+            <!-- <div class="dispearBlack" ></div> -->
             <div class="dispearBlack" :class="{'dispear':flymenu,'dispear_d':flymenu_d}"></div>
           </div>
           <div class="py-3 px-5 infoArea teal lighten-5">
@@ -301,12 +302,15 @@ methods: {
   display: flex;
   top: 79px;
   background-color: #636363;
+  -webkit-box-shadow: 2px 12px 11px 0px #636363a6;
+	-moz-box-shadow: 2px 12px 11px 0px #636363a6;
+	box-shadow: 2px 12px 11px 0px #636363a6;
 }
 .dispear {
   left: 0;
   right: 0;
   position: absolute;
-  height: 83px;
+  height: 92px;
   width: inherit;
   z-index: 1000;
   top: 79px;
@@ -316,7 +320,7 @@ methods: {
   left: 0;
   right: 0;
   position: absolute;
-  height: 83px;
+  height: 92px;
   width: inherit;
   z-index: 1000;
   top: 79px;

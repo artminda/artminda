@@ -38,7 +38,7 @@
             <transition name="load">
               <div v-if="sideBlock" id="sideBlock"></div>
             </transition>
-            <transition name="load">
+            <transition  name="load">
               <div v-if="sidePort_back" id="sidePort_back"></div>
             </transition>
              <transition name="load">
