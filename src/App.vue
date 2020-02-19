@@ -257,6 +257,8 @@ code {
 .routerMargin {
   margin-top: 4vh;
 }
+
+
 /* 筆電 1366 * 768  */
 @media (min-width: 1264px) and (max-width: 1370px) {
   .cube {
@@ -293,6 +295,28 @@ code {
   }
   .v-application--is-ltr .v-text-field .v-input__append-inner {
     display: none;
+  }
+}
+@media (min-width: 600px) and (max-width: 959px) {
+  .godark {
+    top: 2vh;
+  }
+  .godark:hover {
+    top: 2vh;
+  }
+  .golang {
+    top: 1.5vh;
+  }
+}
+@media (min-width: 960px) and (max-width: 1200px) {
+  .godark {
+    top: 4vh;
+  }
+  .godark:hover {
+    top: 4vh;
+  }
+  .golang {
+    top: 3.5vh;
   }
 }
 @media (min-width: 1904px){
