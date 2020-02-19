@@ -56,7 +56,7 @@
 
     <v-flex xs12 md6 row justify-center align-center >
       <!-- <div v-if="fakeblak" class="fakeblak hidden-md-and-up"></div> -->
-      <v-card text @scroll="handleScroll($event)" color="transparent" max-width="373" class="noShadow px-4">
+      <v-card text @scroll="handleScroll($event)" color="transparent" max-width="450" class="noShadow px-4">
         <div class="fakeblak hidden-sm-and-up"></div>  
         <v-card-title primary-title class="font-weight-thin subtitle-1">
           <div>
