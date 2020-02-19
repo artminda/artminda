@@ -30,9 +30,8 @@
               leave-active-class="animated fadeOutLeft faster"
               :duration="{ enter: 800, leave: 1400 }"
               v-on:before-leave="beforeLeave"
-            
             >
-              <router-view class="routerMargin"></router-view>
+            <router-view  class="routerMargin" ></router-view>
             </transition>
             <!-- <div id='sideBlock'></div> -->
             <transition name="load">
@@ -101,7 +100,9 @@ export default {
       this.updateLang(val);
     }
   },
- 
+  // mounted(){
+  //   localStorage.getItem('lang') 
+  // },
   methods: {
     showMenu(data) {
       if (data.run === "noRun" || data.run === 'portfolio') {
@@ -140,12 +141,12 @@ export default {
       if (newLang === "中文") {
         // this.$i18n.locale = "tw";
         localStorage.setItem("lang", "tw");
-        this.$router.go(0)
+        window.location.reload() 
         return;
       }
       // this.$i18n.locale = newLang;
       localStorage.setItem("lang", newLang);
-      this.$router.go(0)
+      window.location.reload() 
     }
   }
 };

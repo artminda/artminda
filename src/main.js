@@ -33,9 +33,6 @@ Vue.use(StoryblokVue)
 // })
 
 new Vue({
-  created(){
-    localStorage.getItem('lang') 
-  },
   vuetify,
   router,
   i18n,
