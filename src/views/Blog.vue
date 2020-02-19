@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-md>
-    <v-layout  row wrap  class="mt-4 pt-4 blogTop ">
+    <v-layout  row wrap  class="my-4 pt-4 blogTop ">
       
         <PostPreview
           v-for="post in posts"
