@@ -1,43 +1,14 @@
 <template>
   <v-layout row justify-center align-center class="flex-wrap  pt-2 wrap">
-
-    <!-- <VueCompareImage
-      class="hidden-md-and-down"
-      hover
-      :style="{ maxWidth: '1200px' }"
-      :sliderLineWidth="sliderLine"
-      :handleSize="hSize"
-      :leftImage="leftImage"
-      :rightImage="rightImage"
-      :sliderPositionPercentage="sliderPosition"
-    /> -->
-
-      <!-- <ball
-       :style="{ maxWidth: '1200px' }"
-       /> -->
-<v-flex xs12 md6>
-    
-    <div class="cube">
-    <cube/>
-    </div>  
-    <!-- <lottie
-    class="" 
-    :options="defaultOptions" 
-    :height="400" 
-    :width="400"
-    v-on:animCreated="handleAnimation"
-    /> -->
-   
-    <!-- <VueCompareImage
-      class="hidden-lg-and-up"
-      :style="{ maxWidth: '300px' }"
-      :sliderLineWidth="sliderLine"
-      :handleSize="hSize"
-      :leftImage="leftImage2"
-      :rightImage="rightImage2"
-      :sliderPositionPercentage="sliderPosition"
-    /> -->
-
+   <v-flex xs12 md6>
+    <transition
+      enter-active-class="animated flipInX fast"
+      leave-active-class="animated zoomOutUp faster"
+    >
+    <div v-if="!fakeblak" class="cube">
+      <cube/>
+    </div>
+    </transition>  
     <br>
     <!-- mobile -->
     <div class="layout mt-4 pt-2 column justify-center align-center hidden-md-and-up typer_mobile">
@@ -83,8 +54,10 @@
 
     </v-flex>
 
-    <v-flex xs12 md6 row justify-center align-center>
-      <v-card text color="transparent" max-width="373" class="noShadow px-3">
+    <v-flex xs12 md6 row justify-center align-center >
+      <!-- <div v-if="fakeblak" class="fakeblak hidden-md-and-up"></div> -->
+      <v-card text @scroll="handleScroll($event)" color="transparent" max-width="373" class="noShadow px-3">
+        <div class="fakeblak hidden-sm-and-up"></div>  
         <v-card-title primary-title class="font-weight-thin subtitle-1">
           <div>
             <h3 class="headline mb-0">
@@ -172,6 +145,7 @@ export default {
   },
   data() {
     return {
+      fakeblak:false,
       defaultOptions: {animationData: animationData.default},
       animationSpeed: 1,
       anim: {},
@@ -203,7 +177,16 @@ export default {
     methods: {
        handleAnimation (anim) {
         this.anim = anim;
-    }
+    },
+     handleScroll(e){
+        // console.log(e.srcElement.scrollTop, e.target.scrollTop)
+        //scrollTop 獲取到頂部的滾動距離
+         if(e.srcElement.scrollTop> 0){
+            this.fakeblak = true
+            return     
+        }
+          this.fakeblak = false
+    }  
   }   
 }
 </script>
@@ -304,6 +287,12 @@ export default {
 .wordbreak {
   word-break: normal;
 }
+.fakeblak{
+  height: 180px;
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+}
 .noShadow{
   left: 64px;
   top: 20px;
@@ -311,19 +300,35 @@ export default {
   margin-top: 13vh;
   word-break: normal;
 }
-@media(max-width: 960px){
+@media(max-width: 600px){
   .noShadow{
+    position: fixed;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 396px;
     left: 0;
-    margin-top: 51vh;
+    margin-top: 36vh;
     margin-bottom: 6vh;
     width: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }  
 }
+
 @media (min-width: 600px) and (max-width: 960px) {
   .cube {
     top: 156px;
 }
+ .noShadow{
+    left: 0;
+    margin-top: 43vh;
+    margin-bottom: 6vh;
+    width: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }  
 }
 @media(max-width: 1264px){
   .typer_title {
