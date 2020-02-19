@@ -269,6 +269,8 @@ methods: {
   padding: 1.5vh;
   background-color: #616161;
   padding: 4rem 1rem;
+  justify-content: center;
+  margin-top: 13px;
   @media (max-width: 960px) {
     padding: 1rem 1rem;
     margin-top: 12vh;

@@ -1,98 +1,97 @@
 <template>
- <v-container grid-list-md>
-  <v-layout row justify-center align-center wrap class="my-4 pt-2">
-    <v-flex xs12 sm10 md10 lg6 xl6 class="mt-4 pt-4">
+ <v-container>
+  <v-row  justify-center align-center  class="my-4 pt-2">
+    <v-col cols="12" sm="6"  class="mt-4 pt-4">
       <h2 class="mb-4 pl-4 pt-2">{{$t("art_education")}}</h2>
       <v-card-text class="py-0">
         <v-timeline align-top dense>
           <v-timeline-item color="green" small>
-            <v-layout pt-3>
-              <v-flex xs4>
+            <v-layout>
+              <v-col xs4>
                 <div class="caption font-weight-bold green--text">SEP 2017 -</div>
                 <div class="caption font-weight-bold green--text">PRESENT</div>
-              </v-flex>
-              <v-flex class="pl-2">
+              </v-col>
+              <v-col class="pl-2">
                 <strong>{{$t("art_master")}}</strong>
                 <div class="caption mb-2">{{$t("art_chiayi")}}</div>
-              </v-flex>
+              </v-col>
             </v-layout>
           </v-timeline-item>
 
           <v-timeline-item color="green" small>
-            <v-layout pt-3>
-              <v-flex xs4>
+            <v-layout >
+              <v-col xs4>
                 <div class="caption font-weight-bold green--text">SEP 2011 -</div>
                 <div class="caption font-weight-bold green--text">MAY 2015</div>
-              </v-flex>
-              <v-flex class="pl-2">
+              </v-col>
+              <v-col class="pl-2">
                 <strong>{{$t("art_bachelor")}}</strong>
                 <div class="caption mb-2">{{$t("art_taitung")}}</div>
-              </v-flex>
+              </v-col>
             </v-layout>
           </v-timeline-item>
 
           <v-timeline-item color="green" small>
-            <v-layout pt-3>
-              <v-flex xs4>
+            <v-layout >
+              <v-col xs4>
                 <div class="caption font-weight-bold green--text">AUG 2008 -</div>
                 <div class="caption font-weight-bold green--text">JUL 2011</div>
-              </v-flex>
-              <v-flex xs8 class="pl-2">
+              </v-col>
+              <v-col xs8 class="pl-2">
                 <strong>{{$t("art_major")}}</strong>
                 <div class="caption mb-2">{{$t("art_singang")}}</div>
-              </v-flex>
+              </v-col>
             </v-layout>
           </v-timeline-item>
         </v-timeline>
       </v-card-text>
-    </v-flex>
-    <v-flex xs12 sm10 md10 lg6 xl6 class="mt-4 pt-2">
+    </v-col>
+    <v-col cols="12" sm="6" class="mt-4 pt-2">
       <h2 class="mb-4 pl-4">{{$t("art_experience")}}</h2>
       <v-card-text class="py-0">
         <v-timeline align-top dense>
           <v-timeline-item color="green" small>
-            <v-layout pt-3>
-              <v-flex xs4>
+            <v-layout >
+              <v-col xs4>
                 <div class="caption font-weight-bold green--text">JUN 2019 -</div>
                 <div class="caption font-weight-bold green--text">JAN 2020</div>
-              </v-flex>
-              <v-flex class="pl-2">
+              </v-col>
+              <v-col class="pl-2">
                 <strong>{{$t('art_front')}}<br> + {{$t("art_web")}}</strong>
                 <div class="caption mb-2">{{$t("art_chung")}}</div>
-              </v-flex>
+              </v-col>
             </v-layout>
           </v-timeline-item>
 
           <v-timeline-item color="green" small>
-            <v-layout pt-3>
-              <v-flex xs4>
+            <v-layout >
+              <v-col xs4>
                 <div class="caption font-weight-bold green--text">JUL 2018 -</div>
                 <div class="caption font-weight-bold green--text">MAY 2019</div>
-              </v-flex>
-              <v-flex xs8 class="pl-2">
+              </v-col>
+              <v-col xs8 class="pl-2">
                 <strong>{{$t('art_front')}}<br> + {{$t("art_web")}}</strong>
                 <div class="caption mb-2">{{$t("art_rock")}}</div>
-              </v-flex>
+              </v-col>
             </v-layout>
           </v-timeline-item>
 
           <v-timeline-item color="green" small>
-            <v-layout pt-3>
-              <v-flex xs4>
+            <v-layout >
+              <v-col xs4>
                 <div class="caption font-weight-bold green--text">SEP 2015 -</div>
                 <div class="caption font-weight-bold green--text">AUG 2016</div>
-              </v-flex>
-              <v-flex class="pl-2">
+              </v-col>
+              <v-col class="pl-2">
                 <strong>{{$t("art_visual")}}</strong>
                 <div class="caption mb-2">{{$t("art_avg")}}</div>
-              </v-flex>
+              </v-col>
             </v-layout>
           </v-timeline-item>
         </v-timeline>
       </v-card-text>
-    </v-flex>
-    <v-layout row justify-center wrap class="mt-4 pt-2">
-      <v-flex xs12 sm10 md10 lg5 xl5 class="mx-2 pt-4">
+    </v-col>
+      <v-col cols="12" sm="6" class="pt-4">
         <h2>
           <span>Design</span>
           <span class="green--text">Skills</span>
@@ -106,8 +105,8 @@
         <v-progress-linear v-model="buffer2" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
         <strong>Premiere</strong>
         <v-progress-linear v-model="buffer3" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
-      </v-flex>
-      <v-flex xs12 sm10 md10 lg5 xl5 class="mx-2 pt-4">
+      </v-col>
+      <v-col cols="12" sm="6" class="pt-4">
         <h2>
           <span>Coding</span>
           <span class="green--text">Skills</span>
@@ -119,8 +118,13 @@
         <v-progress-linear v-model="buffer5" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
         <strong>JavaScript</strong>
         <v-progress-linear v-model="buffer6" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
-      </v-flex>
-      <div class="mt-4 mb-4 pt-2 mb-5">
+      </v-col>
+      <v-col col="12">
+      <v-row 
+      :align="'center'"
+      :justify="'center'"
+      >
+        <div class="mt-4 mb-4 pt-2 mb-5">
         <v-btn
           href="https://docs.google.com/document/d/14wZAIgwog7Lo5EdK7AeU4D311ADfNKnO4YEsiwBlcYY/edit?usp=sharing"
           target="_blank"
@@ -132,8 +136,10 @@
           <v-icon right dark>fas fa-file-download</v-icon>
         </v-btn>
       </div>
-    </v-layout>
-  </v-layout>
+      </v-row>  
+     
+      </v-col>
+  </v-row>
  </v-container>
 </template>
 

@@ -211,7 +211,7 @@ code {
   position: fixed;
   z-index: 999;
   right: 177px;
-  top: 5vh;
+  top: 35px;
   float: right;
   margin: 0 1em;
   display: block;
@@ -228,7 +228,7 @@ code {
 
 .golang {
   right: 85px;
-  top: 4vh;
+  top:26px;
   position: fixed;
   z-index: 999;
   float: right;
@@ -283,6 +283,11 @@ code {
   }
   .v-application--is-ltr .v-text-field .v-input__append-inner {
     display: none;
+  }
+}
+@media (min-width: 1904px){
+  .container {
+    max-width: 1185px;
   }
 }
 
