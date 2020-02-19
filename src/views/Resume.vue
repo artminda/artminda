@@ -1,6 +1,6 @@
 <template>
  <v-container>
-  <v-row  justify-center align-center  class="my-4 pt-2">
+  <v-row  justify-center align-center  class="mb-4 pt-2 resumTop">
     <v-col cols="12" sm="6"  class="mt-4 pt-4">
       <h2 class="mb-4 pl-4 pt-2">{{$t("art_education")}}</h2>
       <v-card-text class="py-0">
@@ -209,5 +209,8 @@ export default {
 };
 </script>
 <style >
+.resumTop {
+  margin-top: 6vh;
+}
 </style>
 
