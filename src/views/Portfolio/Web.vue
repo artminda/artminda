@@ -111,7 +111,9 @@ export default {
             tech1: "vue-cli",
             tech2: "JavaScript",
             tech3: "vuetify",
-            tech4: "storyblok"
+            tech4: "storyblok",
+            tech5: "i18n",
+            tech6: "css 3D transform",
           },
           poster: "https://i.imgur.com/7MxhQDD.jpg",
         },

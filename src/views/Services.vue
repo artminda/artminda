@@ -132,22 +132,22 @@ export default {
         {
           src: "https://i.imgur.com/nWjbVgU.png",
           title: this.$t("art_ser_dev"),
-          content: `<div class="services_cont"><ul><li>前端資料處理</li><li>效能優化</li><li>API串接</li></ul></div>`
+          content: `<div class="services_cont"><ul><li>${this.$t("ser_front_data")}</li><li>${this.$t("ser_front_opt")}</li><li>${this.$t("ser_front_api")}</li></ul></div>`
         },
         {
           src: "https://i.imgur.com/OCabWSH.png",
-          title: "Web Design",
-          content: `<div class="services_cont"><ul><li>視覺總體設計</li><li>網站切版</li><li>RWD設計</li></ul></div>`
+          title:  this.$t("art_ser_web"),
+          content: `<div class="services_cont"><ul><li>${this.$t("ser_front_vis")}</li><li>${this.$t("ser_front_web")}</li><li>${this.$t("ser_front_rwd")}</li></ul></div>`
         },
         {
           src: "https://i.imgur.com/oMftESd.png",
-          title: "Package Design",
-          content: `<div class="services_cont"><ul><li>視覺識別系統</li><li>環保材質</li><li>防震包材</li></ul></div>`
+          title:  this.$t("art_ser_pack"),
+          content: `<div class="services_cont"><ul><li>${this.$t("ser_front_iden")}</li><li>${this.$t("ser_front_envir")}</li><li>${this.$t("ser_front_shock")}</li></ul></div>`
         },
         {
           src: "https://i.imgur.com/weuqlNn.png",
-          title: "Video Editing",
-          content: `<div class="services_cont"><ul><li>短片剪接</li><li>特效動畫</li><li>字體特效</li></ul></div>`
+          title:  this.$t("art_ser_video"),
+          content: `<div class="services_cont"><ul><li>${this.$t("ser_front_video")}</li><li>${this.$t("ser_front_ani")}</li><li>${this.$t("ser_front_feff")}</li></ul></div>`
         }
       ]
     };

@@ -223,7 +223,7 @@ code {
   position: fixed;
   z-index: 999;
   right: 177px;
-  top: 5vh;
+ top: 35px;
 }
 
 .golang {
@@ -256,13 +256,19 @@ code {
 .routerMargin {
   margin-top: 4vh;
 }
-@media (min-width: 1200px) and (max-width: 1920px) {
+/* 筆電 1366 * 768  */
+@media (min-width: 1264px) and (max-width: 1370px) {
+  .cube {
+      top: 94px !important;
+  }
+}
+@media (min-width: 1400px) and (max-width: 1920px) {
   .routerMargin {
   margin-top: 12vh;
-}
-.cube {
-    top: 259px !important;
-}
+  }
+  .cube {
+      top: 259px !important;
+  }
 }
 @media (max-width: 960px) {
   .screenHight {

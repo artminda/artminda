@@ -132,7 +132,7 @@
           dark
           large
         >
-          Download Resume
+          {{$t("art_down")}}
           <v-icon right dark>fas fa-file-download</v-icon>
         </v-btn>
       </div>

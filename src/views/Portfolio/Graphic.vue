@@ -90,7 +90,7 @@ export default {
       select: "ALL",
       dialog: false,
       items:[
-        "ALL","LOGO","BANNER","UI","PACKAGE","PRINT","EXHIBITION"
+        "ALL","BANNER","LOGO","UI","PACKAGE","PRINT","EXHIBITION"
       ],
       images: [
         { 

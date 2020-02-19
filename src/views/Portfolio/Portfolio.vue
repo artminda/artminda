@@ -3,7 +3,7 @@
     <v-layout row align-center justify-center wrap class="mt-4 py-2 px-2 portfolio_top">
       <v-flex v-for="portfolio in portfolios" :key="portfolio.src" xs6 sm6 md4 lg4 xl4>
         <v-card
-          :to="'/portfolio/'+(portfolio.title).toLowerCase()"
+          :to="'/portfolio/'+(portfolio.path).toLowerCase()"
           text
           color="transparent"
           height="230"
@@ -53,15 +53,18 @@ export default {
       portfolios: [
         {
           src: "https://i.imgur.com/nWjbVgU.png",
-          title: "Web"
+          title: this.$t('por_web'),
+          path: "Web"
         },
         {
           src: "https://i.imgur.com/OCabWSH.png",
-          title: "Graphic"
+          title: this.$t('por_vis'),
+          path: "Graphic"
         },
         {
           src: "https://i.imgur.com/weuqlNn.png",
-          title: "Video"
+          title: this.$t('por_video'),
+          path: "Video"
         },
       ]
     };
