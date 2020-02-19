@@ -112,9 +112,9 @@
           <span class="green--text">Skills</span>
         </h2>
         <br>
-        <strong>Vue-CLI</strong>
+        <strong>Vue-CLI/ Vuex</strong>
         <v-progress-linear v-model="buffer4" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
-        <strong>Bootstrap/ Element</strong>
+        <strong>Vuetify/ Bootstrap/ Element</strong>
         <v-progress-linear v-model="buffer5" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
         <strong>JavaScript</strong>
         <v-progress-linear v-model="buffer6" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
