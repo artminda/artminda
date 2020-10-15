@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-export default {};
+export default {}
 </script>
 <style scoped>
 html,
@@ -273,7 +273,7 @@ body {
 }
 
 /*@keyframes rotateShadow {
-		0%, 10% {transform: rotateY(0deg) rotateX(90deg);}	
+		0%, 10% {transform: rotateY(0deg) rotateX(90deg);}
 		15%, 20% {transform: rotateY(180deg) rotateX(90deg); opacity: 1; filter: alpha(opacity=100);}
 		20.1%, 20.9% {transform: rotateY(180deg) rotateX(90deg) translatez(10px); opacity: 0.95; filter: alpha(opacity=95);}
 		25%, 35% {transform: rotateY(180deg) rotateX(90deg); opacity: 1; filter: alpha(opacity=100);}
@@ -285,7 +285,7 @@ body {
 		99.1%, 99.9% {transform: rotateY(180deg) rotateX(90deg) translatez(5px); opacity: 0.95; filter: alpha(opacity=95);}
 	}*/
 
-/* 
+/*
 Credit */
 
 .credit {

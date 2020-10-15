@@ -41,92 +41,92 @@
 </template>
 
 <script>
-import { PlyrVideo } from "vue-plyr";
+import { PlyrVideo } from 'vue-plyr'
 
 export default {
   metaInfo: {
-    title: "Video Portfolio",
+    title: 'Video Portfolio',
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
-        name: "description",
+        name: 'description',
         content:
           "artminda chen's Services Adobe Premire After Effects Video Ad's Social Media Logo Animation Instagram Facebook Video Editing Advetising"
       },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "artminda' web" },
+      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
           "artminda chen's Services Adobe Premire After Effects Video Ad's Social Media Logo Animation Instagram Facebook Video Editing Advetising"
       }
     ]
   },
   components: { plyr: PlyrVideo },
-  data() {
+  data () {
     return {
       dialog: false,
       videos: [
         {
           dialog: false,
-          title: "text title adv",
-          href: "https://www.youtube.com/embed/xC9j8sDYhgQ",
-          type: "text/html",
-          youtube: "xC9j8sDYhgQ",
-          poster: "https://i.imgur.com/TvCZjc4.jpg"
+          title: 'text title adv',
+          href: 'https://www.youtube.com/embed/xC9j8sDYhgQ',
+          type: 'text/html',
+          youtube: 'xC9j8sDYhgQ',
+          poster: 'https://i.imgur.com/TvCZjc4.jpg'
         },
         {
           dialog: false,
-          title: "text title adv2",
-          href: "https://www.youtube.com/embed/50oe_7CfIQw",
-          type: "text/html",
-          youtube: "50oe_7CfIQw",
-          poster: "https://i.imgur.com/TUFVcVe.jpg"
+          title: 'text title adv2',
+          href: 'https://www.youtube.com/embed/50oe_7CfIQw',
+          type: 'text/html',
+          youtube: '50oe_7CfIQw',
+          poster: 'https://i.imgur.com/TUFVcVe.jpg'
         },
         {
           dialog: false,
-          title: "short movie practice",
-          href: "https://www.youtube.com/embed/6z5StwkL-BY",
-          type: "text/html",
-          youtube: "6z5StwkL-BY",
-          poster: "https://i.imgur.com/XFtEDbA.jpg"
+          title: 'short movie practice',
+          href: 'https://www.youtube.com/embed/6z5StwkL-BY',
+          type: 'text/html',
+          youtube: '6z5StwkL-BY',
+          poster: 'https://i.imgur.com/XFtEDbA.jpg'
         },
         {
           dialog: false,
-          title: "short horror movie practice",
-          href: "https://www.youtube.com/embed/3jL7d4nuv_E",
-          type: "text/html",
-          youtube: "3jL7d4nuv_E",
-          poster: "https://i.imgur.com/Pi52KIA.jpg"
+          title: 'short horror movie practice',
+          href: 'https://www.youtube.com/embed/3jL7d4nuv_E',
+          type: 'text/html',
+          youtube: '3jL7d4nuv_E',
+          poster: 'https://i.imgur.com/Pi52KIA.jpg'
         },
         {
           dialog: false,
-          title: "short practice",
-          href: "https://www.youtube.com/embed/3BhEqdZhScE",
-          type: "text/html",
-          youtube: "3BhEqdZhScE",
-          poster: "https://i.imgur.com/KPjCy7e.jpg"
+          title: 'short practice',
+          href: 'https://www.youtube.com/embed/3BhEqdZhScE',
+          type: 'text/html',
+          youtube: '3BhEqdZhScE',
+          poster: 'https://i.imgur.com/KPjCy7e.jpg'
         },
         {
           dialog: false,
-          title: "short adv practice",
-          href: "https://www.youtube.com/embed/g67wKWBWR38",
-          type: "text/html",
-          youtube: "g67wKWBWR38",
-          poster: "https://i.imgur.com/IiZ7Rxb.jpg"
+          title: 'short adv practice',
+          href: 'https://www.youtube.com/embed/g67wKWBWR38',
+          type: 'text/html',
+          youtube: 'g67wKWBWR38',
+          poster: 'https://i.imgur.com/IiZ7Rxb.jpg'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style  scoped>
@@ -138,7 +138,7 @@ export default {
   margin-top: 13vh;
   @media (max-width:960px){
      margin-top: 11vh;
-  }  
-} 
+  }
+}
 
 </style>

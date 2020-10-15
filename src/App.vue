@@ -43,7 +43,7 @@
              <transition name="load">
               <div v-if="sidePort" id="sidePort"></div>
             </transition>
-            <!-- <TheFooter/> --> 
+            <!-- <TheFooter/> -->
           </div>
         </div>
       </div>
@@ -52,104 +52,103 @@
 </template>
 
 <script>
-import hamburger from "./components/hamburger";
-import TheHeader from "./components/TheHeader";
-import TheFooter from "./components/TheFooter";
-import i18n from "i18n";
-import $ from "jquery";
+import hamburger from './components/hamburger'
+// import TheHeader from './components/TheHeader'
+// import TheFooter from './components/TheFooter'
+// import i18n from 'i18n'
+// import $ from 'jquery'
 
 export default {
-  name: "App",
+  name: 'App',
   metaInfo: {
-    title: "Home",
+    title: 'Home',
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
-      { name: "description", content: "artminda chen's Portfolio" },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.web" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
+      { name: 'description', content: "artminda chen's Portfolio" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "artminda' web" },
+      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://artminda.web' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
-      { property: "og:description", content: "artminda chen's Portfolio" }
+      { property: 'og:description', content: "artminda chen's Portfolio" }
     ]
   },
   components: {
-    hamburger,
-    TheHeader,
-    TheFooter
+    hamburger
+    // TheHeader,
+    // TheFooter
   },
-  data() {
+  data () {
     return {
-      selectLang: localStorage.getItem("lang") === "tw" ? "中文" : "English",
-      items: ["English", "中文"],
+      selectLang: localStorage.getItem('lang') === 'tw' ? '中文' : 'English',
+      items: ['English', '中文'],
       sideBlock: false,
       sidePort: false,
       sidePort_back: false,
       menu: false,
       goDark: false,
-      lang: "en"
-    };
+      lang: 'en'
+    }
   },
   watch: {
-    selectLang(val) {
-      this.updateLang(val);
+    selectLang (val) {
+      this.updateLang(val)
     }
   },
   // mounted(){
-  //   localStorage.getItem('lang') 
+  //   localStorage.getItem('lang')
   // },
   methods: {
-    showMenu(data) {
-      if (data.run === "noRun" || data.run === 'portfolio') {
-        return;
+    showMenu (data) {
+      if (data.run === 'noRun' || data.run === 'portfolio') {
+        return
       }
       setTimeout(() => {
-        this.sideBlock = !data.sta;
+        this.sideBlock = !data.sta
         setTimeout(() => {
-          this.sideBlock = data.sta;
-        }, 600);
-      }, 300);
+          this.sideBlock = data.sta
+        }, 600)
+      }, 300)
     },
-    beforeLeave(el) {
-      if(this.$route.path === '/portfolio/web' || this.$route.path === '/portfolio/graphic' || this.$route.path === '/portfolio/video') {
-      setTimeout(()=>{
-        this.sidePort = true;
-           setTimeout(() => {
-          this.sidePort = false;
-        }, 0);
-      }, 0);
+    beforeLeave (el) {
+      if (this.$route.path === '/portfolio/web' || this.$route.path === '/portfolio/graphic' || this.$route.path === '/portfolio/video') {
+        setTimeout(() => {
+          this.sidePort = true
+          setTimeout(() => {
+            this.sidePort = false
+          }, 0)
+        }, 0)
       }
-       if(this.$route.path === '/portfolio' ) {
-      setTimeout(()=>{
-        this.sidePort_back = true;
-           setTimeout(() => {
-          this.sidePort_back = false;
-        }, 0);
-      }, 0);
+      if (this.$route.path === '/portfolio') {
+        setTimeout(() => {
+          this.sidePort_back = true
+          setTimeout(() => {
+            this.sidePort_back = false
+          }, 0)
+        }, 0)
       }
-     
     },
-    updateTheme(updatedTheme) {
+    updateTheme (updatedTheme) {
       this.$vuetify.theme.dark = updatedTheme
     },
-    updateLang(newLang) {
-      if (newLang === "中文") {
+    updateLang (newLang) {
+      if (newLang === '中文') {
         // this.$i18n.locale = "tw";
-        localStorage.setItem("lang", "tw");
-        window.location.reload() 
-        return;
+        localStorage.setItem('lang', 'tw')
+        window.location.reload()
+        return
       }
       // this.$i18n.locale = newLang;
-      localStorage.setItem("lang", newLang);
-      window.location.reload() 
+      localStorage.setItem('lang', newLang)
+      window.location.reload()
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped src="@/assets/css/pageTrans.scss"/>
 <style >
@@ -257,7 +256,6 @@ code {
 .routerMargin {
   margin-top: 4vh;
 }
-
 
 /* 筆電 1366 * 768  */
 @media (min-width: 1264px) and (max-width: 1370px) {

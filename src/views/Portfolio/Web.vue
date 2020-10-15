@@ -57,130 +57,130 @@
 <script>
 export default {
   metaInfo: {
-    title: "Web Portfolio",
+    title: 'Web Portfolio',
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
-        name: "description",
+        name: 'description',
         content:
           "artminda chen's Web Portfolio Vue Vue.js Nuxt Nuxt.js HTML CSS Vuetify Axios GraphQL JavaScript Web Developer Front-End Frontend Designer App Responsive"
       },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "artminda' web" },
+      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
           "artminda chen's Web Portfolio Vue Vue.js Nuxt Nuxt.js HTML CSS Vuetify Axios GraphQL JavaScript Web Developer Front-End Frontend Designer App Responsive"
       }
     ]
   },
-  data() {
+  data () {
     return {
       dialog: false,
       projects: [
-         {
+        {
           dialog: false,
-          title: "yabo_mobile_practice",
-          demo: "https://xj-mbs-yabo.prdasbbwla1.com/m/en-gb/",
+          title: 'yabo_mobile_practice',
+          demo: 'https://xj-mbs-yabo.prdasbbwla1.com/m/en-gb/',
           tech: {
-            tech1: "vue-cli",
-            tech2: "webpack config",
-            tech3: "RESTful API",
-            tech4: "javascript ES6",
-            tech5: "Route",
-            tech6: "vuex",
-            tech7: "element ui",
-            tech8: "SASS"
+            tech1: 'vue-cli',
+            tech2: 'webpack config',
+            tech3: 'RESTful API',
+            tech4: 'javascript ES6',
+            tech5: 'Route',
+            tech6: 'vuex',
+            tech7: 'element ui',
+            tech8: 'SASS'
           },
-          poster: "https://i.imgur.com/nkUJLrm.jpg",
+          poster: 'https://i.imgur.com/nkUJLrm.jpg'
         },
         {
           dialog: false,
-          title: "This Site",
-          git: "https://github.com/artminda/artminda",
-          demo: "https://artminda.github.io/artminda",
+          title: 'This Site',
+          git: 'https://github.com/artminda/artminda',
+          demo: 'https://artminda.github.io/artminda',
           tech: {
-            tech1: "vue-cli",
-            tech2: "JavaScript",
-            tech3: "vuetify",
-            tech4: "storyblok",
-            tech5: "i18n",
-            tech6: "css 3D transform",
+            tech1: 'vue-cli',
+            tech2: 'JavaScript',
+            tech3: 'vuetify',
+            tech4: 'storyblok',
+            tech5: 'i18n',
+            tech6: 'css 3D transform'
           },
-          poster: "https://i.imgur.com/7MxhQDD.jpg",
+          poster: 'https://i.imgur.com/7MxhQDD.jpg'
         },
         {
           dialog: false,
-          title: "Portfolio_basic",
-          git: "https://github.com/artminda/Portfolio_basic",
-          demo: "https://artminda.github.io/Portfolio_basic",
+          title: 'Portfolio_basic',
+          git: 'https://github.com/artminda/Portfolio_basic',
+          demo: 'https://artminda.github.io/Portfolio_basic',
           tech: {
-            tech1: "vue-cli",
-            tech2: "JavaScript",
-            tech3: "vuetify",
-            tech4: "storyblok API",
-            tech5: "i18n",
-            tech6: "lottie"
+            tech1: 'vue-cli',
+            tech2: 'JavaScript',
+            tech3: 'vuetify',
+            tech4: 'storyblok API',
+            tech5: 'i18n',
+            tech6: 'lottie'
           },
-          poster: "https://i.imgur.com/bY1oT8G.jpg",
+          poster: 'https://i.imgur.com/bY1oT8G.jpg'
         },
         {
           dialog: false,
-          title: "creat_fun",
-          git: "https://github.com/artminda/creatFun",
-          demo: "https://artminda.github.io/creatFun",
+          title: 'creat_fun',
+          git: 'https://github.com/artminda/creatFun',
+          demo: 'https://artminda.github.io/creatFun',
           tech: {
-            tech1: "ui design",
-            tech2: "css",
-            tech3: "html",
-            tech4: "JQery"
+            tech1: 'ui design',
+            tech2: 'css',
+            tech3: 'html',
+            tech4: 'JQery'
           },
-          poster: "https://i.imgur.com/TO4wz9M.jpg",
+          poster: 'https://i.imgur.com/TO4wz9M.jpg'
         },
         {
           dialog: false,
-          title: "My Old Web Portfolio",
-          git: "https://github.com/artminda/artminda-old",
-          demo: "https://artminda.github.io/artminda-old",
+          title: 'My Old Web Portfolio',
+          git: 'https://github.com/artminda/artminda-old',
+          demo: 'https://artminda.github.io/artminda-old',
           tech: {
-            tech1: "ui design",
-            tech2: "bootstrap",
+            tech1: 'ui design',
+            tech2: 'bootstrap'
           },
-          poster: "https://i.imgur.com/5KnIrGS.jpg",
-        }, 
-        {
-          dialog: false,
-          title: "oasis bitcoin",
-          git: "https://github.com/artminda/oasis",
-          demo: "http://oasis.byethost9.com/index.php",
-          tech: {
-            tech1: "ui design",
-            tech2: "bootstrap",
-            tech3: "php",
-          },
-          poster: "https://i.imgur.com/Tm5cS5K.jpg",
+          poster: 'https://i.imgur.com/5KnIrGS.jpg'
         },
         {
           dialog: false,
-          title: "Admin dashboard",
-          git: "https://github.com/artminda/artminda-management",
-          demo: "https://artminda.github.io/artminda-management/",
+          title: 'oasis bitcoin',
+          git: 'https://github.com/artminda/oasis',
+          demo: 'http://oasis.byethost9.com/index.php',
+          tech: {
+            tech1: 'ui design',
+            tech2: 'bootstrap',
+            tech3: 'php'
+          },
+          poster: 'https://i.imgur.com/Tm5cS5K.jpg'
+        },
+        {
+          dialog: false,
+          title: 'Admin dashboard',
+          git: 'https://github.com/artminda/artminda-management',
+          demo: 'https://artminda.github.io/artminda-management/',
           tech: [
-             "vue cli",
-             "JavaScript",
-             "sass",
-             "element ui",
-             "proxy api"
+            'vue cli',
+            'JavaScript',
+            'sass',
+            'element ui',
+            'proxy api'
           ],
-          poster: "https://i.imgur.com/0kctvSn.jpg"
+          poster: 'https://i.imgur.com/0kctvSn.jpg'
         },
         // {
         //   dialog: false,
@@ -197,33 +197,33 @@ export default {
         // },
         {
           dialog: false,
-          title: "Lodash practice",
-          git: "https://github.com/artminda/Lodash-practice",
-          demo: "https://artminda.github.io/Lodash-practice/index.html",
+          title: 'Lodash practice',
+          git: 'https://github.com/artminda/Lodash-practice',
+          demo: 'https://artminda.github.io/Lodash-practice/index.html',
           tech: {
-            tech1: "VUE",
-            tech2: "Lodash",
-            tech3: "HTML",
-            tech4: "JavaScript"
+            tech1: 'VUE',
+            tech2: 'Lodash',
+            tech3: 'HTML',
+            tech4: 'JavaScript'
           },
-          poster: "https://i.imgur.com/kCN1CFH.png"
+          poster: 'https://i.imgur.com/kCN1CFH.png'
         },
         {
           dialog: false,
-          title: "poople",
-          git: "https://github.com/artminda/poople",
-          demo: "https://artminda.github.io/poople/",
+          title: 'poople',
+          git: 'https://github.com/artminda/poople',
+          demo: 'https://artminda.github.io/poople/',
           tech: {
-            tech1: "bootstrp",
-            tech2: "RWD",
-            tech3: "HTML"
+            tech1: 'bootstrp',
+            tech2: 'RWD',
+            tech3: 'HTML'
           },
-          poster: "https://i.imgur.com/VDE7Bdp.jpg"
-        },
+          poster: 'https://i.imgur.com/VDE7Bdp.jpg'
+        }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -231,7 +231,7 @@ export default {
   margin-top: 13vh;
   @media (max-width:960px){
      margin-top: 11vh;
-  }  
-} 
+  }
+}
 
 </style>

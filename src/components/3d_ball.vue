@@ -3,38 +3,38 @@
 </template>
 
 <script>
-import * as THREE from "three";
+import * as THREE from 'three'
 // import Stats from "./stats.module.js";
 // import { GUI } from "./dat.gui.module.js";
 // import { OrbitControls } from './OrbitControls.js';
-import { OBJLoader, MTLLoader } from "three-obj-mtl-loader";
+import { OBJLoader, MTLLoader } from 'three-obj-mtl-loader'
 // import MTLLoader from  'three-mtl-loader';
 // import OBJLoader from  'three-obj-loader';
-import { CSS2DRenderer, CSS2DObject } from "three-css2drender";
-const OrbitControls = require("three-orbit-controls")(THREE);
+import { CSS2DRenderer, CSS2DObject } from 'three-css2drender'
+const OrbitControls = require('three-orbit-controls')(THREE)
 
 export default {
-  name: "Home",
-  data() {
+  name: 'Home',
+  data () {
     return {
-      group: "",
-      container:"",
-      stats: "",
+      group: '',
+      container: '',
+      stats: '',
       particlesData: [],
-      camera: "",
-      scene: "",
-      renderer: "",
-      positions:"",
-      colors: "",
-      particles: "",
-      pointCloud: "",
-      particlePositions: "",
-      linesMesh: "",
+      camera: '',
+      scene: '',
+      renderer: '',
+      positions: '',
+      colors: '',
+      particles: '',
+      pointCloud: '',
+      particlePositions: '',
+      linesMesh: '',
       maxParticleCount: 1000,
       particleCount: 300,
       r: 800,
       rHalf: 100 / 2,
-      effectController:{
+      effectController: {
         showDots: false,
         showLines: true,
         minDistance: 150,
@@ -65,38 +65,38 @@ export default {
     //     });
     // },
 
-    init() {
+    init () {
     //   this.initGUI();
 
-      this.container = document.getElementById("container");
+      this.container = document.getElementById('container')
 
       this.camera = new THREE.PerspectiveCamera(
         60,
         window.innerWidth / window.innerHeight,
         1,
         4000
-      );
-      this.camera.position.z = 2000;
-   
-      var controls = new OrbitControls(this.camera, this.container);
+      )
+      this.camera.position.z = 2000
 
-      this.scene = new THREE.Scene();
+      var controls = new OrbitControls(this.camera, this.container)
 
-      this.group = new THREE.Group();
-      this.scene.add(this.group);
+      this.scene = new THREE.Scene()
+
+      this.group = new THREE.Group()
+      this.scene.add(this.group)
 
       var helper = new THREE.BoxHelper(
         new THREE.Mesh(new THREE.BoxBufferGeometry(this.r, this.r, this.r))
-      );
-      helper.material.color.setHex(0x101010);
-      helper.material.blending = THREE.AdditiveBlending;
-      helper.material.transparent = true;
-      this.group.add(helper);
+      )
+      helper.material.color.setHex(0x101010)
+      helper.material.blending = THREE.AdditiveBlending
+      helper.material.transparent = true
+      this.group.add(helper)
 
-      var segments = this.maxParticleCount * this.maxParticleCount;
+      var segments = this.maxParticleCount * this.maxParticleCount
 
-      this.positions = new Float32Array(segments * 3);
-      this.colors = new Float32Array(segments * 3);
+      this.positions = new Float32Array(segments * 3)
+      this.colors = new Float32Array(segments * 3)
 
       var pMaterial = new THREE.PointsMaterial({
         color: 0x222222,
@@ -104,19 +104,19 @@ export default {
         blending: THREE.AdditiveBlending,
         transparent: true,
         sizeAttenuation: false
-      });
+      })
 
-      this.particles = new THREE.BufferGeometry();
-      this.particlePositions = new Float32Array(this.maxParticleCount * 3);
+      this.particles = new THREE.BufferGeometry()
+      this.particlePositions = new Float32Array(this.maxParticleCount * 3)
 
       for (var i = 0; i < this.maxParticleCount; i++) {
-        var x = Math.random() *this.r-this.r/ 2;
-        var y = Math.random() *this.r-this.r/ 2;
-        var z = Math.random() *this.r-this.r/ 2;
+        var x = Math.random() * this.r - this.r / 2
+        var y = Math.random() * this.r - this.r / 2
+        var z = Math.random() * this.r - this.r / 2
 
-        this.particlePositions[i * 3] = x;
-        this.particlePositions[i * 3 + 1] = y;
-        this.particlePositions[i * 3 + 2] = z;
+        this.particlePositions[i * 3] = x
+        this.particlePositions[i * 3 + 1] = y
+        this.particlePositions[i * 3 + 2] = z
 
         // add it to the geometry
         this.particlesData.push({
@@ -126,175 +126,168 @@ export default {
             -1 + Math.random() * 2
           ),
           numConnections: 0
-        });
+        })
       }
 
-      this.particles.setDrawRange(0, this.particleCount);
+      this.particles.setDrawRange(0, this.particleCount)
       this.particles.setAttribute(
-        "position",
+        'position',
         new THREE.BufferAttribute(this.particlePositions, 3).setUsage(
           THREE.DynamicDrawUsage
         )
-      );
+      )
 
       // create the particle system
-      this.pointCloud = new THREE.Points(this.particles, pMaterial);
-      this.group.add(this.pointCloud);
+      this.pointCloud = new THREE.Points(this.particles, pMaterial)
+      this.group.add(this.pointCloud)
 
-      var geometry = new THREE.BufferGeometry();
+      var geometry = new THREE.BufferGeometry()
 
       geometry.setAttribute(
-        "position",
+        'position',
         new THREE.BufferAttribute(this.positions, 3).setUsage(THREE.DynamicDrawUsage)
-      );
+      )
       geometry.setAttribute(
-        "color",
+        'color',
         new THREE.BufferAttribute(this.colors, 3).setUsage(THREE.DynamicDrawUsage)
-      );
+      )
 
-      geometry.computeBoundingSphere();
+      geometry.computeBoundingSphere()
 
-      geometry.setDrawRange(0, 0);
-
+      geometry.setDrawRange(0, 0)
 
       var material = new THREE.LineBasicMaterial({
         vertexColors: THREE.VertexColors,
         blending: THREE.AdditiveBlending,
         transparent: true
-      });
+      })
 
-      this.linesMesh = new THREE.LineSegments(geometry, material);
-      this.group.add(this.linesMesh);
-
-      //
-
-      this.renderer = new THREE.WebGLRenderer({ antialias: true });
-      this.renderer.setPixelRatio(window.devicePixelRatio);
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
-      this.renderer.outputEncoding = THREE.sRGBEncoding;
-
-      this.container.appendChild(this.renderer.domElement);
+      this.linesMesh = new THREE.LineSegments(geometry, material)
+      this.group.add(this.linesMesh)
 
       //
 
-    //   this.stats = new Stats();
-    //   this.container.appendChild(this.stats.dom);
+      this.renderer = new THREE.WebGLRenderer({ antialias: true })
+      this.renderer.setPixelRatio(window.devicePixelRatio)
+      this.renderer.setSize(window.innerWidth, window.innerHeight)
+      this.renderer.outputEncoding = THREE.sRGBEncoding
 
-      window.addEventListener("resize", this.onWindowResize, false);
+      this.container.appendChild(this.renderer.domElement)
+
+      //
+
+      //   this.stats = new Stats();
+      //   this.container.appendChild(this.stats.dom);
+
+      window.addEventListener('resize', this.onWindowResize, false)
     },
 
-    onWindowResize() {
-      this.camera.aspect = window.innerWidth / window.innerHeight;
-      this.camera.updateProjectionMatrix();
+    onWindowResize () {
+      this.camera.aspect = window.innerWidth / window.innerHeight
+      this.camera.updateProjectionMatrix()
 
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.renderer.setSize(window.innerWidth, window.innerHeight)
     },
 
-    animate() {
-      var vertexpos = 0;
-      var colorpos = 0;
-      var numConnected = 0;
+    animate () {
+      var vertexpos = 0
+      var colorpos = 0
+      var numConnected = 0
 
-      for (var i = 0; i < this.particleCount; i++)
-        this.particlesData[i].numConnections = 0;
+      for (var i = 0; i < this.particleCount; i++) { this.particlesData[i].numConnections = 0 }
 
       for (var i = 0; i < this.particleCount; i++) {
         // get the particle
-        var particleData = this.particlesData[i];
+        var particleData = this.particlesData[i]
 
-        this.particlePositions[i * 3] += particleData.velocity.x;
-        this.particlePositions[i * 3 + 1] += particleData.velocity.y;
-        this.particlePositions[i * 3 + 2] += particleData.velocity.z;
+        this.particlePositions[i * 3] += particleData.velocity.x
+        this.particlePositions[i * 3 + 1] += particleData.velocity.y
+        this.particlePositions[i * 3 + 2] += particleData.velocity.z
 
         if (
           this.particlePositions[i * 3 + 1] < -this.rHalf ||
           this.particlePositions[i * 3 + 1] > this.rHalf
-        )
-          particleData.velocity.y = -particleData.velocity.y;
+        ) { particleData.velocity.y = -particleData.velocity.y }
 
         if (
           this.particlePositions[i * 3] < -this.rHalf ||
           this.particlePositions[i * 3] > this.rHalf
-        )
-          particleData.velocity.x = -particleData.velocity.x;
+        ) { particleData.velocity.x = -particleData.velocity.x }
 
         if (
           this.particlePositions[i * 3 + 2] < -this.rHalf ||
           this.particlePositions[i * 3 + 2] > this.rHalf
-        )
-          particleData.velocity.z = -particleData.velocity.z;
+        ) { particleData.velocity.z = -particleData.velocity.z }
 
         if (
           this.effectController.limitConnections &&
           particleData.numConnections >= this.effectController.maxConnections
-        )
-          continue;
+        ) { continue }
 
         // Check collision
         for (var j = i + 1; j < this.particleCount; j++) {
-          var particleDataB = this.particlesData[j];
+          var particleDataB = this.particlesData[j]
           if (
             this.effectController.limitConnections &&
             particleDataB.numConnections >= this.effectController.maxConnections
-          )
-            continue;
+          ) { continue }
 
-          var dx = this.particlePositions[i * 3] - this.particlePositions[j * 3];
-          var dy = this.particlePositions[i * 3 + 1] - this.particlePositions[j * 3 + 1];
-          var dz = this.particlePositions[i * 3 + 2] - this.particlePositions[j * 3 + 2];
-          var dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+          var dx = this.particlePositions[i * 3] - this.particlePositions[j * 3]
+          var dy = this.particlePositions[i * 3 + 1] - this.particlePositions[j * 3 + 1]
+          var dz = this.particlePositions[i * 3 + 2] - this.particlePositions[j * 3 + 2]
+          var dist = Math.sqrt(dx * dx + dy * dy + dz * dz)
 
           if (dist < this.effectController.minDistance) {
-            particleData.numConnections++;
-            particleDataB.numConnections++;
+            particleData.numConnections++
+            particleDataB.numConnections++
 
-            var alpha = 1.0 - dist / this.effectController.minDistance;
+            var alpha = 1.0 - dist / this.effectController.minDistance
 
-            this.positions[vertexpos++] = this.particlePositions[i * 3];
-            this.positions[vertexpos++] = this.particlePositions[i * 3 + 1];
-            this.positions[vertexpos++] = this.particlePositions[i * 3 + 2];
+            this.positions[vertexpos++] = this.particlePositions[i * 3]
+            this.positions[vertexpos++] = this.particlePositions[i * 3 + 1]
+            this.positions[vertexpos++] = this.particlePositions[i * 3 + 2]
 
-            this.positions[vertexpos++] = this.particlePositions[j * 3];
-            this.positions[vertexpos++] = this.particlePositions[j * 3 + 1];
-            this.positions[vertexpos++] = this.particlePositions[j * 3 + 2];
+            this.positions[vertexpos++] = this.particlePositions[j * 3]
+            this.positions[vertexpos++] = this.particlePositions[j * 3 + 1]
+            this.positions[vertexpos++] = this.particlePositions[j * 3 + 2]
 
-            this.colors[colorpos++] = alpha;
-            this.colors[colorpos++] = alpha;
-            this.colors[colorpos++] = alpha;
+            this.colors[colorpos++] = alpha
+            this.colors[colorpos++] = alpha
+            this.colors[colorpos++] = alpha
 
-            this.colors[colorpos++] = alpha;
-            this.colors[colorpos++] = alpha;
-            this.colors[colorpos++] = alpha;
+            this.colors[colorpos++] = alpha
+            this.colors[colorpos++] = alpha
+            this.colors[colorpos++] = alpha
 
-            numConnected++;
+            numConnected++
           }
         }
       }
 
-      this.linesMesh.geometry.setDrawRange(0, numConnected * 2);
-      this.linesMesh.geometry.attributes.position.needsUpdate = true;
-      this.linesMesh.geometry.attributes.color.needsUpdate = true;
+      this.linesMesh.geometry.setDrawRange(0, numConnected * 2)
+      this.linesMesh.geometry.attributes.position.needsUpdate = true
+      this.linesMesh.geometry.attributes.color.needsUpdate = true
 
-      this.pointCloud.geometry.attributes.position.needsUpdate = true;
+      this.pointCloud.geometry.attributes.position.needsUpdate = true
 
-      requestAnimationFrame(this.animate);
+      requestAnimationFrame(this.animate)
 
-    //   this.stats.update();
-      this.render();
+      //   this.stats.update();
+      this.render()
     },
 
-    render() {
-      var time = Date.now() * 0.001;
+    render () {
+      var time = Date.now() * 0.001
 
-      this.group.rotation.y = time * 0.1;
-      this.renderer.render(this.scene, this.camera);
+      this.group.rotation.y = time * 0.1
+      this.renderer.render(this.scene, this.camera)
     }
   },
-  mounted() {
+  mounted () {
     this.init()
     this.animate()
   }
-};
+}
 </script>
 <style scoped>
 #container {

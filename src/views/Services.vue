@@ -7,7 +7,7 @@
           <span class="green--text">{{$t("art_ser")}}</span>
         </h2>
       </v-flex>
-   
+
       <v-flex v-for="service in services" :key="service.src" xs12 sm6 lg3 xl3>
          <v-expansion-panels popout  class="hidden-lg-and-up">
           <v-expansion-panel >
@@ -42,7 +42,7 @@
             <v-flex text-xs-center subheading font-weight-bold>{{service.title}}</v-flex>
           </v-card-title>
           <v-card-text v-html="service.content">
-          </v-card-text>  
+          </v-card-text>
         </v-card>
       </v-flex>
       <v-flex xs12 sm12 md12 lg12 xl12>
@@ -53,7 +53,7 @@
       </v-flex>
 
       <v-flex v-for="client in clients" :key="client.name" xs5 sm4 md3 lg2 xl2>
-       
+
             <v-img
                style="filter:contrast(50%);"
               :src="client.src"
@@ -64,7 +64,7 @@
               contain
             >
             </v-img>
-        
+
       </v-flex>
     </v-layout>
   </v-container>
@@ -73,86 +73,86 @@
 <script>
 export default {
   metaInfo: {
-    title: "Services",
+    title: 'Services',
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
-        name: "description",
+        name: 'description',
         content:
           "artminda chen's Services Web Development Video Editing Graphic Design Front-End Advetising"
       },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "artminda' web" },
+      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
           "artminda chen's Services Web Development Video Editing Graphic Design Front-End Advetising"
       }
     ]
   },
-  data() {
+  data () {
     return {
       clients: [
         {
-          name: "元美電器",
-          src: "https://i.imgur.com/kW3Mvd2.png",
-          href: "https://www.facebook.com/am2213113/"
+          name: '元美電器',
+          src: 'https://i.imgur.com/kW3Mvd2.png',
+          href: 'https://www.facebook.com/am2213113/'
         },
         {
-          name: "怡安藥局",
-          src: "https://i.imgur.com/rHOZNe9.png",
+          name: '怡安藥局',
+          src: 'https://i.imgur.com/rHOZNe9.png',
           href:
-            "https://www.facebook.com/pages/%E6%80%A1%E5%AE%89%E8%97%A5%E5%B1%80/157407534395817"
+            'https://www.facebook.com/pages/%E6%80%A1%E5%AE%89%E8%97%A5%E5%B1%80/157407534395817'
         },
         {
-          name: "大林濕地保育協會",
-          src: "https://i.imgur.com/qTTPaw0.png",
-          href: ""
+          name: '大林濕地保育協會',
+          src: 'https://i.imgur.com/qTTPaw0.png',
+          href: ''
         },
         {
-          name: "taxi",
-          src: "https://i.imgur.com/dwGsXlO.png",
-          href: ""
+          name: 'taxi',
+          src: 'https://i.imgur.com/dwGsXlO.png',
+          href: ''
         },
         {
-          name: "spa",
-          src: "https://i.imgur.com/NRedBVN.png",
-          href: ""
+          name: 'spa',
+          src: 'https://i.imgur.com/NRedBVN.png',
+          href: ''
         }
       ],
       services: [
         {
-          src: "https://i.imgur.com/nWjbVgU.png",
-          title: this.$t("art_ser_dev"),
-          content: `<div class="services_cont"><ul><li>${this.$t("ser_front_data")}</li><li>${this.$t("ser_front_opt")}</li><li>${this.$t("ser_front_api")}</li></ul></div>`
+          src: 'https://i.imgur.com/nWjbVgU.png',
+          title: this.$t('art_ser_dev'),
+          content: `<div class="services_cont"><ul><li>${this.$t('ser_front_data')}</li><li>${this.$t('ser_front_opt')}</li><li>${this.$t('ser_front_api')}</li></ul></div>`
         },
         {
-          src: "https://i.imgur.com/OCabWSH.png",
-          title:  this.$t("art_ser_web"),
-          content: `<div class="services_cont"><ul><li>${this.$t("ser_front_vis")}</li><li>${this.$t("ser_front_web")}</li><li>${this.$t("ser_front_rwd")}</li></ul></div>`
+          src: 'https://i.imgur.com/OCabWSH.png',
+          title: this.$t('art_ser_web'),
+          content: `<div class="services_cont"><ul><li>${this.$t('ser_front_vis')}</li><li>${this.$t('ser_front_web')}</li><li>${this.$t('ser_front_rwd')}</li></ul></div>`
         },
         {
-          src: "https://i.imgur.com/oMftESd.png",
-          title:  this.$t("art_ser_pack"),
-          content: `<div class="services_cont"><ul><li>${this.$t("ser_front_iden")}</li><li>${this.$t("ser_front_envir")}</li><li>${this.$t("ser_front_shock")}</li></ul></div>`
+          src: 'https://i.imgur.com/oMftESd.png',
+          title: this.$t('art_ser_pack'),
+          content: `<div class="services_cont"><ul><li>${this.$t('ser_front_iden')}</li><li>${this.$t('ser_front_envir')}</li><li>${this.$t('ser_front_shock')}</li></ul></div>`
         },
         {
-          src: "https://i.imgur.com/weuqlNn.png",
-          title:  this.$t("art_ser_video"),
-          content: `<div class="services_cont"><ul><li>${this.$t("ser_front_video")}</li><li>${this.$t("ser_front_ani")}</li><li>${this.$t("ser_front_feff")}</li></ul></div>`
+          src: 'https://i.imgur.com/weuqlNn.png',
+          title: this.$t('art_ser_video'),
+          content: `<div class="services_cont"><ul><li>${this.$t('ser_front_video')}</li><li>${this.$t('ser_front_ani')}</li><li>${this.$t('ser_front_feff')}</li></ul></div>`
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 <style >
 

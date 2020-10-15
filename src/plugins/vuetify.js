@@ -1,8 +1,8 @@
-import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
+import Vue from 'vue'
+import Vuetify from 'vuetify/lib'
 import colors from 'vuetify/lib/util/colors'
 
-Vue.use(Vuetify);
+Vue.use(Vuetify)
 
 export default new Vuetify({
   theme: {
@@ -12,11 +12,11 @@ export default new Vuetify({
         primary: colors.green.accent3,
         secondary: colors.grey.darken1,
         accent: colors.shades.black,
-        error: colors.red.accent3,
+        error: colors.red.accent3
       },
       dark: {
         primary: colors.green.accent3
-      },
-    },
-  },
-});
+      }
+    }
+  }
+})

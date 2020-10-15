@@ -34,7 +34,7 @@ export default {
       required: true
     }
   }
-};
+}
 </script>
 
 <style >
@@ -45,7 +45,7 @@ export default {
 }
 .textNobreak {
   word-break: normal;
-  font-family: "Microsoft JhengHei", sans-serif !important; 
+  font-family: "Microsoft JhengHei", sans-serif !important;
 }
 .hightlimt {
   height: 170px;

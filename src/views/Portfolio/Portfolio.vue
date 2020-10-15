@@ -23,58 +23,58 @@
 <script>
 export default {
   metaInfo: {
-    title: "Portfolio",
+    title: 'Portfolio',
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
-        name: "description",
+        name: 'description',
         content:
           "artminda chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
       },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "artminda' web" },
+      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
           "artminda chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
       }
     ]
   },
-  data() {
+  data () {
     return {
       portfolios: [
         {
-          src: "https://i.imgur.com/nWjbVgU.png",
+          src: 'https://i.imgur.com/nWjbVgU.png',
           title: this.$t('por_web'),
-          path: "Web"
+          path: 'Web'
         },
         {
-          src: "https://i.imgur.com/OCabWSH.png",
+          src: 'https://i.imgur.com/OCabWSH.png',
           title: this.$t('por_vis'),
-          path: "Graphic"
+          path: 'Graphic'
         },
         {
-          src: "https://i.imgur.com/weuqlNn.png",
+          src: 'https://i.imgur.com/weuqlNn.png',
           title: this.$t('por_video'),
-          path: "Video"
-        },
+          path: 'Video'
+        }
       ]
-    };
+    }
   },
-  methods:{
-    portfolioLoading(){
-      
+  methods: {
+    portfolioLoading () {
+
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

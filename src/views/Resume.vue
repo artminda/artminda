@@ -120,7 +120,7 @@
         <v-progress-linear v-model="buffer6" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
       </v-col>
       <v-col col="12">
-      <v-row 
+      <v-row
       :align="'center'"
       :justify="'center'"
       >
@@ -136,8 +136,8 @@
           <v-icon right dark>fas fa-file-download</v-icon>
         </v-btn>
       </div>
-      </v-row>  
-     
+      </v-row>
+
       </v-col>
   </v-row>
  </v-container>
@@ -146,32 +146,32 @@
 <script>
 export default {
   metaInfo: {
-    title: "Resume",
+    title: 'Resume',
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
-        name: "description",
+        name: 'description',
         content:
-          "Vue NUXT HTML CSS JavaScript Design Adobe XD Photoshop Coding Skills Resume Work Web Developer Front-End"
+          'Vue NUXT HTML CSS JavaScript Design Adobe XD Photoshop Coding Skills Resume Work Web Developer Front-End'
       },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "artminda' web" },
+      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
-          "Vue NUXT HTML CSS JavaScript Design Adobe XD Photoshop Coding Skills Resume Work Web Developer Front-End"
+          'Vue NUXT HTML CSS JavaScript Design Adobe XD Photoshop Coding Skills Resume Work Web Developer Front-End'
       }
     ]
   },
-  data() {
+  data () {
     return {
       value: 0,
       buffer1: 0,
@@ -183,34 +183,33 @@ export default {
       buffer7: 0,
       bufferValue: 100,
       interval: 0
-    };
+    }
   },
-  mounted() {
-    this.startBuffer();
+  mounted () {
+    this.startBuffer()
   },
 
-  beforeDestroy() {
-    clearInterval(this.interval);
+  beforeDestroy () {
+    clearInterval(this.interval)
   },
 
   methods: {
-    startBuffer() {
+    startBuffer () {
       this.interval = setInterval(() => {
-        this.buffer1 = 90;
-        this.buffer2 = 85;
-        this.buffer3 = 80;
-        this.buffer4 = 80;
-        this.buffer5 = 90;
-        this.buffer6 = 70;
+        this.buffer1 = 90
+        this.buffer2 = 85
+        this.buffer3 = 80
+        this.buffer4 = 80
+        this.buffer5 = 90
+        this.buffer6 = 70
         this.buffer7 = 90
-      }, 800);
+      }, 800)
     }
   }
-};
+}
 </script>
 <style >
 .resumTop {
   margin-top: 6vh;
 }
 </style>
-

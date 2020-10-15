@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import vuetify from './plugins/vuetify';
+import vuetify from './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import StoryblokVue from 'storyblok-vue'
-import VueAnalytics from 'vue-analytics'
+// import VueAnalytics from 'vue-analytics'
 import English from './lang/en.js'
 import tw from './lang/tw.js'
-import lottie from 'vue-lottie';
+import lottie from 'vue-lottie'
 
 Vue.config.productionTip = false
-const isProd = process.env.NODE_ENV === "production"
+// const isProd = process.env.NODE_ENV === 'production'
 
 Vue.component('lottie', lottie)
 

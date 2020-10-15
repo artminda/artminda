@@ -19,79 +19,79 @@
 </template>
 
 <script>
-import marked from "marked";
-import StoryblokClient from "storyblok-js-client";
-const token = "mUT1Vr0FJ9aOLrdlHaMSbQtt";
+import marked from 'marked'
+import StoryblokClient from 'storyblok-js-client'
+const token = 'mUT1Vr0FJ9aOLrdlHaMSbQtt'
 let storyapi = new StoryblokClient({
   accessToken: token
-});
+})
 
 export default {
-  data() {
+  data () {
     return {
       loading: false,
       posts: [],
       result: {}
-    };
+    }
   },
-  metaInfo() {
+  metaInfo () {
     return {
       title: this.result.title,
       titleTemplate: "%s ← artminda's Blog",
       meta: [
-        { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
         {
-          name: "description",
+          name: 'description',
           content: this.result.content
         },
-        { charset: "utf-8" },
-        { property: "og:title", content: "artminda' web" },
-        { property: "og:site_name", content: "artminda' web" },
-        { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://artminda.github.io/artminda/" },
+        { charset: 'utf-8' },
+        { property: 'og:title', content: "artminda' web" },
+        { property: 'og:site_name', content: "artminda' web" },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://artminda.github.io/artminda/' },
         {
-          property: "og:image",
-          content: "https://i.imgur.com/Dcz2PGx.jpg"
+          property: 'og:image',
+          content: 'https://i.imgur.com/Dcz2PGx.jpg'
         },
         {
-          property: "og:description",
+          property: 'og:description',
           content: this.result.content
         }
       ]
-    };
+    }
   },
   computed: {
-    body() {
-      if (this.result.content){
-        return marked(this.result.content);
+    body () {
+      if (this.result.content) {
+        return marked(this.result.content)
       }
-        return ''
+      return ''
     }
   },
 
-  created() {
+  created () {
     window.storyblok.init({
       accessToken: token
-    });
-    window.storyblok.on("change", () => {
-      this.getStory("article", "draft");
-    });
+    })
+    window.storyblok.on('change', () => {
+      this.getStory('article', 'draft')
+    })
     window.storyblok.pingEditor(() => {
       if (window.storyblok.isInEditor()) {
-        this.getStory("article", "draft");
+        this.getStory('article', 'draft')
       } else {
-        this.getStory("article", "published");
+        this.getStory('article', 'published')
       }
-    });
+    })
   },
 
   methods: {
-    getStory(version) {
+    getStory (version) {
       this.loading = true
       storyapi
-        .get("cdn/stories", {
-          version: "draft",
-          starts_with: "article/"
+        .get('cdn/stories', {
+          version: 'draft',
+          starts_with: 'article/'
         })
         .then(res => {
           this.posts = res.data.stories.map(bp => {
@@ -102,21 +102,21 @@ export default {
               image: bp.content.teaser_image,
               content: bp.content.long_text,
               date: bp.content.date
-            };
-          });
+            }
+          })
           // console.log('this.posts:',this.posts)
           this.loading = false
           this.result = this.posts.find(
             rightPost => rightPost.id === this.$route.params.id
-          );
+          )
           // console.log('this.result:',this.result)
         })
         .catch(error => {
-          console.log(error);
-        });
+          console.log(error)
+        })
     }
   }
-};
+}
 </script>
 
 <style scoped>

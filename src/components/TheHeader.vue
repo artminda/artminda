@@ -35,15 +35,15 @@
         <v-list-tile>
             <v-flex class="xs10">
              <v-select
-              v-model="selectLang" 
+              v-model="selectLang"
               class="hidden-md-and-up"
               :items="items"
               label="select"
               dense
               single-line
               ></v-select>
-            </v-flex> 
-        </v-list-tile>  
+            </v-flex>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar text dense color="transparent" scroll-off-screen>
@@ -92,24 +92,24 @@ export default {
       type: String
     }
   },
-  data() {
+  data () {
     return {
-      selectLang: localStorage.getItem('lang') === "tw" ? "中文" : "English" ,
-      items:["English","中文"],
+      selectLang: localStorage.getItem('lang') === 'tw' ? '中文' : 'English',
+      items: ['English', '中文'],
       drawer: null
-    };
+    }
   },
-  watch:{
-    selectLang(val){
-      this.$emit("changeLang", val);
+  watch: {
+    selectLang (val) {
+      this.$emit('changeLang', val)
     }
   },
   methods: {
-    changeTheme() {
-      this.$emit("changeTheme", this.goDark);
+    changeTheme () {
+      this.$emit('changeTheme', this.goDark)
     }
   }
-};
+}
 </script>
 
 <style  scoped>

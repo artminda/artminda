@@ -110,41 +110,41 @@
 </template>
 
 <script>
-import { validationMixin } from "vuelidate";
-import shineBtn from "./shine_btn";
+import { validationMixin } from 'vuelidate'
+import shineBtn from './shine_btn'
 import {
   required,
   maxLength,
   email,
   minLength
-} from "vuelidate/lib/validators";
+} from 'vuelidate/lib/validators'
 export default {
-props: {
-  goDark: {
-    type: Boolean
-  }
-},  
+  props: {
+    goDark: {
+      type: Boolean
+    }
+  },
   metaInfo: {
-    title: "Contact",
+    title: 'Contact',
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
-        name: "description",
+        name: 'description',
         content:
           "artminda chen's Contact please keep in Touch ContactMe"
       },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "artminda' web" },
+      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
           "artminda chen's Contact please keep in Touch ContactMe"
       }
@@ -159,74 +159,74 @@ props: {
   components: {
     shineBtn
   },
-  data() {
+  data () {
     return {
       flymenu_d: false,
       flymenu: false,
-      router:"",
-      name: "",
-      email: "",
-      body: "",
+      router: '',
+      name: '',
+      email: '',
+      body: '',
       drawer: null,
-      Theclose: false,
-    };
+      Theclose: false
+    }
   },
-methods: {
-  changeTheme() {
-    this.$emit("changeTheme", this.goDark);
-  },
-  submit() {
-    this.$v.$touch();
-  },
-  clear() {
-    this.$v.$reset();
-    this.name = "";
-    this.email = "";
-    this.body = "";
-  },
-  closeMenu(data){
-    this.$emit('menu', data)
-  },
-  handleScroll(){
-    const $list = this.$refs.list;
-        //如果資料有在載入中則這次請求退出
-    if(this.isLoading) return; 
-        //scrollTop 獲取到頂部的滾動距離
-    if($list.scrollTop> 0 && this.$vuetify.theme.dark === false){
+  methods: {
+    changeTheme () {
+      this.$emit('changeTheme', this.goDark)
+    },
+    submit () {
+      this.$v.$touch()
+    },
+    clear () {
+      this.$v.$reset()
+      this.name = ''
+      this.email = ''
+      this.body = ''
+    },
+    closeMenu (data) {
+      this.$emit('menu', data)
+    },
+    handleScroll () {
+      const $list = this.$refs.list
+      // 如果資料有在載入中則這次請求退出
+      if (this.isLoading) return
+      // scrollTop 獲取到頂部的滾動距離
+      if ($list.scrollTop > 0 && this.$vuetify.theme.dark === false) {
         this.flymenu = true
-        return     
-    }
-    if($list.scrollTop> 0 && this.$vuetify.theme.dark === true){
-        this.flymenu_d = true     
         return
-    }
+      }
+      if ($list.scrollTop > 0 && this.$vuetify.theme.dark === true) {
+        this.flymenu_d = true
+        return
+      }
       this.flymenu = false
       this.flymenu_d = false
-  }  
-}, 
+    }
+  },
   computed: {
-    nameErrors() {
-      const errors = [];
-      if (!this.$v.name.$dirty) return errors;
+    nameErrors () {
+      const errors = []
+      if (!this.$v.name.$dirty) return errors
       !this.$v.name.maxLength &&
-        errors.push(this.$t('art_err_name'));
-      !this.$v.name.required && errors.push(this.$t('art_required_name'));
-      return errors;
+        errors.push(this.$t('art_err_name'))
+      !this.$v.name.required && errors.push(this.$t('art_required_name'))
+      return errors
     },
-    emailErrors() {
-      const errors = [];
-      if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push(this.$t('art_err_email'));
-      !this.$v.email.required && errors.push(this.$t('art_required_email'));
-      return errors;
+    emailErrors () {
+      const errors = []
+      if (!this.$v.email.$dirty) return errors
+      !this.$v.email.email && errors.push(this.$t('art_err_email'))
+      !this.$v.email.required && errors.push(this.$t('art_required_email'))
+      return errors
     },
-    bodyErrors() {
-      const errors = [];
-      if (!this.$v.body.$dirty) return errors;
+    bodyErrors () {
+      const errors = []
+      if (!this.$v.body.$dirty) return errors
       !this.$v.body.minLength &&
-        errors.push(this.$t('art_err_body'));
-      !this.$v.body.required && errors.push(this.$t('art_required_body'));
-      return errors;
+        errors.push(this.$t('art_err_body'))
+      !this.$v.body.required && errors.push(this.$t('art_required_body'))
+      return errors
     }
   }
 }
@@ -305,8 +305,8 @@ methods: {
   top: 79px;
   background-color: #636363;
   -webkit-box-shadow: 2px 12px 11px 0px #636363a6;
-	-moz-box-shadow: 2px 12px 11px 0px #636363a6;
-	box-shadow: 2px 12px 11px 0px #636363a6;
+  -moz-box-shadow: 2px 12px 11px 0px #636363a6;
+  box-shadow: 2px 12px 11px 0px #636363a6;
 }
 .dispear {
   left: 0;

@@ -81,35 +81,35 @@
 </template>
 
 <script>
-import { validationMixin } from "vuelidate";
+import { validationMixin } from 'vuelidate'
 import {
   required,
   maxLength,
   email,
   minLength
-} from "vuelidate/lib/validators";
+} from 'vuelidate/lib/validators'
 export default {
   metaInfo: {
-    title: "Contact",
+    title: 'Contact',
     titleTemplate: "%s ← artminda's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
-        name: "description",
+        name: 'description',
         content:
           "artminda chen's Contact please keep in Touch ContactMe"
       },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "artminda' web" },
+      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
           "artminda chen's Contact please keep in Touch ContactMe"
       }
@@ -121,50 +121,50 @@ export default {
     email: { required, email },
     body: { required, minLength: minLength(20) }
   },
-  data() {
+  data () {
     return {
-      name: "",
-      email: "",
-      body: ""
-    };
+      name: '',
+      email: '',
+      body: ''
+    }
   },
   methods: {
-    submit() {
-      this.$v.$touch();
+    submit () {
+      this.$v.$touch()
     },
-    clear() {
-      this.$v.$reset();
-      this.name = "";
-      this.email = "";
-      this.body = "";
+    clear () {
+      this.$v.$reset()
+      this.name = ''
+      this.email = ''
+      this.body = ''
     }
   },
   computed: {
-    nameErrors() {
-      const errors = [];
-      if (!this.$v.name.$dirty) return errors;
+    nameErrors () {
+      const errors = []
+      if (!this.$v.name.$dirty) return errors
       !this.$v.name.maxLength &&
-        errors.push(this.$t('art_err_name'));
-      !this.$v.name.required && errors.push(this.$t('art_required_name'));
-      return errors;
+        errors.push(this.$t('art_err_name'))
+      !this.$v.name.required && errors.push(this.$t('art_required_name'))
+      return errors
     },
-    emailErrors() {
-      const errors = [];
-      if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push(this.$t('art_err_email'));
-      !this.$v.email.required && errors.push(this.$t('art_required_email'));
-      return errors;
+    emailErrors () {
+      const errors = []
+      if (!this.$v.email.$dirty) return errors
+      !this.$v.email.email && errors.push(this.$t('art_err_email'))
+      !this.$v.email.required && errors.push(this.$t('art_required_email'))
+      return errors
     },
-    bodyErrors() {
-      const errors = [];
-      if (!this.$v.body.$dirty) return errors;
+    bodyErrors () {
+      const errors = []
+      if (!this.$v.body.$dirty) return errors
       !this.$v.body.minLength &&
-        errors.push(this.$t('art_err_body'));
-      !this.$v.body.required && errors.push(this.$t('art_required_body'));
-      return errors;
+        errors.push(this.$t('art_err_body'))
+      !this.$v.body.required && errors.push(this.$t('art_required_body'))
+      return errors
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

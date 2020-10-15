@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-        ? '/artminda/'
-        : '/'
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/artminda/'
+    : '/'
 }

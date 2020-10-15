@@ -8,7 +8,7 @@
     <div v-if="!fakeblak" class="cube">
       <cube/>
     </div>
-    </transition>  
+    </transition>
     <br>
     <!-- mobile -->
     <div class="layout mt-4 pt-2 column justify-center align-center hidden-md-and-up typer_mobile">
@@ -51,13 +51,12 @@
      </div>
     </div>
 
-
     </v-flex>
 
     <v-flex xs12 md6 row justify-center align-center >
       <!-- <div v-if="fakeblak" class="fakeblak hidden-md-and-up"></div> -->
       <v-card text @scroll="handleScroll($event)" color="transparent" max-width="450" class="noShadow px-4">
-        <div class="fakeblak hidden-sm-and-up"></div>  
+        <div class="fakeblak hidden-sm-and-up"></div>
         <v-card-title primary-title class="font-weight-thin subtitle-1">
           <div>
             <h3 class="headline mb-0">
@@ -113,81 +112,81 @@
 </template>
 
 <script>
-import { VueTyper } from "vue-typer";
-import VueCompareImage from "vue-compare-image";
+import { VueTyper } from 'vue-typer'
+// import VueCompareImage from 'vue-compare-image'
 // import ball from "@/components/3d_ball";
-import * as animationData from '@/assets/pinjump.json';
-import cube from "@/components/cube_slide";
+import * as animationData from '@/assets/pinjump.json'
+import cube from '@/components/cube_slide'
 
 export default {
   metaInfo: {
-    title: "Home",
+    title: 'Home',
     titleTemplate: "%s ← Artminda's Web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1,maximum-scale=1" },
-      { name: "description", content: "Artminda Chen's Portfolio" },
-      { charset: "utf-8" },
-      { property: "og:title", content: "Artminda' Web" },
-      { property: "og:site_name", content: "Artminda' Web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
+      { name: 'description', content: "Artminda Chen's Portfolio" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "Artminda' Web" },
+      { property: 'og:site_name', content: "Artminda' Web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
-      { property: "og:description", content: "Artminda Chen's Portfolio" }
+      { property: 'og:description', content: "Artminda Chen's Portfolio" }
     ]
   },
   components: {
-    "vue-typer": VueTyper,
-    VueCompareImage,
+    'vue-typer': VueTyper,
+    // VueCompareImage,
     cube
   },
-  data() {
+  data () {
     return {
-      fakeblak:false,
-      defaultOptions: {animationData: animationData.default},
+      fakeblak: false,
+      defaultOptions: { animationData: animationData.default },
       animationSpeed: 1,
       anim: {},
       icons: [
-        { href: "https://github.com/artminda", icon: "fab fa-github" },
+        { href: 'https://github.com/artminda', icon: 'fab fa-github' },
         {
-          href: "https://www.cakeresume.com/dashboard#",
-          icon: "fab fa-cuttlefish"
+          href: 'https://www.cakeresume.com/dashboard#',
+          icon: 'fab fa-cuttlefish'
         },
         {
-          href: "https://www.facebook.com/shyshydesign/",
-          icon: "fab fa-facebook-f"
+          href: 'https://www.facebook.com/shyshydesign/',
+          icon: 'fab fa-facebook-f'
         },
         {
-          href: "https://www.upwork.com/o/profiles/users/~01665ea6dd70561bc2/",
-          icon: "fas fa-underline"
+          href: 'https://www.upwork.com/o/profiles/users/~01665ea6dd70561bc2/',
+          icon: 'fas fa-underline'
         }
       ],
-      text1: [this.$t("art_job1"), this.$t("art_job2"), this.$t("art_job3")],
-      leftImage: "https://i.imgur.com/okK8qil.jpg",
-      rightImage: "https://i.imgur.com/f8NTpow.jpg",
-      leftImage2: "https://i.imgur.com/owrCaj3.jpg",
-      rightImage2: "https://i.imgur.com/kNmA7qB.jpg",
+      text1: [this.$t('art_job1'), this.$t('art_job2'), this.$t('art_job3')],
+      leftImage: 'https://i.imgur.com/okK8qil.jpg',
+      rightImage: 'https://i.imgur.com/f8NTpow.jpg',
+      leftImage2: 'https://i.imgur.com/owrCaj3.jpg',
+      rightImage2: 'https://i.imgur.com/kNmA7qB.jpg',
       sliderLine: 0,
       hSize: 0,
       sliderPosition: 0.5
-    };
+    }
   },
-    methods: {
-       handleAnimation (anim) {
-        this.anim = anim;
+  methods: {
+    handleAnimation (anim) {
+      this.anim = anim
     },
-     handleScroll(e){
-        // console.log(e.srcElement.scrollTop, e.target.scrollTop)
-        //scrollTop 獲取到頂部的滾動距離
-         if(e.srcElement.scrollTop> 0){
-            this.fakeblak = true
-            return     
-        }
-          this.fakeblak = false
-    }  
-  }   
+    handleScroll (e) {
+      // console.log(e.srcElement.scrollTop, e.target.scrollTop)
+      // scrollTop 獲取到頂部的滾動距離
+      if (e.srcElement.scrollTop > 0) {
+        this.fakeblak = true
+        return
+      }
+      this.fakeblak = false
+    }
+  }
 }
 </script>
 <style lang="scss">
@@ -241,7 +240,6 @@ export default {
   right: 76px;
   top: -10px;
 }
-
 
 .typer{
     display: -webkit-box;
@@ -313,7 +311,7 @@ export default {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-  }  
+  }
 }
 
 @media (min-width: 600px) and (max-width: 960px) {
@@ -328,7 +326,7 @@ export default {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-  }  
+  }
 }
 @media(max-width: 1264px){
   .typer_title {
@@ -340,5 +338,5 @@ export default {
     top: 53px;
     left: 0;
   }
-}    
+}
 </style>

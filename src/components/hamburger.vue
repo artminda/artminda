@@ -68,8 +68,8 @@
 </template>
 
 <script>
-import TheMenu from "./TheMenu";
-import shineBtn from "./shine_btn";
+import TheMenu from './TheMenu'
+import shineBtn from './shine_btn'
 export default {
   props: {
     goDark: {
@@ -86,14 +86,14 @@ export default {
     TheMenu,
     shineBtn
   },
-  data() {
+  data () {
     return {
       menu: false,
       isClosed: true,
-      selectLang: localStorage.getItem("lang") === "tw" ? "中文" : "English",
-      items: ["English", "中文"],
+      selectLang: localStorage.getItem('lang') === 'tw' ? '中文' : 'English',
+      items: ['English', '中文'],
       drawer: null
-    };
+    }
   },
   // created() {
   //   // [註冊監聽事件]
@@ -102,29 +102,29 @@ export default {
   // },
 
   methods: {
-    showMenu(data) {
-      if(this.menu === false){
-       this.$emit('menu', data)
-       return  
+    showMenu (data) {
+      if (this.menu === false) {
+        this.$emit('menu', data)
+        return
       }
       this.menu = data.sta
       this.burgerTime()
       this.$emit('menu', data)
     },
-    changeTheme() {
-      this.$emit("changeTheme", this.goDark);
+    changeTheme () {
+      this.$emit('changeTheme', this.goDark)
     },
-    burgerTime() {
+    burgerTime () {
       if (this.isClosed === true) {
-        this.isClosed = false;
-        this.menu = true;
+        this.isClosed = false
+        this.menu = true
       } else {
-        this.isClosed = true;
-        this.menu = false;
+        this.isClosed = true
+        this.menu = false
       }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
