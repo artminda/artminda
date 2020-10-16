@@ -34,7 +34,7 @@ body {
 
 .slider {
   position: relative;
-  top: 120px;
+  top: 0px;
   width: 200px;
   height: 200px;
   margin: auto;
@@ -273,17 +273,17 @@ body {
 }
 
 /*@keyframes rotateShadow {
-		0%, 10% {transform: rotateY(0deg) rotateX(90deg);}
-		15%, 20% {transform: rotateY(180deg) rotateX(90deg); opacity: 1; filter: alpha(opacity=100);}
-		20.1%, 20.9% {transform: rotateY(180deg) rotateX(90deg) translatez(10px); opacity: 0.95; filter: alpha(opacity=95);}
-		25%, 35% {transform: rotateY(180deg) rotateX(90deg); opacity: 1; filter: alpha(opacity=100);}
-		35.1%, 35.9% {transform: rotateY(180deg) rotateX(90deg) translatez(-10px); opacity: 0.95; filter: alpha(opacity=95);}
-		40%, 50% {transform: rotateY(180deg) rotateX(90deg);}
-		55%, 65% {transform: rotateY(0deg) rotateX(90deg);}
-		70%, 80% {transform: rotateY(180deg) rotateX(90deg);}
-		90%, 99% {transform: rotateY(0deg) rotateX(90deg);}
-		99.1%, 99.9% {transform: rotateY(180deg) rotateX(90deg) translatez(5px); opacity: 0.95; filter: alpha(opacity=95);}
-	}*/
+0%, 10% {transform: rotateY(0deg) rotateX(90deg);}
+15%, 20% {transform: rotateY(180deg) rotateX(90deg); opacity: 1; filter: alpha(opacity=100);}
+20.1%, 20.9% {transform: rotateY(180deg) rotateX(90deg) translatez(10px); opacity: 0.95; filter: alpha(opacity=95);}
+25%, 35% {transform: rotateY(180deg) rotateX(90deg); opacity: 1; filter: alpha(opacity=100);}
+35.1%, 35.9% {transform: rotateY(180deg) rotateX(90deg) translatez(-10px); opacity: 0.95; filter: alpha(opacity=95);}
+40%, 50% {transform: rotateY(180deg) rotateX(90deg);}
+55%, 65% {transform: rotateY(0deg) rotateX(90deg);}
+70%, 80% {transform: rotateY(180deg) rotateX(90deg);}
+90%, 99% {transform: rotateY(0deg) rotateX(90deg);}
+99.1%, 99.9% {transform: rotateY(180deg) rotateX(90deg) translatez(5px); opacity: 0.95; filter: alpha(opacity=95);}
+}*/
 
 /*
 Credit */

@@ -7,8 +7,8 @@
       <shineBtn :text="$t('art_blog')" :path="'/blog'" @menu="closeMenu($event)"></shineBtn>
     </div>
     <div class="TheMenu" ref="list" @scroll="handleScroll">
-      <v-layout  justify-center align-center wrap class>
-        <v-flex xs12 md6 lg6 class="p-0">
+      <v-layout align-center wrap>
+        <v-flex xs12 md4 class="p-0">
           <div class="shineBtn">
             <shineBtn :text="$t('art_re')" :path="'/resume'" @menu="closeMenu($event)"></shineBtn>
             <shineBtn :text="$t('art_ser')" :path="'/services'" @menu="closeMenu($event)"></shineBtn>
@@ -44,7 +44,8 @@
             </div>-->
           </div>
         </v-flex>
-        <v-flex xs12 md6 class="con_area">
+         <v-flex md4 class="hidden-sm-and-down"/>
+        <v-flex xs12 md4 class="con_area">
           <v-container class="px-5 py-5">
             <h2 class="pb-1">
               <span class="blue-grey--text">{{$t('art_contact')}}</span>
@@ -285,9 +286,6 @@ export default {
 .con_area {
   margin-top: 16vh;
   background-color: aliceblue;
-  @media (max-width: 960px) {
-    margin-top: 0vh;
-  }
 }
 .p-0 {
   padding: 0 !important;

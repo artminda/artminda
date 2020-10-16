@@ -1,37 +1,34 @@
 <template>
-  <v-layout row justify-center align-center class="flex-wrap  pt-2 wrap">
-   <v-flex xs12 md6>
-    <transition
-      enter-active-class="animated flipInX fast"
-      leave-active-class="animated zoomOutUp faster"
-    >
-    <div v-if="!fakeblak" class="cube">
-      <cube/>
-    </div>
-    </transition>
-    <br>
-    <!-- mobile -->
-    <div class="layout mt-4 pt-2 column justify-center align-center hidden-md-and-up typer_mobile">
-    <vue-typer class="headline" :repeat="0" text="artminda chen"></vue-typer>
-    <div class="typer mt-2 pl-2 ">
-    <vue-typer
-      :text="text1"
-      :repeat="Infinity"
-      :shuffle="false"
-      initial-action="erasing"
-      :pre-type-delay="70"
-      :type-delay="70"
-      :pre-erase-delay="1980"
-      :erase-delay="150"
-      erase-style="select-back"
-      :erase-on-complete="false"
-      caret-animation="smooth"
-    ></vue-typer>
-    </div>
-    </div>
+  <v-layout row justify-center align-center class="flex-wrap pt-2 wrap">
+    <v-flex xs12>
+      <!-- mobile -->
+      <div
+        class="layout mt-4 pt-2 column justify-center align-center hidden-md-and-up typer_mobile"
+      >
+        <vue-typer
+          class="headline"
+          :repeat="0"
+          text="artminda chen"
+        ></vue-typer>
+        <div class="typer mt-2 pl-2">
+          <vue-typer
+            :text="text1"
+            :repeat="Infinity"
+            :shuffle="false"
+            initial-action="erasing"
+            :pre-type-delay="70"
+            :type-delay="70"
+            :pre-erase-delay="1980"
+            :erase-delay="150"
+            erase-style="select-back"
+            :erase-on-complete="false"
+            caret-animation="smooth"
+          ></vue-typer>
+        </div>
+      </div>
 
-     <!-- pc -->
-    <div class="layout mt-4 pt-2 column hidden-sm-and-down">
+      <!-- pc -->
+      <!-- <div class="layout column hidden-sm-and-down">
     <vue-typer class="typer_title " :repeat="0" text="artminda"></vue-typer>
     <vue-typer class="typer_title " :repeat="0" text="chen"></vue-typer>
      <div class="typer_pc mt-2 pl-2 ">
@@ -47,49 +44,70 @@
       erase-style="select-back"
       :erase-on-complete="false"
       caret-animation="smooth"
-    ></vue-typer>
+    />
      </div>
-    </div>
-
+    </div> -->
+      <v-flex xs12 row justify-center align-center>
+        <transition
+          enter-active-class="animated flipInX fast"
+          leave-active-class="animated zoomOutUp faster"
+        >
+          <div v-if="!fakeblak" class="cube mt-md-11">
+            <cube />
+          </div>
+        </transition>
+      </v-flex>
     </v-flex>
 
-    <v-flex xs12 md6 row justify-center align-center >
+    <v-flex xs12 md6 row justify-center align-center>
       <!-- <div v-if="fakeblak" class="fakeblak hidden-md-and-up"></div> -->
-      <v-card text @scroll="handleScroll($event)" color="transparent" max-width="450" class="noShadow px-4">
+
+      <vue-typer
+        class="hidden-sm-and-down"
+        :text="text1"
+        :repeat="Infinity"
+        :shuffle="false"
+        initial-action="erasing"
+        :pre-type-delay="70"
+        :type-delay="70"
+        :pre-erase-delay="1980"
+        :erase-delay="150"
+        erase-style="select-back"
+        :erase-on-complete="false"
+        caret-animation="smooth"
+      />
+
+      <v-card
+        text
+        @scroll="handleScroll($event)"
+        color="transparent"
+        max-width="450"
+        class="noShadow px-4"
+      >
         <div class="fakeblak hidden-sm-and-up"></div>
         <v-card-title primary-title class="font-weight-thin subtitle-1">
           <div>
             <h3 class="headline mb-0">
-              <span>{{$t('art_about')}}</span>
-              <span class="green--text">{{$t('art_me')}}</span>
+              <span>{{ $t("art_about") }}</span>
+              <span class="green--text">{{ $t("art_me") }}</span>
             </h3>
             <!-- <h3 class="headline mb-0"> <span>{{$t('art_good1')}}</span></h3> -->
-            <h3 class="BOLD ITALIC text--secondary mb-0 border-left wordbreak"> <span>{{$t('art_good2')}}</span></h3>
+            <h3 class="BOLD ITALIC text--secondary mb-0 border-left wordbreak">
+              <span>{{ $t("art_good2") }}</span>
+            </h3>
             <div>
-              <p class="wordbreak font-weight-regular grey--text text--darken-1">
-               {{$t('art_content_top')}}
-                <span
-                  class="green--text font-weight-bold"
-                >{{$t('art_vue')}}</span>, {{$t('art_content_but')}}
+              <p
+                class="wordbreak font-weight-regular grey--text text--darken-1"
+              >
+                {{ $t("art_content_top") }}
+                <span class="green--text font-weight-bold">{{
+                  $t("art_vue")
+                }}</span
+                >, {{ $t("art_content_but") }}
               </p>
             </div>
           </div>
         </v-card-title>
-
-        <v-card-actions class="hidden-sm-and-down">
-          <v-btn
-            v-for="icon in icons"
-            :key="icon.icon"
-            fab
-            dark
-            outlined
-            color="green"
-            :href="icon.href"
-            target="_blank"
-          >
-            <v-icon dark>{{icon.icon}}</v-icon>
-          </v-btn>
-        </v-card-actions>
 
         <v-card-actions class="hidden-md-and-up justify-center mb-4 pb-3">
           <v-btn
@@ -103,10 +121,26 @@
             :href="icon.href"
             target="_blank"
           >
-            <v-icon dark>{{icon.icon}}</v-icon>
+            <v-icon dark>{{ icon.icon }}</v-icon>
           </v-btn>
         </v-card-actions>
       </v-card>
+    </v-flex>
+    <v-flex xs12 mt-md-10 row justify-center align-center>
+      <v-card-actions class="hidden-sm-and-down">
+        <v-btn
+          v-for="icon in icons"
+          :key="icon.icon"
+          fab
+          dark
+          outlined
+          color="green"
+          :href="icon.href"
+          target="_blank"
+        >
+          <v-icon dark>{{ icon.icon }}</v-icon>
+        </v-btn>
+      </v-card-actions>
     </v-flex>
   </v-layout>
 </template>
@@ -123,7 +157,10 @@ export default {
     title: 'Home',
     titleTemplate: "%s ← Artminda's Web",
     meta: [
-      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1,maximum-scale=1'
+      },
       { name: 'description', content: "Artminda Chen's Portfolio" },
       { charset: 'utf-8' },
       { property: 'og:title', content: "Artminda' Web" },
@@ -159,8 +196,8 @@ export default {
           icon: 'fab fa-facebook-f'
         },
         {
-          href: 'https://www.upwork.com/o/profiles/users/~01665ea6dd70561bc2/',
-          icon: 'fas fa-underline'
+          href: 'https://www.linkedin.com/in/huang-min-chen-73357a16a/',
+          icon: 'fab fa-linkedin-in'
         }
       ],
       text1: [this.$t('art_job1'), this.$t('art_job2'), this.$t('art_job3')],
@@ -225,7 +262,7 @@ export default {
   border-left-style: solid;
   border-left-color: #4caf50b8;
   padding: 5px;
-  font-style:italic;
+  font-style: italic;
 }
 .typer_title {
   overflow: hidden;
@@ -233,7 +270,7 @@ export default {
   word-break: keep-all;
   line-height: 8rem;
   letter-spacing: normal;
-  font-family: fantasy ;
+  font-family: fantasy;
   margin-left: 5px;
   transform: rotate(-33deg);
   position: relative;
@@ -241,65 +278,68 @@ export default {
   top: -10px;
 }
 
-.typer{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    min-width: 0;
+.typer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
-.typer_mobile{
-   position: fixed;
-    margin: 0 auto;
-    width: 100%;
-    top: 10vh;
+.typer_mobile {
+  display: flex;
+  //    position: fixed;
+  margin: 0 auto;
+  width: 100%;
+  top: 10vh;
 }
-.typer_pc{
-    position: fixed;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    min-width: 0;
-    transform: rotate(-33deg);
-    right: -147px;
-    position: relative;
-    top: -148px;
-    font-size: 2rem;
+.typer_pc {
+  // position: fixed;
+  // display: -webkit-box;
+  // display: -ms-flexbox;
+  display: flex;
+  // -webkit-box-flex: 1;
+  // -ms-flex: 1 1 auto;
+  // flex: 1 1 auto;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  min-width: 0;
+  transform: rotate(-33deg);
+  right: -147px;
+  // position: absolute;
+  // z-index: 5;
+  // top: -148px;
+  font-size: 2rem;
 }
 .cube {
-    width: 100%;
-    position: fixed;
-    height: 350px;
-    top: 78px;
+  width: 100%;
+  display: flex;
+  // position: fixed;
+  height: 350px;
+  // top: 78px;
 }
 
 .wordbreak {
   word-break: normal;
 }
-.fakeblak{
+.fakeblak {
   height: 180px;
   width: 100%;
   position: relative;
   background-color: transparent;
 }
-.noShadow{
+.noShadow {
   left: 64px;
   top: 20px;
   box-shadow: none;
-  margin-top: 13vh;
+  //   margin-top: 13vh;
   word-break: normal;
 }
-@media(max-width: 600px){
-  .noShadow{
+@media (max-width: 600px) {
+  .noShadow {
     position: fixed;
     overflow: scroll;
     overflow-x: hidden;
@@ -317,10 +357,10 @@ export default {
 @media (min-width: 600px) and (max-width: 960px) {
   .cube {
     top: 156px;
-}
- .noShadow{
+  }
+  .noShadow {
     left: 0;
-    margin-top: 43vh;
+    // margin-top: 43vh;
     margin-bottom: 6vh;
     width: 100%;
     -webkit-box-pack: center;
@@ -328,7 +368,7 @@ export default {
     justify-content: center;
   }
 }
-@media(max-width: 1264px){
+@media (max-width: 1264px) {
   .typer_title {
     left: -61px;
     top: 51px;

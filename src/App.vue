@@ -5,6 +5,7 @@
         <!-- <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/> -->
         <div class="screenHight">
           <div class="screenContent">
+            <div class="headerContainer">
             <hamburger
               :lang="lang"
               @menu="showMenu($event)"
@@ -22,7 +23,7 @@
               dense
               single-line
             ></v-select>
-
+            </div>
             <transition
               mode="out-in"
               name="router-animation"
@@ -203,6 +204,12 @@ code {
   color: #dcdcdc;
 }
 
+.headerContainer {
+  position: relative;
+  z-index: 888;
+  background-color: #fff;
+}
+
 .wordbreak {
   word-break: normal;
 }
@@ -250,7 +257,7 @@ code {
   overflow: auto;
   overflow-x: hidden;
   height: inherit;
-  height: 97vh;
+  height: 100%;
   border: #4caf50 2px solid;
 }
 .routerMargin {
