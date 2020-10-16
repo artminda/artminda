@@ -7,11 +7,11 @@
         <v-timeline align-top dense>
           <v-timeline-item color="green" small>
             <v-layout>
-              <v-col xs4>
+              <v-col cols="4">
                 <div class="caption font-weight-bold green--text">SEP 2017 -</div>
                 <div class="caption font-weight-bold green--text">PRESENT</div>
               </v-col>
-              <v-col class="pl-2">
+              <v-col class="pl-2 subheading">
                 <strong>{{$t("art_master")}}</strong>
                 <div class="caption mb-2">{{$t("art_chiayi")}}</div>
               </v-col>
@@ -20,29 +20,17 @@
 
           <v-timeline-item color="green" small>
             <v-layout >
-              <v-col xs4>
+              <v-col cols="4">
                 <div class="caption font-weight-bold green--text">SEP 2011 -</div>
                 <div class="caption font-weight-bold green--text">MAY 2015</div>
               </v-col>
-              <v-col class="pl-2">
+              <v-col class="pl-2 subheading">
                 <strong>{{$t("art_bachelor")}}</strong>
                 <div class="caption mb-2">{{$t("art_taitung")}}</div>
               </v-col>
             </v-layout>
           </v-timeline-item>
 
-          <v-timeline-item color="green" small>
-            <v-layout >
-              <v-col xs4>
-                <div class="caption font-weight-bold green--text">AUG 2008 -</div>
-                <div class="caption font-weight-bold green--text">JUL 2011</div>
-              </v-col>
-              <v-col xs8 class="pl-2">
-                <strong>{{$t("art_major")}}</strong>
-                <div class="caption mb-2">{{$t("art_singang")}}</div>
-              </v-col>
-            </v-layout>
-          </v-timeline-item>
         </v-timeline>
       </v-card-text>
     </v-col>
@@ -52,7 +40,7 @@
         <v-timeline align-top dense>
           <v-timeline-item color="green" small>
             <v-layout >
-              <v-col xs4>
+              <v-col cols="4">
                 <div class="caption font-weight-bold green--text">JUN 2019 -</div>
                 <div class="caption font-weight-bold green--text">JAN 2020</div>
               </v-col>
@@ -65,7 +53,7 @@
 
           <v-timeline-item color="green" small>
             <v-layout >
-              <v-col xs4>
+              <v-col cols="4">
                 <div class="caption font-weight-bold green--text">JUL 2018 -</div>
                 <div class="caption font-weight-bold green--text">MAY 2019</div>
               </v-col>
@@ -78,7 +66,7 @@
 
           <v-timeline-item color="green" small>
             <v-layout >
-              <v-col xs4>
+              <v-col cols="4">
                 <div class="caption font-weight-bold green--text">SEP 2015 -</div>
                 <div class="caption font-weight-bold green--text">AUG 2016</div>
               </v-col>
@@ -91,34 +79,45 @@
         </v-timeline>
       </v-card-text>
     </v-col>
+
       <v-col cols="12" sm="6" class="pt-4">
+        <h2>
+          <span>F2E</span>
+          <span class="green--text">Skills</span>
+        </h2>
+        <br>
+        <strong>Vue</strong>
+        <v-progress-linear v-model="buffer10" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <strong>專案溝通整合管理</strong>
+        <v-progress-linear v-model="buffer9" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <strong>Webpack setting</strong>
+        <v-progress-linear v-model="buffer7" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <strong>敏捷開發</strong>
+        <v-progress-linear v-model="buffer8" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <strong>球類遊戲網站製作</strong>
+        <v-progress-linear v-model="buffer10" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <strong>WERP製作</strong>
+        <v-progress-linear v-model="buffer9" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <strong>SEO</strong>
+        <v-progress-linear v-model="buffer10" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+      </v-col>
+
+        <v-col cols="12" sm="6" class="pt-4">
         <h2>
           <span>Design</span>
           <span class="green--text">Skills</span>
         </h2>
         <br>
         <strong>CSS Animation / Transform / Transition</strong>
-        <v-progress-linear v-model="buffer7" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <v-progress-linear v-model="buffer8" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
         <strong>Photoshop</strong>
-        <v-progress-linear v-model="buffer1" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <v-progress-linear v-model="buffer9" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
         <strong>Illustrator</strong>
-        <v-progress-linear v-model="buffer2" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <v-progress-linear v-model="buffer9" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
         <strong>Premiere</strong>
-        <v-progress-linear v-model="buffer3" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
+        <v-progress-linear v-model="buffer7" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
       </v-col>
-      <v-col cols="12" sm="6" class="pt-4">
-        <h2>
-          <span>Coding</span>
-          <span class="green--text">Skills</span>
-        </h2>
-        <br>
-        <strong>Vue-CLI/ Vuex</strong>
-        <v-progress-linear v-model="buffer4" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
-        <strong>Vuetify/ Bootstrap/ Element</strong>
-        <v-progress-linear v-model="buffer5" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
-        <strong>JavaScript</strong>
-        <v-progress-linear v-model="buffer6" :buffer-value="bufferValue" color="green" height="16"></v-progress-linear>
-      </v-col>
+
       <v-col col="12">
       <v-row
       :align="'center'"
@@ -181,6 +180,9 @@ export default {
       buffer5: 0,
       buffer6: 0,
       buffer7: 0,
+      buffer8: 0,
+      buffer9: 0,
+      buffer10: 0,
       bufferValue: 100,
       interval: 0
     }
@@ -196,13 +198,16 @@ export default {
   methods: {
     startBuffer () {
       this.interval = setInterval(() => {
-        this.buffer1 = 90
-        this.buffer2 = 85
-        this.buffer3 = 80
-        this.buffer4 = 80
-        this.buffer5 = 90
-        this.buffer6 = 70
-        this.buffer7 = 90
+        this.buffer1 = 10
+        this.buffer2 = 20
+        this.buffer3 = 30
+        this.buffer4 = 40
+        this.buffer5 = 50
+        this.buffer6 = 60
+        this.buffer7 = 70
+        this.buffer8 = 80
+        this.buffer9 = 90
+        this.buffer10 = 100
       }, 800)
     }
   }
