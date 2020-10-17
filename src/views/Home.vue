@@ -3,7 +3,7 @@
     <v-flex xs12>
       <!-- mobile -->
       <div
-        class="layout mt-4 pt-2 column justify-center align-center hidden-md-and-up typer_mobile"
+        class="layout mt-4 pt-8 column justify-center align-center hidden-md-and-up typer_mobile"
       >
         <vue-typer
           class="headline"
@@ -345,7 +345,7 @@ export default {
     overflow-x: hidden;
     height: 396px;
     left: 0;
-    margin-top: 36vh;
+    margin-top: 40vh;
     margin-bottom: 6vh;
     width: 100%;
     -webkit-box-pack: center;

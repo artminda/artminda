@@ -88,6 +88,20 @@ export default {
       projects: [
         {
           dialog: false,
+          title: '搞運彩-即時比分數據平台',
+          demo: 'https://getsport.cc/',
+          tech: {
+            tech1: 'vue',
+            tech2: 'Quasar-cli',
+            tech3: 'Firebase SDK',
+            tech4: 'GA Tag',
+            tech5: 'SEO',
+            tech6: 'realtime database'
+          },
+          poster: 'https://i.imgur.com/tWuVmp7.jpg'
+        },
+        {
+          dialog: false,
           title: 'yabo_mobile_practice',
           demo: 'https://xj-mbs-yabo.prdasbbwla1.com/m/en-gb/',
           tech: {
@@ -116,21 +130,6 @@ export default {
             tech6: 'css 3D transform'
           },
           poster: 'https://i.imgur.com/7MxhQDD.jpg'
-        },
-        {
-          dialog: false,
-          title: 'Portfolio_basic',
-          git: 'https://github.com/artminda/Portfolio_basic',
-          demo: 'https://artminda.github.io/Portfolio_basic',
-          tech: {
-            tech1: 'vue-cli',
-            tech2: 'JavaScript',
-            tech3: 'vuetify',
-            tech4: 'storyblok API',
-            tech5: 'i18n',
-            tech6: 'lottie'
-          },
-          poster: 'https://i.imgur.com/bY1oT8G.jpg'
         },
         {
           dialog: false,
