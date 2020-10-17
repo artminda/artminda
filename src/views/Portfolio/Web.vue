@@ -159,7 +159,7 @@ export default {
           dialog: false,
           title: 'oasis bitcoin',
           git: 'https://github.com/artminda/oasis',
-          demo: 'http://oasis.byethost9.com/index.php',
+          demo: 'http://artminda.byethost17.com',
           tech: {
             tech1: 'ui design',
             tech2: 'bootstrap',
