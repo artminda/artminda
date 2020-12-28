@@ -1,7 +1,7 @@
 export default {
-  art_content_top: "Hello! I'm Artminda Chen. I'm a front-end developer who is passionate about",
-  art_vue: 'vue',
-  art_content_but: "building great user experiences,fighting for simplicity over complexity and constantly learning. When I'm not coding or making graphic adv, you'll find me workouts.",
+  art_content_top: "Hello! I'm Artminda Chen. I'm a senior front-end developer who is passionate about",
+  art_vue: 'VUE',
+  art_content_but: 'I can independently handle visual design, front-end layout (RWD), data concatenation, business logic calculation, performance optimization, and SEO optimization.',
   art_good2: 'Willing to accept criticism in order to make myself better',
   art_name: 'artminda chen',
   art_about: 'about',

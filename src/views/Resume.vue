@@ -34,8 +34,7 @@
                 </v-col>
                 <v-col class="pl-2">
                   <strong
-                    >{{ $t("art_front") }}<br />
-                    + {{ $t("art_web") }}</strong
+                    >Front-End Developer</strong
                   >
                   <div class="caption mb-2">{{ $t("art_chung") }}</div>
                 </v-col>
@@ -54,8 +53,8 @@
                 </v-col>
                 <v-col xs8 class="pl-2">
                   <strong
-                    >{{ $t("art_front") }}<br />
-                    + {{ $t("art_web") }}</strong
+                    >Front-End Developer
+                   </strong
                   >
                   <div class="caption mb-2">{{ $t("art_rock") }}</div>
                 </v-col>
@@ -106,115 +105,26 @@
         </v-card-text>
       </v-col>
 
-      <v-col cols="12" sm="6" class="pt-4">
+      <v-col cols="12" sm="2" class="pt-4">
         <h2>
           <span>F2E</span>
           <span class="green--text">Skills</span>
         </h2>
-        <br />
-        <strong>Vue</strong>
-        <v-progress-linear
-          v-model="buffer10"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
-        <strong>專案溝通整合管理</strong>
-        <v-progress-linear
-          v-model="buffer9"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
-        <strong>Webpack</strong>
-        <v-progress-linear
-          v-model="buffer7"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
-        <strong>敏捷開發</strong>
-        <v-progress-linear
-          v-model="buffer8"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
-        <strong>球類遊戲網站製作</strong>
-        <v-progress-linear
-          v-model="buffer10"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
-        <strong>WERP製作</strong>
-        <v-progress-linear
-          v-model="buffer9"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
-        <strong>SEO (Google Analytics)</strong>
-        <v-progress-linear
-          v-model="buffer10"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
+      </v-col>
+      <v-col cols="12" sm="4" class="pt-4">
+        <strong v-for="(item,i) in op" :key="`${i}_${item}`" class="op">{{item}}</strong>
       </v-col>
 
-      <v-col cols="12" sm="6" class="pt-4">
+      <v-col cols="12" sm="2" class="pt-4">
         <h2>
           <span>Design</span>
           <span class="green--text">Skills</span>
         </h2>
-        <br />
-        <strong>CSS Animation / Transform / Transition</strong>
-        <v-progress-linear
-          v-model="buffer8"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
-        <strong>Photoshop</strong>
-        <v-progress-linear
-          v-model="buffer9"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
-        <strong>Illustrator</strong>
-        <v-progress-linear
-          v-model="buffer9"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
-        <strong>Premiere</strong>
-        <v-progress-linear
-          v-model="buffer7"
-          :buffer-value="bufferValue"
-          color="green"
-          height="16"
-        ></v-progress-linear>
+       </v-col>
+      <v-col cols="12" sm="4" class="pt-4">
+        <strong v-for="(item,i) in opUI" :key="`${i}_${item}`" class="op">{{item}}</strong>
       </v-col>
 
-      <v-col col="12">
-        <v-row :align="'center'" :justify="'center'">
-          <div class="mt-4 mb-4 pt-2 mb-5">
-            <v-btn
-              href="https://docs.google.com/document/d/14wZAIgwog7Lo5EdK7AeU4D311ADfNKnO4YEsiwBlcYY/edit?usp=sharing"
-              target="_blank"
-              color="green"
-              dark
-              large
-            >
-              {{ $t("art_down") }}
-              <v-icon right dark>fas fa-file-download</v-icon>
-            </v-btn>
-          </div>
-        </v-row>
-      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -252,19 +162,17 @@ export default {
   },
   data () {
     return {
-      value: 0,
-      buffer1: 0,
-      buffer2: 0,
-      buffer3: 0,
-      buffer4: 0,
-      buffer5: 0,
-      buffer6: 0,
-      buffer7: 0,
-      buffer8: 0,
-      buffer9: 0,
-      buffer10: 0,
-      bufferValue: 100,
-      interval: 0
+      op: [
+        'VUE',
+        'front-end SSR',
+        'Webpack setting',
+        '敏捷開發',
+        '遊戲網站製作',
+        'SEO & Speed optimization'
+      ],
+      opUI: [
+        'CSS3 Animation', 'Photoshop', 'Illustrator', 'Premiere'
+      ]
     }
   },
   mounted () {
@@ -296,5 +204,11 @@ export default {
 <style >
 .resumTop {
   margin-top: 6vh;
+}
+strong.op{
+   display: inline-flex;
+   white-space:nowrap;
+   width: 100%;
+   padding: 0 20px;
 }
 </style>
