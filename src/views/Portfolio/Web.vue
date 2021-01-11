@@ -113,7 +113,7 @@ export default {
             tech6: 'vuex',
             tech8: 'SCSS'
           },
-          poster: 'https://i.imgur.com/nkUJLrm.jpg'
+          poster: 'https://i.imgur.com/Uu2nLat.png'
         },
         {
           dialog: false,
