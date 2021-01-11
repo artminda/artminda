@@ -102,8 +102,8 @@ export default {
         },
         {
           dialog: false,
-          title: 'yabo_mobile_practice',
-          demo: 'https://xj-mbs-yabo.prdasbbwla1.com/m/en-gb/',
+          title: 'KK 彩票',
+          demo: 'https://artminda.github.io/work_copy',
           tech: {
             tech1: 'vue-cli',
             tech2: 'webpack config',
@@ -111,8 +111,7 @@ export default {
             tech4: 'javascript ES6',
             tech5: 'Route',
             tech6: 'vuex',
-            tech7: 'element ui',
-            tech8: 'SASS'
+            tech8: 'SCSS'
           },
           poster: 'https://i.imgur.com/nkUJLrm.jpg'
         },
