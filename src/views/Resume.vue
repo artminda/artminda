@@ -164,6 +164,8 @@ export default {
     return {
       op: [
         'VUE',
+        'React',
+        'Redux',
         'front-end SSR',
         'Webpack setting',
         '敏捷開發',
