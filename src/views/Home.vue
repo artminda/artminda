@@ -196,7 +196,7 @@ export default {
           icon: 'fab fa-facebook-f'
         },
         {
-          href: 'https://www.linkedin.com/in/huang-min-chen-73357a16a/',
+          href: 'www.linkedin.com/in/artminda-chen-73357a16a/',
           icon: 'fab fa-linkedin-in'
         }
       ],
