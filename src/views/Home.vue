@@ -196,7 +196,7 @@ export default {
           icon: 'fab fa-facebook-f'
         },
         {
-          href: 'www.linkedin.com/in/artminda-chen-73357a16a/',
+          href: 'https://www.linkedin.com/in/artminda-chen-73357a16a/',
           icon: 'fab fa-linkedin-in'
         }
       ],
