@@ -90,7 +90,7 @@ export default {
       select: 'ALL',
       dialog: false,
       items: [
-        'ALL', 'BANNER', 'LOGO', 'UI', 'PACKAGE', 'PRINT', 'EXHIBITION'
+        'ALL', 'BANNER', 'LOGO', 'PACKAGE', 'PRINT', 'EXHIBITION'
       ],
       images: [
         {
@@ -126,13 +126,13 @@ export default {
         {
           type: 'LOGO',
           dialog: false,
-          title: 'rgb practice',
+          title: 'practice',
           poster: 'https://i.imgur.com/sNBBULk.jpg'
         },
         {
           type: 'LOGO',
           dialog: false,
-          title: '168 practice',
+          title: 'practice',
           poster: 'https://i.imgur.com/Q4U4RNT.jpg'
         },
         {
@@ -171,26 +171,26 @@ export default {
           title: 'practice',
           poster: 'https://i.imgur.com/yFwNQcC.jpg'
         },
-        {
-          type: 'BANNER',
-          dialog: false,
-          title: 'practice',
-          poster: 'https://i.imgur.com/Dz6iBC5.jpg'
-        },
-        {
-          position: 'top',
-          type: 'UI',
-          dialog: false,
-          title: 'practice',
-          poster: 'https://i.imgur.com/OwYp710.jpg'
-        },
-        {
-          position: 'top',
-          type: 'UI',
-          dialog: false,
-          title: 'practice',
-          poster: 'https://i.imgur.com/Ie7oZtj.jpg'
-        },
+        // {
+        //   type: 'BANNER',
+        //   dialog: false,
+        //   title: 'practice',
+        //   poster: 'https://i.imgur.com/Dz6iBC5.jpg'
+        // },
+        // {
+        //   position: 'top',
+        //   type: 'UI',
+        //   dialog: false,
+        //   title: 'practice',
+        //   poster: 'https://i.imgur.com/OwYp710.jpg'
+        // },
+        // {
+        //   position: 'top',
+        //   type: 'UI',
+        //   dialog: false,
+        //   title: 'practice',
+        //   poster: 'https://i.imgur.com/Ie7oZtj.jpg'
+        // },
         {
           type: 'PACKAGE',
           dialog: false,

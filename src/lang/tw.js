@@ -43,7 +43,7 @@ export default {
   art_front: '前端工程師',
   art_chung: '中佑集團',
   art_web: '美術設計',
-  art_rock: '火箭科技有限公司',
+  art_rock: 'Rocket Technology Co., Ltd.',
   art_visual: '平面廣告設計師',
   art_avg: '愛之味股份有限公司',
   art_my: '我的',

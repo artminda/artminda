@@ -17,7 +17,7 @@
                 </v-col>
                 <v-col class="pl-2">
                   <strong>Senior Front-End Developer</strong>
-                  <div class="caption mb-2">搞資訊有限公司</div>
+                  <div class="caption mb-2">GSI Technology Co., Ltd.</div>
                 </v-col>
               </v-layout>
             </v-timeline-item>
@@ -168,8 +168,8 @@ export default {
         'Redux',
         'front-end SSR',
         'Webpack setting',
-        '敏捷開發',
-        '遊戲網站製作',
+        'Scrum',
+        'game web',
         'SEO & Speed optimization'
       ],
       opUI: [
