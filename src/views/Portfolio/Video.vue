@@ -46,19 +46,19 @@ import { PlyrVideo } from 'vue-plyr'
 export default {
   metaInfo: {
     title: 'Video Portfolio',
-    titleTemplate: "%s ← artminda's web",
+    titleTemplate: "%s ← poca's web",
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
         name: 'description',
         content:
-          "artminda chen's Services Adobe Premire After Effects Video Ad's Social Media Logo Animation Instagram Facebook Video Editing Advetising"
+          "poca chen's Services Adobe Premire After Effects Video Ad's Social Media Logo Animation Instagram Facebook Video Editing Advetising"
       },
       { charset: 'utf-8' },
-      { property: 'og:title', content: "artminda' web" },
-      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:title', content: "poca' web" },
+      { property: 'og:site_name', content: "poca' web" },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
+      { property: 'og:url', content: 'https://poca.github.io/poca' },
       {
         property: 'og:image',
         content: 'https://i.imgur.com/Dcz2PGx.jpg'
@@ -66,7 +66,7 @@ export default {
       {
         property: 'og:description',
         content:
-          "artminda chen's Services Adobe Premire After Effects Video Ad's Social Media Logo Animation Instagram Facebook Video Editing Advetising"
+          "poca chen's Services Adobe Premire After Effects Video Ad's Social Media Logo Animation Instagram Facebook Video Editing Advetising"
       }
     ]
   },

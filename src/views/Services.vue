@@ -18,7 +18,7 @@
                 width="88"
                 height="100"
                 aspect-ratio="2.75"
-                :alt="'artminda do '+service.title"
+                :alt="'poca do '+service.title"
                 lazy-src="https://cdn.dribbble.com/users/503653/screenshots/3143656/fluid-loader.gif"
                 contain
               ></v-img>
@@ -34,7 +34,7 @@
             :src="service.src"
             height="100"
             aspect-ratio="2.75"
-            :alt="'artminda do '+service.title"
+            :alt="'poca do '+service.title"
             lazy-src="https://cdn.dribbble.com/users/503653/screenshots/3143656/fluid-loader.gif"
             contain
           ></v-img>
@@ -45,7 +45,7 @@
           </v-card-text>
         </v-card>
       </v-flex>
-      <v-flex xs12 sm12 md12 lg12 xl12>
+      <!-- <v-flex xs12 sm12 md12 lg12 xl12>
         <h2 class="pl-4">
           <span>{{$t("art_my")}}</span>
           <span class="green--text">{{$t("art_cli")}}</span>
@@ -65,7 +65,7 @@
             >
             </v-img>
 
-      </v-flex>
+      </v-flex> -->
     </v-layout>
   </v-container>
 </template>
@@ -74,19 +74,19 @@
 export default {
   metaInfo: {
     title: 'Services',
-    titleTemplate: "%s ← artminda's web",
+    titleTemplate: "%s ← poca's web",
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
         name: 'description',
         content:
-          "artminda chen's Services Web Development Video Editing Graphic Design Front-End Advetising"
+          "poca chen's Services Web Development Video Editing Graphic Design Front-End Advetising"
       },
       { charset: 'utf-8' },
-      { property: 'og:title', content: "artminda' web" },
-      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:title', content: "poca' web" },
+      { property: 'og:site_name', content: "poca' web" },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
+      { property: 'og:url', content: 'https://poca.github.io/poca' },
       {
         property: 'og:image',
         content: 'https://i.imgur.com/Dcz2PGx.jpg'
@@ -94,7 +94,7 @@ export default {
       {
         property: 'og:description',
         content:
-          "artminda chen's Services Web Development Video Editing Graphic Design Front-End Advetising"
+          "poca chen's Services Web Development Video Editing Graphic Design Front-End Advetising"
       }
     ]
   },

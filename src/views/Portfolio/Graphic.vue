@@ -61,19 +61,19 @@
 export default {
   metaInfo: {
     title: 'Graphic Portfolio ',
-    titleTemplate: "%s ← artminda's web",
+    titleTemplate: "%s ← poca's web",
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
         name: 'description',
         content:
-          "artminda chen's Graphic Adobe PhotoShop Logo Design Instagram Poster"
+          "poca chen's Graphic Adobe PhotoShop Logo Design Instagram Poster"
       },
       { charset: 'utf-8' },
-      { property: 'og:title', content: "artminda' web" },
-      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:title', content: "poca' web" },
+      { property: 'og:site_name', content: "poca' web" },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
+      { property: 'og:url', content: 'https://poca.github.io/poca' },
       {
         property: 'og:image',
         content: 'https://i.imgur.com/Dcz2PGx.jpg'
@@ -81,7 +81,7 @@ export default {
       {
         property: 'og:description',
         content:
-          "artminda chen's Graphic Adobe PhotoShop Logo Design Instagram Poster"
+          "poca chen's Graphic Adobe PhotoShop Logo Design Instagram Poster"
       }
     ]
   },
@@ -96,25 +96,25 @@ export default {
         {
           type: 'LOGO',
           dialog: false,
-          title: 'artminda Logo',
+          title: 'poca Logo',
           poster: 'https://i.imgur.com/Fj5l6Ka.jpg'
         },
         {
           type: 'LOGO',
           dialog: false,
-          title: 'artminda Logo',
+          title: 'poca Logo',
           poster: 'https://i.imgur.com/WmrQxZ1.jpg'
         },
         {
           type: 'LOGO',
           dialog: false,
-          title: 'artminda Logo',
+          title: 'poca Logo',
           poster: 'https://i.imgur.com/eb7P9S5.jpg'
         },
         {
           type: 'LOGO',
           dialog: false,
-          title: 'artminda Logo',
+          title: 'poca Logo',
           poster: 'https://i.imgur.com/ovRIoIK.jpg'
         },
         {
@@ -123,18 +123,18 @@ export default {
           title: 'city boyz',
           poster: 'https://i.imgur.com/3spNE3i.jpg'
         },
-        {
-          type: 'LOGO',
-          dialog: false,
-          title: 'practice',
-          poster: 'https://i.imgur.com/sNBBULk.jpg'
-        },
-        {
-          type: 'LOGO',
-          dialog: false,
-          title: 'practice',
-          poster: 'https://i.imgur.com/Q4U4RNT.jpg'
-        },
+        // {
+        //   type: 'LOGO',
+        //   dialog: false,
+        //   title: 'practice',
+        //   poster: 'https://i.imgur.com/sNBBULk.jpg'
+        // },
+        // {
+        //   type: 'LOGO',
+        //   dialog: false,
+        //   title: 'practice',
+        //   poster: 'https://i.imgur.com/Q4U4RNT.jpg'
+        // },
         {
           type: 'LOGO',
           dialog: false,
@@ -165,12 +165,12 @@ export default {
           title: 'new year',
           poster: 'https://i.imgur.com/MkXsTf2.jpg'
         },
-        {
-          type: 'BANNER',
-          dialog: false,
-          title: 'practice',
-          poster: 'https://i.imgur.com/yFwNQcC.jpg'
-        },
+        // {
+        //   type: 'BANNER',
+        //   dialog: false,
+        //   title: 'practice',
+        //   poster: 'https://i.imgur.com/yFwNQcC.jpg'
+        // },
         // {
         //   type: 'BANNER',
         //   dialog: false,

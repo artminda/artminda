@@ -37,7 +37,7 @@ export default {
   metaInfo () {
     return {
       title: this.result.title,
-      titleTemplate: "%s ← artminda's Blog",
+      titleTemplate: "%s ← poca's Blog",
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
         {
@@ -45,10 +45,10 @@ export default {
           content: this.result.content
         },
         { charset: 'utf-8' },
-        { property: 'og:title', content: "artminda' web" },
-        { property: 'og:site_name', content: "artminda' web" },
+        { property: 'og:title', content: "poca' web" },
+        { property: 'og:site_name', content: "poca' web" },
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://artminda.github.io/artminda/' },
+        { property: 'og:url', content: 'https://poca.github.io/poca/' },
         {
           property: 'og:image',
           content: 'https://i.imgur.com/Dcz2PGx.jpg'

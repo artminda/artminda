@@ -77,14 +77,14 @@ body {
 
 .slide.x:after {
   content: "";
-  background-image: url("https://i.imgur.com/owrCaj3.jpg");
+  background-image: url("https://i.imgur.com/eb7P9S5.jpg");
   -webkit-transform: translateZ(100px) rotateZ(-90deg);
   transform: translateZ(100px) rotateZ(-90deg);
 }
 
 .slide.x:before {
   content: "";
-  background-image: url("https://i.imgur.com/kNmA7qB.jpg");
+  background-image: url("https://i.imgur.com/WmrQxZ1.jpg");
   -webkit-transform: translateZ(-100px) rotateZ(-90deg);
   transform: translateZ(-100px) rotateZ(-90deg);
 }

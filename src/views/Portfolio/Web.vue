@@ -58,19 +58,19 @@
 export default {
   metaInfo: {
     title: 'Web Portfolio',
-    titleTemplate: "%s ← artminda's web",
+    titleTemplate: "%s ← poca's web",
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
         name: 'description',
         content:
-          "artminda chen's Web Portfolio Vue Vue.js Nuxt Nuxt.js HTML CSS Vuetify Axios GraphQL JavaScript Web Developer Front-End Frontend Designer App Responsive"
+          "poca chen's Web Portfolio Vue Vue.js Nuxt Nuxt.js HTML CSS Vuetify Axios GraphQL JavaScript Web Developer Front-End Frontend Designer App Responsive"
       },
       { charset: 'utf-8' },
-      { property: 'og:title', content: "artminda' web" },
-      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:title', content: "poca' web" },
+      { property: 'og:site_name', content: "poca' web" },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
+      { property: 'og:url', content: 'https://poca.github.io/poca' },
       {
         property: 'og:image',
         content: 'https://i.imgur.com/Dcz2PGx.jpg'
@@ -78,7 +78,7 @@ export default {
       {
         property: 'og:description',
         content:
-          "artminda chen's Web Portfolio Vue Vue.js Nuxt Nuxt.js HTML CSS Vuetify Axios GraphQL JavaScript Web Developer Front-End Frontend Designer App Responsive"
+          "poca chen's Web Portfolio Vue Vue.js Nuxt Nuxt.js HTML CSS Vuetify Axios GraphQL JavaScript Web Developer Front-End Frontend Designer App Responsive"
       }
     ]
   },
@@ -100,26 +100,26 @@ export default {
           },
           poster: 'https://i.imgur.com/tWuVmp7.jpg'
         },
-        {
-          dialog: false,
-          title: 'KK 彩票',
-          demo: 'https://artminda.github.io/work_copy',
-          tech: {
-            tech1: 'vue-cli',
-            tech2: 'webpack config',
-            tech3: 'RESTful API',
-            tech4: 'javascript ES6',
-            tech5: 'Route',
-            tech6: 'vuex',
-            tech8: 'SCSS'
-          },
-          poster: 'https://i.imgur.com/Uu2nLat.png'
-        },
+        // {
+        //   dialog: false,
+        //   title: 'KK 彩票',
+        //   demo: 'https://poca.github.io/work_copy',
+        //   tech: {
+        //     tech1: 'vue-cli',
+        //     tech2: 'webpack config',
+        //     tech3: 'RESTful API',
+        //     tech4: 'javascript ES6',
+        //     tech5: 'Route',
+        //     tech6: 'vuex',
+        //     tech8: 'SCSS'
+        //   },
+        //   poster: 'https://i.imgur.com/Uu2nLat.png'
+        // },
         {
           dialog: false,
           title: 'This Site',
-          git: 'https://github.com/artminda/artminda',
-          demo: 'https://artminda.github.io/artminda',
+          git: 'https://github.com/poca/poca',
+          demo: 'https://poca.github.io/poca',
           tech: {
             tech1: 'vue-cli',
             tech2: 'JavaScript',
@@ -133,8 +133,8 @@ export default {
         {
           dialog: false,
           title: 'creat_fun',
-          git: 'https://github.com/artminda/creatFun',
-          demo: 'https://artminda.github.io/creatFun',
+          git: 'https://github.com/poca/creatFun',
+          demo: 'https://poca.github.io/creatFun',
           tech: {
             tech1: 'ui design',
             tech2: 'css',
@@ -146,8 +146,8 @@ export default {
         {
           dialog: false,
           title: 'My Old Web Portfolio',
-          git: 'https://github.com/artminda/artminda-old',
-          demo: 'https://artminda.github.io/artminda-old',
+          git: 'https://github.com/poca/poca-old',
+          demo: 'https://poca.github.io/poca-old',
           tech: {
             tech1: 'ui design',
             tech2: 'bootstrap'
@@ -157,8 +157,8 @@ export default {
         {
           dialog: false,
           title: 'oasis bitcoin',
-          git: 'https://github.com/artminda/oasis',
-          demo: 'http://artminda.byethost17.com',
+          git: 'https://github.com/poca/oasis',
+          demo: 'http://poca.byethost17.com',
           tech: {
             tech1: 'ui design',
             tech2: 'bootstrap',
@@ -169,8 +169,8 @@ export default {
         {
           dialog: false,
           title: 'Admin dashboard',
-          git: 'https://github.com/artminda/artminda-management',
-          demo: 'https://artminda.github.io/artminda-management/',
+          git: 'https://github.com/poca/poca-management',
+          demo: 'https://poca.github.io/poca-management/',
           tech: [
             'vue cli',
             'JavaScript',
@@ -184,7 +184,7 @@ export default {
         //   dialog: false,
         //   title: "GraphQL practice",
         //   git: "https://github.com/EldinZaimovic/SnowBall-Project",
-        //   demo: "https://artminda.github.io/GraphQL-practice/index.html",
+        //   demo: "https://poca.github.io/GraphQL-practice/index.html",
         //   tech: {
         //     tech1: "VUE",
         //     tech2: "GraphQL",
@@ -196,8 +196,8 @@ export default {
         {
           dialog: false,
           title: 'Lodash practice',
-          git: 'https://github.com/artminda/Lodash-practice',
-          demo: 'https://artminda.github.io/Lodash-practice/index.html',
+          git: 'https://github.com/poca/Lodash-practice',
+          demo: 'https://poca.github.io/Lodash-practice/index.html',
           tech: {
             tech1: 'VUE',
             tech2: 'Lodash',
@@ -209,8 +209,8 @@ export default {
         {
           dialog: false,
           title: 'poople',
-          git: 'https://github.com/artminda/poople',
-          demo: 'https://artminda.github.io/poople/',
+          git: 'https://github.com/poca/poople',
+          demo: 'https://poca.github.io/poople/',
           tech: {
             tech1: 'bootstrp',
             tech2: 'RWD',

@@ -49,7 +49,7 @@
     <v-toolbar text dense color="transparent" scroll-off-screen>
       <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="headline">
-        <span class="font-weight-light">artminda</span>
+        <span class="font-weight-light">Poca</span>
         <span class="green--text">Chen</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>

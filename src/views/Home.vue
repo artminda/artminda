@@ -8,7 +8,7 @@
         <vue-typer
           class="headline"
           :repeat="0"
-          text="artminda chen"
+          text="poca chen"
         ></vue-typer>
         <div class="typer mt-2 pl-2">
           <vue-typer
@@ -29,7 +29,7 @@
 
       <!-- pc -->
       <!-- <div class="layout column hidden-sm-and-down">
-    <vue-typer class="typer_title " :repeat="0" text="artminda"></vue-typer>
+    <vue-typer class="typer_title " :repeat="0" text="poca"></vue-typer>
     <vue-typer class="typer_title " :repeat="0" text="chen"></vue-typer>
      <div class="typer_pc mt-2 pl-2 ">
      <vue-typer
@@ -155,23 +155,23 @@ import cube from '@/components/cube_slide'
 export default {
   metaInfo: {
     title: 'Home',
-    titleTemplate: "%s ← Artminda's Web",
+    titleTemplate: "%s ← poca's Web",
     meta: [
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1,maximum-scale=1'
       },
-      { name: 'description', content: "Artminda Chen's Portfolio" },
+      { name: 'description', content: "poca Chen's Portfolio" },
       { charset: 'utf-8' },
-      { property: 'og:title', content: "Artminda' Web" },
-      { property: 'og:site_name', content: "Artminda' Web" },
+      { property: 'og:title', content: "poca' Web" },
+      { property: 'og:site_name', content: "poca' Web" },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
+      { property: 'og:url', content: 'https://poca.github.io/poca' },
       {
         property: 'og:image',
         content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
-      { property: 'og:description', content: "Artminda Chen's Portfolio" }
+      { property: 'og:description', content: "poca Chen's Portfolio" }
     ]
   },
   components: {
@@ -186,17 +186,9 @@ export default {
       animationSpeed: 1,
       anim: {},
       icons: [
-        { href: 'https://github.com/artminda', icon: 'fab fa-github' },
+        { href: 'https://github.com/poca', icon: 'fab fa-github' },
         {
-          href: 'https://www.cakeresume.com/dashboard#',
-          icon: 'fab fa-cuttlefish'
-        },
-        {
-          href: 'https://www.facebook.com/shyshydesign/',
-          icon: 'fab fa-facebook-f'
-        },
-        {
-          href: 'https://www.linkedin.com/in/artminda-chen-73357a16a/',
+          href: 'https://www.linkedin.com/in/poca-chen-73357a16a/',
           icon: 'fab fa-linkedin-in'
         }
       ],

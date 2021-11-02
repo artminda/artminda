@@ -24,19 +24,19 @@
 export default {
   metaInfo: {
     title: 'Portfolio',
-    titleTemplate: "%s ← artminda's web",
+    titleTemplate: "%s ← poca's web",
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
         name: 'description',
         content:
-          "artminda chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
+          "poca chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
       },
       { charset: 'utf-8' },
-      { property: 'og:title', content: "artminda' web" },
-      { property: 'og:site_name', content: "artminda' web" },
+      { property: 'og:title', content: "poca' web" },
+      { property: 'og:site_name', content: "poca' web" },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://artminda.github.io/artminda' },
+      { property: 'og:url', content: 'https://poca.github.io/poca' },
       {
         property: 'og:image',
         content: 'https://i.imgur.com/Dcz2PGx.jpg'
@@ -44,7 +44,7 @@ export default {
       {
         property: 'og:description',
         content:
-          "artminda chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
+          "poca chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
       }
     ]
   },
@@ -60,12 +60,12 @@ export default {
           src: 'https://i.imgur.com/OCabWSH.png',
           title: this.$t('por_vis'),
           path: 'Graphic'
-        },
-        {
-          src: 'https://i.imgur.com/weuqlNn.png',
-          title: this.$t('por_video'),
-          path: 'Video'
         }
+        // {
+        //   src: 'https://i.imgur.com/weuqlNn.png',
+        //   title: this.$t('por_video'),
+        //   path: 'Video'
+        // }
       ]
     }
   },
