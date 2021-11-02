@@ -186,9 +186,9 @@ export default {
       animationSpeed: 1,
       anim: {},
       icons: [
-        { href: 'https://github.com/poca', icon: 'fab fa-github' },
+        { href: 'https://github.com/artminda', icon: 'fab fa-github' },
         {
-          href: 'https://www.linkedin.com/in/poca-chen-73357a16a/',
+          href: 'https://www.linkedin.com/in/poca-c-73357a16a/',
           icon: 'fab fa-linkedin-in'
         }
       ],
