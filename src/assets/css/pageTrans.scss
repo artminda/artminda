@@ -1,8 +1,115 @@
+// .fade-enter {
+//   background-color: red;
+//   left: 100vw;
+// //   position: absolute;
+//   z-index: 1000;
+// }
+// .fade-enter-active {
+//   transition: 5s;
+// }
+// .fade-enter-to {
+//   top: 5rem;
+//   left: 0;
+// //   position: absolute;
+//   z-index: 1000;
+// }
+// .fade-leave {
+//   background-color: plum;
+//   left: 0;
+// //   position: absolute;
+//   z-index: 1000;
+// }
+// .fade-leave-active {
+//   transition: 5s;
+// }
+// .fade-leave-to {
+//    background-color: green;
+//    left: 1000vw;
+// //    position: absolute;
+//    z-index: 1000;
+// }
+
+
+	.is-active-side-block {
+		left: -300px;
+		animation: slideOnLeft 1s cubic-bezier(0.5, 0.0, 0.0, 1);
+	}
+	
+	.un-active-side-block {
+		left: -600px;
+		animation: slideOffLeft 1s cubic-bezier(0.5, 0.0, 0.0, 1);
+	}
+	#sidePort {
+		position: absolute;
+		top: 0;
+		left: 98vw;
+		height: 100%;
+		width: 100%;
+		background: url("https://media.giphy.com/media/LO9SfybTLwNu7wS0dU/giphy.gif")center center no-repeat;
+		z-index: 1;
+	}
+
+	#sidePort_back {
+		position: absolute;
+		top: 0;
+		left: 98vw;
+		height: 100%;
+		width: 100%;
+		background: url("https://media.giphy.com/media/JOQwMqLQJI1Dve1B9m/giphy.gif") center center no-repeat;
+		z-index: 1;
+	}
+
+	#sideBlock {
+	   position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: url("https://media.giphy.com/media/U5DuR8bPh5iI2oIwXD/giphy.gif") center center no-repeat;
+		z-index: 1;
+		left: 98vw;
+	}
+	.appbg{
+		// background: url("https://i.imgur.com/ovRIoIK.jpg") center center no-repeat;
+		background-size: cover;
+	}
+	.content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 503;
+		padding: 1rem 2rem;
+		
+		.is-active-content {
+			top: 0;
+			opacity: 1;
+			animation: fadeIn 0.5s cubic-bezier(0.5, 0.0, 0.0, 1);
+		}
+		
+		.un-active-content {
+			top: 1rem;
+			opacity: 0;
+			animation: fadeOut 0.5s cubic-bezier(0.5, 0.0, 0.0, 1);
+		}
+	}
+
+// load
+
+.load-enter-active {
+  animation: load-in 1.5s;
+}
+.load-leave-active {
+  animation: load-in 1.8s;
+}
+// ANIMATIONS
+// .load_in {
+// 	animation: loadIn 1.5s cubic-bezier(0.5, 0.0, 0.0, 1);
+// }
 // Anim for loader
-@keyframes loadIn {
-	0%   {top: 100%;}
-	50%  {top: -10%;}
-	100% {top: -120%;}
+@keyframes load-in {
+ 0% {left: -34vw; transform:scale(0);}
+ 50% {left: 5vw; transform:scale(1);}
+ 80% {left: 8vw; transform:scale(1);}
+ 100% {left: 98vw; transform:scale(0);}
 }
 
 //Anims for moving the grey block

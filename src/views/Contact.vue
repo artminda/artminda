@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl>
+  <v-container grid-list-md>
     <v-layout row justify-center align-center wrap class="mt-4 pt-2">
       <v-flex xs12 sm12 md6 lg6 xl6>
         <h2 class="pb-4 mt-2">
@@ -16,11 +16,11 @@
           <span>doai10007118@</span>
           <span class="green--text">gmail.com</span>
         </div>
-        <div class="py-4 subheading font-weight-bold">
+        <!-- <div class="py-4 subheading font-weight-bold">
           <v-icon large color="green" left>fas fa-phone</v-icon>
           <span>0937&nbsp;</span>
           <span class="green--text">828 251</span>
-        </div>
+        </div> -->
         <!-- <div class="py-4 subheading font-weight-bold">
           <v-icon large color="green" left>fas fa-check</v-icon>
           <span>Freelance</span>
@@ -81,37 +81,37 @@
 </template>
 
 <script>
-import { validationMixin } from "vuelidate";
+import { validationMixin } from 'vuelidate'
 import {
   required,
   maxLength,
   email,
   minLength
-} from "vuelidate/lib/validators";
+} from 'vuelidate/lib/validators'
 export default {
   metaInfo: {
-    title: "Contact",
-    titleTemplate: "%s ← artminda's web",
+    title: 'Contact',
+    titleTemplate: "%s ← poca's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
-        name: "description",
+        name: 'description',
         content:
-          "artminda chen's Contact please keep in Touch ContactMe"
+          "poca chen's Contact please keep in Touch ContactMe"
       },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "poca' web" },
+      { property: 'og:site_name', content: "poca' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://poca.github.io/poca' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
-          "artminda chen's Contact please keep in Touch ContactMe"
+          "poca chen's Contact please keep in Touch ContactMe"
       }
     ]
   },
@@ -121,50 +121,50 @@ export default {
     email: { required, email },
     body: { required, minLength: minLength(20) }
   },
-  data() {
+  data () {
     return {
-      name: "",
-      email: "",
-      body: ""
-    };
+      name: '',
+      email: '',
+      body: ''
+    }
   },
   methods: {
-    submit() {
-      this.$v.$touch();
+    submit () {
+      this.$v.$touch()
     },
-    clear() {
-      this.$v.$reset();
-      this.name = "";
-      this.email = "";
-      this.body = "";
+    clear () {
+      this.$v.$reset()
+      this.name = ''
+      this.email = ''
+      this.body = ''
     }
   },
   computed: {
-    nameErrors() {
-      const errors = [];
-      if (!this.$v.name.$dirty) return errors;
+    nameErrors () {
+      const errors = []
+      if (!this.$v.name.$dirty) return errors
       !this.$v.name.maxLength &&
-        errors.push(this.$t('art_err_name'));
-      !this.$v.name.required && errors.push(this.$t('art_required_name'));
-      return errors;
+        errors.push(this.$t('art_err_name'))
+      !this.$v.name.required && errors.push(this.$t('art_required_name'))
+      return errors
     },
-    emailErrors() {
-      const errors = [];
-      if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push(this.$t('art_err_email'));
-      !this.$v.email.required && errors.push(this.$t('art_required_email'));
-      return errors;
+    emailErrors () {
+      const errors = []
+      if (!this.$v.email.$dirty) return errors
+      !this.$v.email.email && errors.push(this.$t('art_err_email'))
+      !this.$v.email.required && errors.push(this.$t('art_required_email'))
+      return errors
     },
-    bodyErrors() {
-      const errors = [];
-      if (!this.$v.body.$dirty) return errors;
+    bodyErrors () {
+      const errors = []
+      if (!this.$v.body.$dirty) return errors
       !this.$v.body.minLength &&
-        errors.push(this.$t('art_err_body'));
-      !this.$v.body.required && errors.push(this.$t('art_required_body'));
-      return errors;
+        errors.push(this.$t('art_err_body'))
+      !this.$v.body.required && errors.push(this.$t('art_required_body'))
+      return errors
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

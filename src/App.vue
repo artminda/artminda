@@ -1,28 +1,51 @@
 <template>
-  <v-app :dark="goDark">
+  <v-app>
     <v-content>
-      <div>
-        <hamburger :goDark="goDark" :lang="lang" @menu="showMenu($event)" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)" />
+      <div class="appbg">
         <!-- <TheHeader :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/> -->
-        <!-- <TheTips v-if="$route.name === 'home'"/> --> 
-         <transition
-          name="router-animation"
-          mode="out-in"
-          enter-active-class="animated fadeInRight fast"
-          leave-active-class="animated fadeOutRight faster"
-        > 
-        <TheMenu v-if="menu" :goDark="goDark" :lang="lang" @changeTheme="updateTheme($event)" @changeLang="updateLang($event)"/>
-        </transition>
-        <div class="screenHight">     
-        <transition
-          name="router-animation"
-          mode="out-in"
-          enter-active-class="animated bounceInDown fast"
-          leave-active-class="animated bounceOutDown faster"
-        > 
-          <router-view></router-view>
-        </transition>
-        <!-- <TheFooter/> -->
+        <div class="screenHight">
+          <div class="screenContent">
+            <div class="headerContainer">
+            <hamburger
+              :lang="lang"
+              @menu="showMenu($event)"
+            />
+            <v-btn class="godark" @click="updateTheme(goDark = !goDark)" depressed small icon>
+              <v-icon v-if="goDark===true">fas fa-sun</v-icon>
+              <v-icon v-else>fas fa-moon</v-icon>
+            </v-btn>
+            <v-select
+              append-icon=""
+              v-model="selectLang"
+              class="selectWidth ml-3 mr-3 golang"
+              :items="items"
+              label="select lang"
+              dense
+              single-line
+            ></v-select>
+            </div>
+            <transition
+              mode="out-in"
+              name="router-animation"
+              enter-active-class="animated fadeInLeft fast"
+              leave-active-class="animated fadeOutLeft faster"
+              :duration="{ enter: 800, leave: 1400 }"
+              v-on:before-leave="beforeLeave"
+            >
+            <router-view  class="routerMargin" ></router-view>
+            </transition>
+            <!-- <div id='sideBlock'></div> -->
+            <transition name="load">
+              <div v-if="sideBlock" id="sideBlock"></div>
+            </transition>
+            <transition  name="load">
+              <div v-if="sidePort_back" id="sidePort_back"></div>
+            </transition>
+             <transition name="load">
+              <div v-if="sidePort" id="sidePort"></div>
+            </transition>
+            <!-- <TheFooter/> -->
+          </div>
         </div>
       </div>
     </v-content>
@@ -30,119 +53,281 @@
 </template>
 
 <script>
-import TheMenu from "./components/TheMenu";
-import hamburger from "./components/hamburger";
-import TheTips from "./components/TheTips";
-import TheHeader from "./components/TheHeader";
-import TheFooter from "./components/TheFooter";
-import i18n from 'i18n'
+import hamburger from './components/hamburger'
+// import TheHeader from './components/TheHeader'
+// import TheFooter from './components/TheFooter'
+// import i18n from 'i18n'
+// import $ from 'jquery'
 
 export default {
-  name: "App",
+  name: 'App',
   metaInfo: {
-    title: "Home",
-    titleTemplate: "%s ← artminda's web",
+    title: 'Home',
+    titleTemplate: "%s ← paul's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "description", content: "artminda chen's Portfolio" },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.web" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
+      { name: 'description', content: "paul chen's Portfolio" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "paul' web" },
+      { property: 'og:site_name', content: "paul' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://paul.web' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
-      { property: "og:description", content: "artminda chen's Portfolio" }
+      { property: 'og:description', content: "paul chen's Portfolio" }
     ]
   },
   components: {
-    hamburger,
-    TheHeader,
-    TheFooter,
-    TheTips,
-    TheMenu
+    hamburger
+    // TheHeader,
+    // TheFooter
   },
-  data() {
+  data () {
     return {
-      menu: false, 
-      goDark: false, 
-      lang: "en"  
-    };
-  },
-  methods: {
-    showMenu(val){
-      this.menu = val
-      console.log("showMenu:",this.menu)
-    },
-    updateTheme(updatedTheme) {
-      this.goDark = !updatedTheme;
-    },
-    updateLang(newLang){
-      console.log("APP-newLang-EMIT:", typeof newLang, newLang)
-      if (newLang === "中文"){
-        this.$i18n.locale = "tw"
-        localStorage.setItem("lang", "tw")
-        return
-      }
-      this.$i18n.locale = newLang
-      localStorage.setItem("lang", newLang)
+      selectLang: localStorage.getItem('lang') === 'tw' ? '中文' : 'English',
+      items: ['English', '中文'],
+      sideBlock: false,
+      sidePort: false,
+      sidePort_back: false,
+      menu: false,
+      goDark: false,
+      lang: 'en'
     }
   },
-  mounted(){
-    console.log("APP-menu:", this.menu) 
+  watch: {
+    selectLang (val) {
+      this.updateLang(val)
+    }
+  },
+  // mounted(){
+  //   localStorage.getItem('lang')
+  // },
+  methods: {
+    showMenu (data) {
+      if (data.run === 'noRun' || data.run === 'portfolio') {
+        return
+      }
+      setTimeout(() => {
+        this.sideBlock = !data.sta
+        setTimeout(() => {
+          this.sideBlock = data.sta
+        }, 600)
+      }, 300)
+    },
+    beforeLeave (el) {
+      if (this.$route.path === '/portfolio/web' || this.$route.path === '/portfolio/graphic' || this.$route.path === '/portfolio/video') {
+        setTimeout(() => {
+          this.sidePort = true
+          setTimeout(() => {
+            this.sidePort = false
+          }, 0)
+        }, 0)
+      }
+      if (this.$route.path === '/portfolio') {
+        setTimeout(() => {
+          this.sidePort_back = true
+          setTimeout(() => {
+            this.sidePort_back = false
+          }, 0)
+        }, 0)
+      }
+    },
+    updateTheme (updatedTheme) {
+      this.$vuetify.theme.dark = updatedTheme
+    },
+    updateLang (newLang) {
+      if (newLang === '中文') {
+        // this.$i18n.locale = "tw";
+        localStorage.setItem('lang', 'tw')
+        window.location.reload()
+        return
+      }
+      // this.$i18n.locale = newLang;
+      localStorage.setItem('lang', newLang)
+      window.location.reload()
+    }
   }
-};
+}
 </script>
-<style>
+<style lang="scss" scoped src="@/assets/css/pageTrans.scss"/>
+<style >
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
 
 * {
-  font-family:'Microsoft JhengHei',sans-serif;  
+  font-family: "Microsoft JhengHei", sans-serif;
 }
 
 ::-webkit-scrollbar {
-width: 5px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
--webkit-border-radius: 10px;
-border-radius: 10px;
-margin:80px 0 5px 0;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 80px 0 5px 0;
+  background: #616161;
 }
 ::-webkit-scrollbar-thumb {
--webkit-border-radius: 4px;
-border-radius: 4px;
-background: rgb(219,219,219);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #4caf50;
 }
 
 .screenHight {
-  overflow: scroll;
-  overflow-x: hidden;
   height: 100vh;
-  padding: 2rem;
-  border: 10px red solid;
+  padding: 10px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+body{
+  -ms-overflow-style: none;
 }
 
 pre {
-    font-size: 1rem;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #282c34;
-    background: #282c34;
-    color: #DCDCDC;
-    display: block;
-    font-family: monospace;
-    white-space: pre;
-    margin: 1em 0px;
- }
+ font-size: 1rem;
+  padding: 9px;
+  border-radius: 5px;
+  background: #517b53;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0px;
+}
 
 code {
   background: #282c34;
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  color: #DCDCDC;
+  color: #dcdcdc;
+}
+
+.headerContainer {
+  position: relative;
+  z-index: 888;
+  background-color: #fff;
+}
+
+.wordbreak {
+  word-break: normal;
+}
+
+.godark {
+  position: fixed;
+  z-index: 999;
+  right: 177px;
+  top: 35px;
+  float: right;
+  margin: 0 1em;
+  display: block;
+  cursor: pointer;
+}
+
+.godark:hover {
+  margin: 0 1em;
+  position: fixed;
+  z-index: 999;
+  right: 177px;
+ top: 35px;
+}
+
+.golang {
+  right: 85px;
+  top:26px;
+  position: fixed;
+  z-index: 999;
+  float: right;
+  margin: 0 1em;
+  display: block;
+  cursor: pointer;
+}
+
+.selectWidth {
+  width: 65px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.screenContent {
+  overflow: auto;
+  overflow-x: hidden;
+  height: inherit;
+  height: 100%;
+  border: #4caf50 2px solid;
+}
+.routerMargin {
+  margin-top: 4vh;
+}
+
+/* 筆電 1366 * 768  */
+@media (min-width: 1264px) and (max-width: 1370px) {
+  .cube {
+      top: 94px !important;
+  }
+}
+@media (min-width: 1400px) and (max-width: 1920px) {
+  .routerMargin {
+  margin-top: 0;
+  }
+  .cube {
+      top: 259px !important;
+  }
+}
+@media (max-width: 960px) {
+  .routerMargin {
+  margin-bottom: 11vh
+  }
+  .screenHight {
+    padding: 0;
+    }
+  .screenContent {
+  height: 100vh;
+  border: none;
+  }
+  .godark {
+    top: 3vh;
+  }
+  .godark:hover {
+    top: 3vh;
+  }
+  .golang {
+    top: 2vh;
+  }
+  .v-application--is-ltr .v-text-field .v-input__append-inner {
+    display: none;
+  }
+}
+@media (min-width: 600px) and (max-width: 959px) {
+  .godark {
+    top: 2vh;
+  }
+  .godark:hover {
+    top: 2vh;
+  }
+  .golang {
+    top: 1.5vh;
+  }
+}
+@media (min-width: 960px) and (max-width: 1200px) {
+  .godark {
+    top: 4vh;
+  }
+  .godark:hover {
+    top: 4vh;
+  }
+  .golang {
+    top: 3.5vh;
+  }
+}
+@media (min-width: 1904px){
+  .container {
+    max-width: 1185px;
+  }
 }
 
 </style>

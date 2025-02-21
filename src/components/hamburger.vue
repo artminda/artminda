@@ -1,140 +1,158 @@
 <template>
-  <div id="hamburger" @click="burgerTime()" 
-  :class="{is_closed: isClosed, is_open: !isClosed}"
-  class="hamburglar">
-    <div class="burger-icon">
-      <div class="burger-container">
-        <span class="burger-bun-top"></span>
-        <span class="burger-filling"></span>
-        <span class="burger-bun-bot"></span>
+  <div>
+    <div
+      id="hamburger"
+      @click="burgerTime()"
+      :class="{is_closed: isClosed, is_open: !isClosed}"
+      class="hamburglar"
+    >
+      <div class="burger-icon">
+        <div class="burger-container">
+          <span class="burger-bun-top"></span>
+          <span class="burger-filling"></span>
+          <span class="burger-bun-bot"></span>
+        </div>
       </div>
-    </div>
 
-    <!-- svg ring containter -->
-    <div class="burger-ring">
-      <svg class="svg-ring">
-        <path
-          class="path"
-          fill="none"
-          stroke="#4caf50"
-          stroke-miterlimit="10"
-          stroke-width="4"
-          d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2"
-        />
+      <!-- svg ring containter -->
+      <div class="burger-ring">
+        <svg class="svg-ring">
+          <path
+            class="path"
+            fill="none"
+            stroke="#4caf50"
+            stroke-miterlimit="10"
+            stroke-width="4"
+            d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2"
+          />
+        </svg>
+      </div>
+      <!-- the masked path that animates the fill to the ring -->
+
+      <svg width="0" height="0">
+        <mask id="mask">
+          <path
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="#ff0000"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"
+          />
+        </mask>
       </svg>
-    </div>
-    <!-- the masked path that animates the fill to the ring -->
 
-    <svg width="0" height="0">
-      <mask id="mask">
-        <path
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          stroke="#ff0000"
-          stroke-miterlimit="10"
-          stroke-width="4"
-          d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"
-        />
-      </mask>
-    </svg>
-    <div class="path-burger">
-      <div class="animate-path">
-        <div class="path-rotation"></div>
+      <!-- 往上那一撇 -->
+      <div class="path-burger">
+        <div class="animate-path">
+          <div class="path-rotation"></div>
+        </div>
       </div>
     </div>
+    <shineBtn @menu="showMenu($event)" class="homeBtn" :text="$t('art_home')" :path="'/'"></shineBtn>
+    <transition
+      enter-active-class="animated bounceInUp fast"
+      leave-active-class="animated bounceOutUp faster"
+    >
+      <TheMenu
+        style="position: fixed;z-index: 888;top: 0;left: 0;bottom: 0; right: 0;"
+        v-if="menu"
+        :goDark="goDark"
+        :lang="lang"
+        @menu="showMenu($event)"
+        @changeTheme="updateTheme($event)"
+        @changeLang="updateLang($event)"
+      />
+    </transition>
   </div>
 </template>
 
 <script>
+import TheMenu from './TheMenu'
+import shineBtn from './shine_btn'
 export default {
-props: {
+  props: {
     goDark: {
       type: Boolean
     },
     lang: {
       type: String
+    },
+    theStatus: {
+      type: Boolean
     }
   },
-data() {
-    return {  
+  components: {
+    TheMenu,
+    shineBtn
+  },
+  data () {
+    return {
+      menu: false,
       isClosed: true,
-      selectLang: localStorage.getItem('lang') === "tw" ? "中文" : "English" ,
-      items:["English","中文"],
+      selectLang: localStorage.getItem('lang') === 'tw' ? '中文' : 'English',
+      items: ['English', '中文'],
       drawer: null
     }
-},
- watch:{
-    selectLang(val){
-      this.$emit("changeLang", val);
-    }
-},
-methods: {
-  changeTheme() {
-      this.$emit("changeTheme", this.goDark);
   },
-  burgerTime(){
-    if (this.isClosed === true) {   
+  // created() {
+  //   // [註冊監聽事件]
+  //   this.$bus.$on("closeMenu", event);
+  //   this.isClosed = !event;
+  // },
+
+  methods: {
+    showMenu (data) {
+      if (this.menu === false) {
+        this.$emit('menu', data)
+        return
+      }
+      this.menu = data.sta
+      this.burgerTime()
+      this.$emit('menu', data)
+    },
+    changeTheme () {
+      this.$emit('changeTheme', this.goDark)
+    },
+    burgerTime () {
+      if (this.isClosed === true) {
         this.isClosed = false
-        this.$emit("menu", !this.isClosed)
+        this.menu = true
       } else {
         this.isClosed = true
-        this.$emit("menu", !this.isClosed)
+        this.menu = false
       }
+    }
   }
-}
 }
 </script>
 
 <style lang="scss" scoped>
-.selectWidth {
-  width: 109px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
+
 // vars
-$color: #4caf50;		  // icon color
-$blue: transparent;	  // background color
-$animation: 0.6s;	// animation speed
-$scale: 1;			  // icon scale 68/68 default
-
-*, *:before, *:after {
-  box-sizing: border-box;
- }
-
-// spacing + background-color
-body {
-  background: $blue;
-  padding: 40px;
-}
-
-h4 {
-  font-family: arial,helvetica,serif;
-  color: $color;
-  font-size: 18px;
-  text-align: center;
-  margin: 40px 0 0;
-  
-}
+$color: #4caf50; // icon color
+$blue: transparent; // background color
+$animation: 0.6s; // animation speed
+$scale: 1; // icon scale 68/68 default
 
 .hamburglar {
-  float: right;
-  transform: scale($scale);
-// margin: 40px auto;
-  position: absolute;
+  position: fixed;
   z-index: 999;
-  right: 0;
-  margin: 2vh;
+  right: 0vw;
+  float: right;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  margin: 0 10px;
   display: block;
   width: 68px;
   height: 68px;
-  background: $blue;
+  background: transparent;
   -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-
 }
 
 // transition mask
@@ -165,7 +183,7 @@ h4 {
   transform: rotate(0deg);
   transform-origin: 100% 0;
   &:before {
-    content: '';
+    content: "";
     display: block;
     width: 30px;
     height: 34px;
@@ -206,22 +224,22 @@ h4 {
 .hamburglar.is_open {
   .path {
     animation: dash-in $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
   .animate-path {
     animation: rotate-in $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
 }
 
 .hamburglar.is_closed {
   .path {
     animation: dash-out $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
   .animate-path {
     animation: rotate-out $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -253,8 +271,6 @@ h4 {
     stroke-dashoffset: 240;
   }
 }
-
-
 
 // All good burgers need filling!
 
@@ -296,8 +312,8 @@ h4 {
 //}
 // relative parent is the button
 .burger-filling {
-   top: 10px;
-   height: 8px;
+  top: 10px;
+  height: 8px;
 }
 
 // burger ring container
@@ -314,26 +330,25 @@ h4 {
   height: 68px;
 }
 
-
-// bun animations 
+// bun animations
 .hamburglar.is_open {
   .burger-bun-top {
     animation: bun-top-out $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
   .burger-bun-bot {
     animation: bun-bot-out $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
 }
 .hamburglar.is_closed {
   .burger-bun-top {
     animation: bun-top-in $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
   .burger-bun-bot {
     animation: bun-bot-in $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -379,7 +394,6 @@ h4 {
   }
 }
 
-
 @keyframes bun-top-in {
   0% {
     left: -5px;
@@ -424,19 +438,18 @@ h4 {
   }
 }
 
-
 // burger filling
 .hamburglar.is_open {
   .burger-filling {
     animation: burger-fill-out $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
 }
 
 .hamburglar.is_closed {
   .burger-filling {
     animation: burger-fill-in $animation linear normal;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -478,5 +491,13 @@ h4 {
     width: 0;
     left: 36px;
   }
+}
+
+.homeBtn {
+  left: -22px;
+  position: fixed;
+  z-index: 999;
+  margin: 0 2em;
+  cursor: pointer;
 }
 </style>

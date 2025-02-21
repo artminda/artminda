@@ -17,11 +17,11 @@
             <v-list-tile-title>{{$t('art_ser')}}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile active-class="green--text" to="/portfolio">
+        <!-- <v-list-tile active-class="green--text" to="/portfolio">
           <v-list-tile-content>
             <v-list-tile-title>{{$t('art_por')}}</v-list-tile-title>
           </v-list-tile-content>
-        </v-list-tile>
+        </v-list-tile> -->
         <v-list-tile active-class="green--text" to="/blog">
           <v-list-tile-content>
             <v-list-tile-title>{{$t('art_blog')}}</v-list-tile-title>
@@ -35,21 +35,21 @@
         <v-list-tile>
             <v-flex class="xs10">
              <v-select
-              v-model="selectLang" 
+              v-model="selectLang"
               class="hidden-md-and-up"
               :items="items"
               label="select"
               dense
               single-line
               ></v-select>
-            </v-flex> 
-        </v-list-tile>  
+            </v-flex>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar flat dense color="transparent" scroll-off-screen>
+    <v-toolbar text dense color="transparent" scroll-off-screen>
       <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="headline">
-        <span class="font-weight-light">artminda</span>
+        <span class="font-weight-light">Poca</span>
         <span class="green--text">Chen</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -59,12 +59,12 @@
       </v-btn>
     <!-- pc -->
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat to="/" active-class="green--text headline">{{$t('art_home')}}</v-btn>
-        <v-btn flat to="/resume" active-class="green--text headline">{{$t('art_re')}}</v-btn>
-        <v-btn flat to="/services" active-class="green--text headline">{{$t('art_ser')}}</v-btn>
-        <v-btn flat to="/portfolio" active-class="green--text headline">{{$t('art_por')}}</v-btn>
-        <v-btn flat to="/blog" active-class="green--text headline">{{$t('art_blog')}}</v-btn>
-        <v-btn flat to="/contact" active-class="green--text headline">{{$t('art_con')}}</v-btn>
+        <v-btn text to="/" active-class="green--text headline">{{$t('art_home')}}</v-btn>
+        <v-btn text to="/resume" active-class="green--text headline">{{$t('art_re')}}</v-btn>
+        <v-btn text to="/services" active-class="green--text headline">{{$t('art_ser')}}</v-btn>
+        <!-- <v-btn text to="/portfolio" active-class="green--text headline">{{$t('art_por')}}</v-btn> -->
+        <v-btn text to="/blog" active-class="green--text headline">{{$t('art_blog')}}</v-btn>
+        <v-btn text to="/contact" active-class="green--text headline">{{$t('art_con')}}</v-btn>
         <v-select
           v-model="selectLang"
           class="selectWidth ml-3 mr-3"
@@ -92,27 +92,27 @@ export default {
       type: String
     }
   },
-  data() {
+  data () {
     return {
-      selectLang: localStorage.getItem('lang') === "tw" ? "中文" : "English" ,
-      items:["English","中文"],
+      selectLang: localStorage.getItem('lang') === 'tw' ? '中文' : 'English',
+      items: ['English', '中文'],
       drawer: null
-    };
+    }
   },
-  watch:{
-    selectLang(val){
-      this.$emit("changeLang", val);
+  watch: {
+    selectLang (val) {
+      this.$emit('changeLang', val)
     }
   },
   methods: {
-    changeTheme() {
-      this.$emit("changeTheme", this.goDark);
+    changeTheme () {
+      this.$emit('changeTheme', this.goDark)
     }
   }
-};
+}
 </script>
 
-<style >
+<style  scoped>
 .selectWidth {
   width: 109px;
   -webkit-box-align: center;

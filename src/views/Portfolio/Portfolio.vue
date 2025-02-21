@@ -1,18 +1,18 @@
 <template>
-  <v-container grid-list-xl>
-    <v-layout row align-center wrap class="mt-4 pt-2">
-      <v-flex v-for="portfolio in portfolios" :key="portfolio.src" xs12 sm12 md4 lg4 xl4>
+  <v-container grid-list-md mt-5>
+    <v-layout row align-center justify-center wrap class="mt-4 py-2 px-2 portfolio_top">
+      <v-flex v-for="portfolio in portfolios" :key="portfolio.src" xs6 sm6 md4 lg4 xl4>
         <v-card
-          :to="'/portfolio/'+(portfolio.title).toLowerCase()"
-          hover
-          flat
+          :to="'/portfolio/'+(portfolio.path).toLowerCase()"
+          text
           color="transparent"
           height="230"
+          @click.native="portfolioLoading()"
         >
           <v-card-title></v-card-title>
-          <v-img :src="portfolio.src" aspect-ratio="2.75" height="130" contain></v-img>
+          <v-img :src="portfolio.src" lazy-src="https://i.imgur.com/MrbPiPS.gif" aspect-ratio="2.75" height="130" contain></v-img>
           <v-card-title primary-title class="justify-center">
-            <v-flex text-xs-center subheading font-weight-bold>{{portfolio.title}}</v-flex>
+            <v-flex text-center subheading font-weight-bold>{{portfolio.title}}</v-flex>
           </v-card-title>
         </v-card>
       </v-flex>
@@ -23,51 +23,69 @@
 <script>
 export default {
   metaInfo: {
-    title: "Portfolio",
-    titleTemplate: "%s ← artminda's web",
+    title: 'Portfolio',
+    titleTemplate: "%s ← poca's web",
     meta: [
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
       {
-        name: "description",
+        name: 'description',
         content:
-          "artminda chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
+          "poca chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
       },
-      { charset: "utf-8" },
-      { property: "og:title", content: "artminda' web" },
-      { property: "og:site_name", content: "artminda' web" },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://artminda.github.io/artminda" },
+      { charset: 'utf-8' },
+      { property: 'og:title', content: "poca' web" },
+      { property: 'og:site_name', content: "poca' web" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://poca.github.io/poca' },
       {
-        property: "og:image",
-        content: "https://i.imgur.com/Dcz2PGx.jpg"
+        property: 'og:image',
+        content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content:
-          "artminda chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
+          "poca chen's Portfolio Web Development Video Editing Graphic Design Front-End Advetising"
       }
     ]
   },
-  data() {
+  data () {
     return {
       portfolios: [
         {
-          src: "https://i.imgur.com/GvTt5GG.png",
-          title: "Web"
+          src: 'https://i.imgur.com/nWjbVgU.png',
+          title: this.$t('por_web'),
+          path: 'Web'
         },
         {
-          src: "https://i.imgur.com/g74mGuU.png",
-          title: "Graphic"
-        },
-        {
-          src: "https://i.imgur.com/wXLtLKy.png",
-          title: "Video"
-        },
+          src: 'https://i.imgur.com/OCabWSH.png',
+          title: this.$t('por_vis'),
+          path: 'Graphic'
+        }
+        // {
+        //   src: 'https://i.imgur.com/weuqlNn.png',
+        //   title: this.$t('por_video'),
+        //   path: 'Video'
+        // }
       ]
-    };
+    }
+  },
+  methods: {
+    portfolioLoading () {
+
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
+.portfolio_top {
+   margin-top: 3rem !important;
+}
+
+@media(min-width: 600px){
+
+.portfolio_top {
+    margin-top: 9rem !important;
+ }
+}
 </style>
