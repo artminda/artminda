@@ -17,11 +17,11 @@
             <v-list-tile-title>{{$t('art_ser')}}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile active-class="green--text" to="/portfolio">
+        <!-- <v-list-tile active-class="green--text" to="/portfolio">
           <v-list-tile-content>
             <v-list-tile-title>{{$t('art_por')}}</v-list-tile-title>
           </v-list-tile-content>
-        </v-list-tile>
+        </v-list-tile> -->
         <v-list-tile active-class="green--text" to="/blog">
           <v-list-tile-content>
             <v-list-tile-title>{{$t('art_blog')}}</v-list-tile-title>
@@ -62,7 +62,7 @@
         <v-btn text to="/" active-class="green--text headline">{{$t('art_home')}}</v-btn>
         <v-btn text to="/resume" active-class="green--text headline">{{$t('art_re')}}</v-btn>
         <v-btn text to="/services" active-class="green--text headline">{{$t('art_ser')}}</v-btn>
-        <v-btn text to="/portfolio" active-class="green--text headline">{{$t('art_por')}}</v-btn>
+        <!-- <v-btn text to="/portfolio" active-class="green--text headline">{{$t('art_por')}}</v-btn> -->
         <v-btn text to="/blog" active-class="green--text headline">{{$t('art_blog')}}</v-btn>
         <v-btn text to="/contact" active-class="green--text headline">{{$t('art_con')}}</v-btn>
         <v-select

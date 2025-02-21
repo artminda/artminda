@@ -1,6 +1,6 @@
 <template>
   <v-flex xs12 sm6 md4 lg4 xl4 >
-    <v-card :to="'/blog/'+id" class="mb-3">
+    <v-card :to="'/blog/'+id" class="mb-3 card">
       <v-img :src="thumbnailImage" aspect-ratio="2.75" height="230" :alt="title"></v-img>
       <v-card-title primary-title class="">
         <div>
@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style >
+<style>
 .blog_list {
   padding: 1rem 2rem !important;
   height: 400px;
@@ -49,5 +49,11 @@ export default {
 }
 .hightlimt {
   height: 170px;
+}
+
+@media (min-width: 1264px) {
+  .card {
+      height: 400px;
+  }
 }
 </style>

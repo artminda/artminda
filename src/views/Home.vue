@@ -8,7 +8,7 @@
         <vue-typer
           class="headline"
           :repeat="0"
-          text="poca chen"
+          text="Paul chen"
         ></vue-typer>
         <div class="typer mt-2 pl-2">
           <vue-typer
@@ -63,7 +63,7 @@
       <!-- <div v-if="fakeblak" class="fakeblak hidden-md-and-up"></div> -->
 
       <vue-typer
-        class="hidden-sm-and-down"
+        class="typer hidden-sm-and-down"
         :text="text1"
         :repeat="Infinity"
         :shuffle="false"
@@ -187,10 +187,10 @@ export default {
       anim: {},
       icons: [
         { href: 'https://github.com/artminda', icon: 'fab fa-github' },
-        {
-          href: 'https://www.linkedin.com/in/poca-c-73357a16a/',
-          icon: 'fab fa-linkedin-in'
-        }
+        // {
+        //   href: 'https://www.linkedin.com/in/poca-c-73357a16a/',
+        //   icon: 'fab fa-linkedin-in'
+        // }
       ],
       text1: [this.$t('art_job1'), this.$t('art_job2'), this.$t('art_job3')],
       leftImage: 'https://i.imgur.com/okK8qil.jpg',
@@ -271,15 +271,9 @@ export default {
 }
 
 .typer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  min-width: 0;
+  width: 257px;
+  justify-content: flex-end;
 }
 .typer_mobile {
   display: flex;
@@ -289,29 +283,17 @@ export default {
   top: 10vh;
 }
 .typer_pc {
-  // position: fixed;
-  // display: -webkit-box;
-  // display: -ms-flexbox;
   display: flex;
-  // -webkit-box-flex: 1;
-  // -ms-flex: 1 1 auto;
-  // flex: 1 1 auto;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   min-width: 0;
   transform: rotate(-33deg);
   right: -147px;
-  // position: absolute;
-  // z-index: 5;
-  // top: -148px;
   font-size: 2rem;
 }
 .cube {
   width: 100%;
   display: flex;
-  // position: fixed;
   height: 350px;
-  // top: 78px;
 }
 
 .wordbreak {
@@ -331,6 +313,9 @@ export default {
   word-break: normal;
 }
 @media (max-width: 600px) {
+  .typer {
+    justify-content: center;
+  }
   .noShadow {
     position: fixed;
     overflow: scroll;

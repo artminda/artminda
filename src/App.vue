@@ -63,20 +63,20 @@ export default {
   name: 'App',
   metaInfo: {
     title: 'Home',
-    titleTemplate: "%s ← poca's web",
+    titleTemplate: "%s ← paul's web",
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1' },
-      { name: 'description', content: "poca chen's Portfolio" },
+      { name: 'description', content: "paul chen's Portfolio" },
       { charset: 'utf-8' },
-      { property: 'og:title', content: "poca' web" },
-      { property: 'og:site_name', content: "poca' web" },
+      { property: 'og:title', content: "paul' web" },
+      { property: 'og:site_name', content: "paul' web" },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://poca.web' },
+      { property: 'og:url', content: 'https://paul.web' },
       {
         property: 'og:image',
         content: 'https://i.imgur.com/Dcz2PGx.jpg'
       },
-      { property: 'og:description', content: "poca chen's Portfolio" }
+      { property: 'og:description', content: "paul chen's Portfolio" }
     ]
   },
   components: {
@@ -272,7 +272,7 @@ code {
 }
 @media (min-width: 1400px) and (max-width: 1920px) {
   .routerMargin {
-  margin-top: 12vh;
+  margin-top: 0;
   }
   .cube {
       top: 259px !important;

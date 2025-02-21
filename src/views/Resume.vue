@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify-center align-center class="mb-4 pt-2 resumTop">
-      <v-col cols="12" sm="6" class="mt-4 pt-2">
+      <!-- <v-col cols="12" sm="6" class="mt-4 pt-2">
         <h2 class="mb-4 pl-4">{{ $t("art_experience") }}</h2>
         <v-card-text class="py-0">
           <v-timeline align-top dense>
@@ -9,15 +9,12 @@
               <v-layout>
                 <v-col cols="4">
                   <div class="caption font-weight-bold green--text">
-                    MAR 2020 -
-                  </div>
-                  <div class="caption font-weight-bold green--text">
-                    OCT 2020
+                    2023/4 - 2025/3
                   </div>
                 </v-col>
                 <v-col class="pl-2">
-                  <strong>Senior Front-End Developer</strong>
-                  <div class="caption mb-2">GSI Technology Co., Ltd.</div>
+                  <strong>資深前端工程師</strong>
+                  <div class="caption mb-2">SEEKTOP</div>
                 </v-col>
               </v-layout>
             </v-timeline-item>
@@ -26,17 +23,14 @@
               <v-layout>
                 <v-col cols="4">
                   <div class="caption font-weight-bold green--text">
-                    JUN 2019 -
-                  </div>
-                  <div class="caption font-weight-bold green--text">
-                    JAN 2020
+                    2019/9 - 2023/3
                   </div>
                 </v-col>
                 <v-col class="pl-2">
                   <strong
-                    >Front-End Developer</strong
+                    >资深前端工程师</strong
                   >
-                  <div class="caption mb-2">{{ $t("art_chung") }}</div>
+                  <div class="caption mb-2">FLASHSPEED INC 闪速科技有限公司</div>
                 </v-col>
               </v-layout>
             </v-timeline-item>
@@ -45,26 +39,23 @@
               <v-layout>
                 <v-col cols="4">
                   <div class="caption font-weight-bold green--text">
-                    JUL 2018 -
-                  </div>
-                  <div class="caption font-weight-bold green--text">
-                    MAY 2019
+                    2016/6 - 2019/7
                   </div>
                 </v-col>
                 <v-col xs8 class="pl-2">
                   <strong
-                    >Front-End Developer
+                    >资深前端工程师
                    </strong
                   >
-                  <div class="caption mb-2">{{ $t("art_rock") }}</div>
+                  <div class="caption mb-2">搞之訊有限公司</div>
                 </v-col>
               </v-layout>
             </v-timeline-item>
           </v-timeline>
         </v-card-text>
-      </v-col>
+      </v-col> -->
 
-      <v-col cols="12" sm="6" class="mt-4 pt-4">
+      <!-- <v-col cols="12" sm="6" class="mt-4 pt-4">
         <h2 class="mb-4 pl-4 pt-2">{{ $t("art_education") }}</h2>
         <v-card-text class="py-0">
           <v-timeline align-top dense>
@@ -103,7 +94,7 @@
             </v-timeline-item>
           </v-timeline>
         </v-card-text>
-      </v-col>
+      </v-col> -->
 
       <v-col cols="12" sm="2" class="pt-4">
         <h2>
@@ -165,7 +156,6 @@ export default {
       op: [
         'VUE',
         'React',
-        'Redux',
         'front-end SSR',
         'Webpack setting',
         'Scrum',
@@ -205,7 +195,7 @@ export default {
 </script>
 <style >
 .resumTop {
-  margin-top: 6vh;
+  margin-top: 20vh;
 }
 strong.op{
    display: inline-flex;

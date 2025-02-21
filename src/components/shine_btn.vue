@@ -3,7 +3,7 @@
         {{text}}
     </div>
     <div v-else @click="closeMenu(path)" class="btn btn-3" :class="{ 'btn-3_shine': homeRouter === path}">
-        Poca
+        Paul
     </div>
 </template>
 <script>
